@@ -10,7 +10,7 @@
 <p> ETag也是和Last-Modified一样，对文件进行标识的字段。不同的是，ETag的取值是一个对文件进行标识的特征字串。在向服务器查询文件是否有更新时，浏览器通过If-None-Match字段把特征字串发送给服务器，由服务器和文件最新特征字串进行匹配，来判断文件是否有更新。没有更新回包304，有更新回包200。</p>
 <p>ETag和Last-Modified可根据需求使用一个或两个同时使用。两个同时使用时，只要满足基中一个条件，就认为文件没有更新。</p>
 <h5 id="⚠️两种特殊情况"><a href="#⚠️两种特殊情况" class="headerlink" title="⚠️两种特殊情况"></a>⚠️两种特殊情况</h5><ul>
-<li>手动刷新页面（F5)，浏览器会直接认为缓存已经过期（可能缓存还没有过期），在请求头中加上字段：Cache-Control:max-age=0，发包向服务器查询是否有文件是否有更新。</li>
+<li>手动刷新页面（F5)，浏览器会直接认为缓存已经过期（可能缓存还没有过期），在请求中加上字段：Cache-Control:max-age=0，发包向服务器查询是否有文件是否有更新。</li>
 <li>强制刷新页面（Ctrl+F5)，浏览器会直接忽略本地的缓存（有缓存也会认为本地没有缓存），在请求头中加上字段：Cache-Control:no-cache（或 Pragma:no-cache），发包向服务重新拉取文件。</li>
 </ul>
 </blockquote>
@@ -40,4 +40,12 @@
 <blockquote>
 <p>1、 在要缓存的资源文件名中加上版本号或文件MD5值字串，如common.d5d02a02.js、common.v1.js，同时设置Cache-Control:max-age=31536000，也就是一年。在一年时间内，资源文件如果本地有缓存，就会使用缓存；也就不会有304的回包。<br>2、 如果资源文件有修改，则更新文件内容，同时修改资源文件名，如common.v2.js，html页面也会引用新的资源文件名。</p>
 </blockquote>
+<hr>
+<p>###总结<br>1、 首先强缓存：在服务器返回的cache-control中的过期时间范围内，这时请求资源不会向服务器发送HTTP请求。<br>2、 如果强缓存没有命中，即已经过了缓存时间，这时浏览器会向服务器发送HTTP请求，包括：</p>
+<ul>
+<li>Date:Fri, 09 Jun 2017 09:15:50 GMT</li>
+<li>ETag:W/“6f4-15bf577a270” （对该资源文件名的标识）</li>
+<li>Last-Modified:Thu, 11 May 2017 03:05:10 GMT（上次修改日期）</li>
+</ul>
+<p>这时服务器会与浏览器发送的文件名的标识进行对比，验证资源是否被修改，如果没有被修改，则说明没有命中协商缓存，服务器会告诉客户端可以直接从自己的缓存中获取资源，于是浏览器就直接从自己的缓存中加载资源。</p>
 </div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-06-09</span><i class="fa fa-tag"></i><a href="/tags/html5-缓存/" title="html5 缓存" class="tag">html5 缓存 </a></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://yoursite.com/2017/06/09/html5缓存/,Joeng_ll,html5缓存,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
