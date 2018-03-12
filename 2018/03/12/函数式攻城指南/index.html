@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Joeng_ll"><title>函数式攻城指南.md · Joeng_ll</title><meta name="description" content="第一章 函数式JavaScript3种常见编程范式 + 1
+命令式 (C语言)        由一条条的命令组成
+面向对象（JAVA） 对象与对象之间通过消息传递信息 
+函数式 （Clojure） 更像是套用数学公式 扩展 
+逻辑式 (SQL的query语句) 通过提问找到答案的编程方式
+
+
+一等公"><meta name="keywords" content="前端"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/avator2.png" style="width:127px;"><h3 title=""><a href="/">Joeng_ll</a></h3><div class="description"><p>Welcome to my blog,and if u have any problem,please contact me in github.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/Joeng3ll"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="https://joeng3ll.github.io/"></a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avator.png"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>函数式攻城指南.md</a></h3></div><div class="post-content"><h2 id="第一章-函数式JavaScript"><a href="#第一章-函数式JavaScript" class="headerlink" title="第一章 函数式JavaScript"></a>第一章 函数式JavaScript</h2><h4 id="3种常见编程范式-1"><a href="#3种常见编程范式-1" class="headerlink" title="3种常见编程范式 + 1"></a>3种常见编程范式 + 1</h4><ul>
+<li>命令式 (C语言)        由一条条的命令组成</li>
+<li>面向对象（JAVA） 对象与对象之间通过消息传递信息 </li>
+<li>函数式 （Clojure） 更像是套用数学公式 扩展 </li>
+<li>逻辑式 (SQL的query语句) 通过提问找到答案的编程方式</li>
+</ul>
+<blockquote>
+<p><em>一等公民</em>  : 函数和值有相同的地位，所有值在的地方都可以被函数替代。</p>
+</blockquote>
+<h3 id="JavaScript-的函数式支持"><a href="#JavaScript-的函数式支持" class="headerlink" title="JavaScript 的函数式支持"></a>JavaScript 的函数式支持</h3><ul>
+<li>函数作为参数，典型的是 ES6的Array.Map(()=&gt;{}) </li>
+<li>函数作为返回值，典制：柯里化（将多个参数的函数变为一次只能接受一个参数的函数）、thunk (?)</li>
+<li>越来越函数式的ES6</li>
+<li>ES6的箭头函数</li>
+<li>Destructure 解构</li>
+<li>尾递归优化 ? </li>
+</ul>
+<h3 id="JavaScript-与函数式编程的距离"><a href="#JavaScript-与函数式编程的距离" class="headerlink" title="JavaScript 与函数式编程的距离"></a>JavaScript 与函数式编程的距离</h3><ul>
+<li>Javascript中除了6种原始类型（Boolean,Undefined,Null,Number,String,Symbol）之外的第7种Object类型数据结构是可变的</li>
+<li>缺少惰性求值，比如数组中有1000个元素，但是只需要操作前10个元素</li>
+<li>缺少对函数组合的支持</li>
+<li>缺少尾递归优化</li>
+</ul>
+<blockquote>
+<p>Clojure :运行在JVM上的Lisp方言</p>
+<p>ClojureScript: 能够编译成javascript的Clojure</p>
+</blockquote>
+<hr>
+<h2 id="第二章、集合"><a href="#第二章、集合" class="headerlink" title="第二章、集合"></a>第二章、集合</h2><blockquote>
+<p>集合是 函数式编程中 最常用到的数据结构</p>
+</blockquote>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-03-12</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://yoursite.com/2018/03/12/函数式攻城指南/,Joeng_ll,函数式攻城指南.md,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="pre pagbuttons"><a role="navigation" href="/2018/03/12/函数式攻城/" title="函数式攻城" class="btn">上一篇</a></li><li class="next pagbuttons"><a role="navigation" href="/2018/03/11/节流和防抖动/" title="节流和防抖动" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
