@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Joeng_ll"><title>装饰器 · Joeng_ll</title><meta name="description" content="装饰器 1.0.0foreword:
+了解以下概念：
+
+Object.defineProperty(obj, prop,  descriptor)
+
+
+1、对象属性描述符 只能是以下两种形式之一
+数据描述符
+存取描述符
+
+可同时具有的键值：
+
+
+
+
+enumerable
+writable
+confi"><meta name="keywords" content="前端"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/avator2.png" style="width:127px;"><h3 title=""><a href="/">Joeng_ll</a></h3><div class="description"><p>Be Patient &amp; Modest.</p></div></div></div><ul class="social-links"><li><a href="http://github.com/Joeng3ll"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="https://joeng3ll.github.io/"></a></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"> </a></li></div><div class="avatar"><img src="/images/avator_2018_7_2.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>装饰器</a></h3></div><div class="post-content"><h3 id="装饰器-1-0-0"><a href="#装饰器-1-0-0" class="headerlink" title="装饰器 1.0.0"></a>装饰器 1.0.0</h3><h5 id="foreword"><a href="#foreword" class="headerlink" title="foreword:"></a>foreword:</h5><blockquote>
+<p>了解以下概念：</p>
+<ul>
+<li>Object.defineProperty(obj, prop,  descriptor)</li>
+</ul>
+</blockquote>
+<h6 id="1、对象属性描述符-只能是以下两种形式之一"><a href="#1、对象属性描述符-只能是以下两种形式之一" class="headerlink" title="1、对象属性描述符 只能是以下两种形式之一"></a>1、对象属性描述符 只能是以下两种形式之一</h6><ul>
+<li>数据描述符</li>
+<li>存取描述符</li>
+</ul>
+<p>可同时具有的键值：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:right">enumerable</th>
+<th>writable</th>
+<th>configurable</th>
+<th>get</th>
+<th>set</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据描述符</td>
+<td style="text-align:right">YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+<td>NO</td>
+<td>YES</td>
+</tr>
+<tr>
+<td>存取描述符</td>
+<td style="text-align:right">YES</td>
+<td>NO</td>
+<td>YES</td>
+<td>YES</td>
+<td>YES</td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<h4 id="一、针对属性方法的装饰器"><a href="#一、针对属性方法的装饰器" class="headerlink" title="一、针对属性方法的装饰器"></a>一、针对属性方法的装饰器</h4><blockquote>
+<ul>
+<li><p>装饰器本意是”装饰”类的实例，但此时实例还未生成，所以只能去<strong>修饰原型</strong>，这一点去类的修饰不同</p>
+</li>
+<li><p>装饰器会修改属性的描述对象(descriptor) ，然后被修改的描述对象在用来定义属性。</p>
+</li>
+<li>当一个方法有多个装饰器，先从外到内进入，由内向外执行</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readonly</span>(<span class="params">target, key , descriptor</span>)</span>&#123;</div><div class="line">    descriptor.writable = <span class="literal">false</span></div><div class="line">    <span class="keyword">return</span> descriptor</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">      <span class="keyword">this</span>.first = <span class="string">'Joeng'</span></div><div class="line">      <span class="keyword">this</span>.last = <span class="string">'ll'</span></div><div class="line">    &#125;</div><div class="line">    @readonly</div><div class="line">    name()&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.first&#125;</span>+<span class="subst">$&#123;<span class="keyword">this</span>.last&#125;</span>`</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="二、针对类的装饰器"><a href="#二、针对类的装饰器" class="headerlink" title="二、针对类的装饰器"></a>二、针对类的装饰器</h4><blockquote>
+<p>装饰器对类的行为的改变，发生在<strong>代码编译</strong>时，而不是运行时</p>
+<p><strong>装饰器本身是编译时执行的函数</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">/*</div><div class="line">* @param &#123;object&#125; target 装饰的类  此处为Person </div><div class="line">*/</div><div class="line">function testable(target)&#123;</div><div class="line">   // 若要改变实例属性 通过prototype对象操作 </div><div class="line">   target.prototype.isTestbale = true     </div><div class="line">&#125;</div><div class="line"></div><div class="line">@testable</div><div class="line">class Person&#123;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2018-08-24</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://yoursite.com/2018/08/24/装饰器/,Joeng_ll,装饰器,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/2018/03/28/lerna/" title="lerna" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
