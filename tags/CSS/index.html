@@ -2,7 +2,7 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>Tag: html5 缓存 - Joeng_ll</title>
+<title>Tag: CSS - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
@@ -10,7 +10,7 @@
     <meta name="description" content="FrontEnd">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Joeng_ll">
-<meta property="og:url" content="http://yoursite.com/tags/html5-缓存/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/CSS/index.html">
 <meta property="og:site_name" content="Joeng_ll">
 <meta property="og:description" content="FrontEnd">
 <meta name="twitter:card" content="summary">
@@ -140,7 +140,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">html5 缓存</a></li>
+            <li class="is-active"><a href="#" aria-current="page">CSS</a></li>
         </ul>
         </nav>
     </div>
@@ -152,13 +152,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2017-06-09T07:23:17.000Z">2017-06-09</time>
+                <time class="level-item has-text-grey" datetime="2017-06-13T01:59:42.000Z">2017-06-13</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    15 minutes read (About 2241 words)
+                    3 minutes read (About 407 words)
                 </span>
                 
             </div>
@@ -166,67 +166,16 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2017/06/09/html5缓存/">html5缓存</a>
+                <a class="has-link-black-ter" href="/2017/06/13/css相关/">css布局</a>
             
         </h1>
         <div class="content">
-            <h3 id="1、-浏览器缓存机制"><a href="#1、-浏览器缓存机制" class="headerlink" title="1、 浏览器缓存机制"></a>1、 浏览器缓存机制</h3><p>浏览器缓存机制是指通过HTTP协议头里的Cache-Control（或Expires）和Last-Modified（或Etag）等字段来控制文件缓存的机制。属于是Web中比较早的缓存机制，是在HTTP协议中实现的。属于协议层实现的缓存。这与Dom Storage、AppCache等缓存机制有些不同，后者为应用层缓存的实现。</p>
-<blockquote>
-<h5 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h5><p>用于控制文件在本地缓存有效时长。最常见的，比如服务器回包：Cache-Control:max-age=600表示文件在本地应该缓存，且有效时长是600秒（从发出请求算起）。在接下来600秒内，如果有请求这个资源，浏览器不会发出HTTP请求，而是直接使用本地缓存的文件。</p>
-<p>Cache-Control还有一个同功能的字段：Expires。Expires的值一个绝对的时间点，如：Expires: Thu, 10 Nov 2015 08:45:11 GMT，表示在这个时间点之前，缓存都是有效的。</p>
-<p>Expires是HTTP1.0标准中的字段，Cache-Control是HTTP1.1标准中新加的字段，功能一样，都是控制缓存的有效时间。当这两个字段同时出现时，Cache-Control是高优化级的。</p>
+            <h3 id="CSS相关"><a href="#CSS相关" class="headerlink" title="CSS相关"></a>CSS相关</h3><blockquote>
+<p>前言：学习前端也有些日子了，越来越发现自己忽视了很多基础的部分。《精通CSS》这本书躺在我的书架上大概有一年多了，我却几乎没有精读过，细想原因大概是我太浮躁，急于求成，却不知基础是最好的垫脚石。现在接触得越来越多，越发现自己的认识有很大的错误。所以想回顾和总结一下样式布局方面的一些感悟。也会在之后补充一些在样式布局方面遇到的坑。</p>
+<h4 id="1、浏览器对-CSS-的匹配原理"><a href="#1、浏览器对-CSS-的匹配原理" class="headerlink" title="1、浏览器对 CSS 的匹配原理"></a>1、浏览器对 CSS 的匹配原理</h4><p>浏览器CSS匹配不是从左到右进行查找，而是<strong>从右到左</strong>进行查找。比如：<br>div#divBox p span.red { color:red }<br>浏览器的查找顺序如下：先查找类名为red的span元素，找到后再查找其父辈元素中是否含有p元素，再判断p的父元素中是否有id为divBox的div元素，如果都存在，则匹配上。</p>
+<p>浏览器从右到左查询的好处是尽早过滤掉一些无关的样式规则和元素。Firefox 称这种查找方式为 keyselector(关键字查询)，所谓的关键字就是样式规则中最后(最右边)的规则，上面的 key 就是 span.red。<br>所以为了优化css的加载速度，就要让浏览器在查找 style 匹配的元素的时候尽量进行少的查找。</p>
 </blockquote>
-<p>注：Cache-Control常与Last-Modified一起使用一个用于控制缓存有效时间，一个在缓存失效后，向服务查询是否有更新。</p>
-<blockquote>
-<h5 id="Last-Modified"><a href="#Last-Modified" class="headerlink" title="Last-Modified"></a>Last-Modified</h5><p> Last-Modified是标识文件在服务器上的最新更新时间。下次请求时，如果文件缓存过期，浏览器通过If-Modified-Since字段带上这个时间，发送给服务器，由服务器比较时间戳来判断文件是否有修改。如果没有修改，服务器返回304告诉浏览器继续使用缓存；如果有修改，则返回200，同时返回最新的文件。</p>
-<p> ETag也是和Last-Modified一样，对文件进行标识的字段。不同的是，ETag的取值是一个对文件进行标识的特征字串。在向服务器查询文件是否有更新时，浏览器通过If-None-Match字段把特征字串发送给服务器，由服务器和文件最新特征字串进行匹配，来判断文件是否有更新。没有更新回包304，有更新回包200。</p>
-<p>ETag和Last-Modified可根据需求使用一个或两个同时使用。两个同时使用时，只要满足基中一个条件，就认为文件没有更新。</p>
-<h5 id="⚠️两种特殊情况"><a href="#⚠️两种特殊情况" class="headerlink" title="⚠️两种特殊情况"></a>⚠️两种特殊情况</h5><ul>
-<li>手动刷新页面（F5)，浏览器会直接认为缓存已经过期（可能缓存还没有过期），在请求中加上字段：Cache-Control:max-age=0，发包向服务器查询是否有文件是否有更新。</li>
-<li>强制刷新页面（Ctrl+F5)，浏览器会直接忽略本地的缓存（有缓存也会认为本地没有缓存），在请求头中加上字段：Cache-Control:no-cache（或 Pragma:no-cache），发包向服务重新拉取文件。</li>
-</ul>
-</blockquote>
-<hr>
-<h6 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h6><blockquote>
-<p>Cache-Control和Last-Modified一般用在Web的<strong>静态资源</strong>文件上，如JS、CSS 和一些图像文件。通过设置资源文件缓存属性，对提高资源文件加载速度，节省流量很有意义，特别是移动网络环境。但问题是：缓存有效时长该如何设置？如果设置太短，就起不到缓存的使用；如果设置的太长，在资源文件有更新时，浏览器如果有缓存，则不能及时取到最新的文件。</p>
-</blockquote>
-<h6 id="所谓的消灭‘304’"><a href="#所谓的消灭‘304’" class="headerlink" title="所谓的消灭‘304’"></a>所谓的消灭‘304’</h6><blockquote>
-<p>Last-Modified需要向服务器发起查询请求，才能知道资源文件有没有更新。虽然服务器可能返回304告诉没有更新，但也还有一个请求的过程。对于移动网络，这个请求可能是比较耗时的。有一种说法叫“消灭304”，指的就是优化掉304的请求。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>抓包发现，带if-Modified-Since字段的请求，如果服务器回包304，回包带有Cache-Control:max-age或Expires字段，文件的缓存有效时间会更新，就是文件的缓存会重新有效。304回包后如果再请求，则又直接使用缓存文件了，不再向服务器查询文件是否更新了，除非新的缓存时间再次过期。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>Cache-Control与Last-Modified是浏览器内核的机制，一般都是标准的实现，不能更改或设置。以QQ浏览器的X5为例，Cache-Control与Last-Modified缓存不能禁用。缓存容量是12MB，不分Host，过期的缓存会最先被清除。如果都没过期，应该优先清最早的缓存或最快到期的或文件大小最大的；过期缓存也有可能还是有效的，清除缓存会导致资源文件的重新拉取。</p>
-<p>⚠️⚠️：浏览器，如X5，在使用缓存文件时，是没有对缓存文件内容进行校验的，这样缓存文件内容被修改的可能。</p>
-</blockquote>
-<hr>
-<p><strong>完美的缓存机制应该是这样的：</strong></p>
-<blockquote>
-<p>1、缓存文件没更新，尽可能使用缓存，不用和服务器交互；<br>2、 缓存文件有更新时，第一时间能使用到新的文件；<br>3 、缓存的文件要保持完整性，不使用被修改过的缓存文件；<br>4、 缓存的容量大小要能设置或控制，缓存文件不能因为存储空间限制或过期被清除。 以X5为例，第1、2条不能同时满足，第3、4条都不能满足。</p>
-</blockquote>
-<hr>
-<p><strong>为了解决Cache-Control缓存时长不好设置的问题，以及为了“消灭304”，Web前端采用的方式是：</strong></p>
-<blockquote>
-<p>1、 在要缓存的资源文件名中加上版本号或文件MD5值字串，如common.d5d02a02.js、common.v1.js，同时设置Cache-Control:max-age=31536000，也就是一年。在一年时间内，资源文件如果本地有缓存，就会使用缓存；也就不会有304的回包。<br>2、 如果资源文件有修改，则更新文件内容，同时修改资源文件名，如common.v2.js，html页面也会引用新的资源文件名。</p>
-</blockquote>
-<hr>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1、 首先强缓存：在服务器返回的cache-control中的过期时间范围内，这时请求资源不会向服务器发送HTTP请求。<br>2、 如果强缓存没有命中，即已经过了缓存时间，这时浏览器会向服务器发送HTTP请求，包括：</p>
-<ul>
-<li>Date:Fri, 09 Jun 2017 09:15:50 GMT</li>
-<li>ETag:W/“6f4-15bf577a270” （对该资源文件名的标识）</li>
-<li>Last-Modified:Thu, 11 May 2017 03:05:10 GMT（上次修改日期）</li>
-</ul>
-<p>这时服务器会与浏览器发送的文件名的标识进行对比，验证资源是否被修改，如果没有被修改，则说明没有命中协商缓存，服务器会告诉客户端可以直接从自己的缓存中获取资源，于是浏览器就直接从自己的缓存中加载资源。</p>
-<hr>
-<h3 id="2、DOM-Storage"><a href="#2、DOM-Storage" class="headerlink" title="2、DOM Storage"></a>2、DOM Storage</h3><p>DOM存储被设计为用来提供一个更大存储量、更安全、更便捷的存储方法，从而可以代替掉将一些不需要让服务器知道的信息存储到Cookies里的这种传统方法。</p>
-<p>Dom Storage是通过存储字符串的Key/Value对来提供的，并提供5MB（不同浏览器可能不同，分Host）的存储空间（Cookies才4KB)。另外Dom Storage存储的数据在本地，不像 Cookies，每次请求一次页面，Cookies 都会发送给服务器。</p>
-<p>DOM Storage分为sessionStorage和localStorage。localStorage对象和sessionStorage对象使用方法基本相同，它们的区别在于作用的范围不同。sessionStorage用来存储与页面相关的数据，它在页面关闭后无法使用。而localStorage则持久存在，在页面关闭后也可以使用。</p>
-<p>当浏览器被意外刷新的时候，一些临时数据应当被保存和恢复。sessionStorage对象在处理这种情况的时候是最有用的，比如恢复我们在表单中已经填写的数据。</p>
-<h3 id="3、IndexDB"><a href="#3、IndexDB" class="headerlink" title="3、IndexDB"></a>3、IndexDB</h3><p>待补充..</p>
-<h3 id="4、WebSQL"><a href="#4、WebSQL" class="headerlink" title="4、WebSQL"></a>4、WebSQL</h3>
+
         </div>
         
         
@@ -282,7 +231,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        15
+                        14
                     </p>
                 </div>
             </div>
@@ -299,10 +248,10 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tag
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        1
+                        10
                     </p>
                 </div>
             </div>
@@ -356,12 +305,51 @@
 </div>
     
         
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/html5-缓存/" style="font-size: 10px;">html5 缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/缓存/" style="font-size: 15px;">缓存</a>
     </div>
 </div>
 
@@ -413,44 +401,6 @@
         
         <article class="media">
             
-            <a href="/2018/12/29/EventLoop/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="EventLoop">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-29T03:44:20.000Z">2018-12-29</time></div>
-                    <a href="/2018/12/29/EventLoop/" class="has-link-black-ter is-size-6">EventLoop</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/12/29/Loop/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Loop">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-29T03:42:55.000Z">2018-12-29</time></div>
-                    <a href="/2018/12/29/Loop/" class="has-link-black-ter is-size-6">Loop</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/12/06/类型签名/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="类型签名">
@@ -487,6 +437,44 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2018/09/10/record-for-ts/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="record-for-ts">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-10T10:59:56.000Z">2018-09-10</time></div>
+                    <a href="/2018/09/10/record-for-ts/" class="has-link-black-ter is-size-6">record-for-ts</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/24/Proxy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Proxy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-24T09:22:56.000Z">2018-08-24</time></div>
+                    <a href="/2018/08/24/Proxy/" class="has-link-black-ter is-size-6">Proxy</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -516,7 +504,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -539,6 +527,17 @@
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -579,12 +578,111 @@
             <ul class="menu-list">
                 
                 <li>
-                    <a class="level is-marginless" href="/tags/html5-缓存/">
+                    <a class="level is-marginless" href="/tags/CSS/">
                         <span class="level-start">
-                            <span class="level-item">html5 缓存</span>
+                            <span class="level-item">CSS</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/ES6/">
+                        <span class="level-start">
+                            <span class="level-item">ES6</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Functional-Programming/">
+                        <span class="level-start">
+                            <span class="level-item">Functional Programming</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Html/">
+                        <span class="level-start">
+                            <span class="level-item">Html</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/JavaScript/">
+                        <span class="level-start">
+                            <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Tool/">
+                        <span class="level-start">
+                            <span class="level-item">Tool</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/TypeScript/">
+                        <span class="level-start">
+                            <span class="level-item">TypeScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/browser/">
+                        <span class="level-start">
+                            <span class="level-item">browser</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/webpack/">
+                        <span class="level-start">
+                            <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/缓存/">
+                        <span class="level-start">
+                            <span class="level-item">缓存</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -649,44 +747,6 @@
         
         <article class="media">
             
-            <a href="/2018/12/29/EventLoop/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="EventLoop">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-29T03:44:20.000Z">2018-12-29</time></div>
-                    <a href="/2018/12/29/EventLoop/" class="has-link-black-ter is-size-6">EventLoop</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/12/29/Loop/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Loop">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-29T03:42:55.000Z">2018-12-29</time></div>
-                    <a href="/2018/12/29/Loop/" class="has-link-black-ter is-size-6">Loop</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2018/12/06/类型签名/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="类型签名">
@@ -723,6 +783,44 @@
             </div>
         </article>
         
+        <article class="media">
+            
+            <a href="/2018/09/10/record-for-ts/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="record-for-ts">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-10T10:59:56.000Z">2018-09-10</time></div>
+                    <a href="/2018/09/10/record-for-ts/" class="has-link-black-ter is-size-6">record-for-ts</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2018/08/24/Proxy/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Proxy">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-24T09:22:56.000Z">2018-08-24</time></div>
+                    <a href="/2018/08/24/Proxy/" class="has-link-black-ter is-size-6">Proxy</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
     </div>
 </div>
 
@@ -752,7 +850,7 @@
                     <span class="level-item">December 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -775,6 +873,17 @@
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -815,12 +924,111 @@
             <ul class="menu-list">
                 
                 <li>
-                    <a class="level is-marginless" href="/tags/html5-缓存/">
+                    <a class="level is-marginless" href="/tags/CSS/">
                         <span class="level-start">
-                            <span class="level-item">html5 缓存</span>
+                            <span class="level-item">CSS</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/ES6/">
+                        <span class="level-start">
+                            <span class="level-item">ES6</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Functional-Programming/">
+                        <span class="level-start">
+                            <span class="level-item">Functional Programming</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Html/">
+                        <span class="level-start">
+                            <span class="level-item">Html</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/JavaScript/">
+                        <span class="level-start">
+                            <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Tool/">
+                        <span class="level-start">
+                            <span class="level-item">Tool</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/TypeScript/">
+                        <span class="level-start">
+                            <span class="level-item">TypeScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/browser/">
+                        <span class="level-start">
+                            <span class="level-item">browser</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/webpack/">
+                        <span class="level-start">
+                            <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/缓存/">
+                        <span class="level-start">
+                            <span class="level-item">缓存</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>

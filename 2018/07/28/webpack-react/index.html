@@ -2,22 +2,22 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>lerna - Joeng_ll</title>
+<title>webpack+react简单使用 - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Lerna 管理多个独立的包结构  常用命令行1$ lerna init         #初始化或更新已有版本的lerna repo 1$ lerna bootstrap    #根据每个包的package.json来安装当前lerna repo下所有包的依赖 1234567$ lerna add &amp;lt;package&amp;gt;[@version] [--dev]    #安装某个依赖，同时会将">
-<meta name="keywords" content="Tool">
+    <meta name="description" content="webpack 搭建 react项目 （ 简易版） webpack :   加载器（Loaders）的概念 pipelineLESS文件先通过less-load处理成css，然后再通过css-loader加载成css模块，最后由style-loader加载器对其做最后的处理，从而运行时可以通过style标签将其应用到最终的浏览器环境。 webpack is a module bundler for">
+<meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lerna">
-<meta property="og:url" content="http://yoursite.com/2018/03/28/lerna/index.html">
+<meta property="og:title" content="webpack+react简单使用">
+<meta property="og:url" content="http://yoursite.com/2018/07/28/webpack-react/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="Lerna 管理多个独立的包结构  常用命令行1$ lerna init         #初始化或更新已有版本的lerna repo 1$ lerna bootstrap    #根据每个包的package.json来安装当前lerna repo下所有包的依赖 1234567$ lerna add &amp;lt;package&amp;gt;[@version] [--dev]    #安装某个依赖，同时会将">
-<meta property="og:updated_time" content="2019-01-11T07:15:51.694Z">
+<meta property="og:description" content="webpack 搭建 react项目 （ 简易版） webpack :   加载器（Loaders）的概念 pipelineLESS文件先通过less-load处理成css，然后再通过css-loader加载成css模块，最后由style-loader加载器对其做最后的处理，从而运行时可以通过style标签将其应用到最终的浏览器环境。 webpack is a module bundler for">
+<meta property="og:updated_time" content="2019-01-11T07:18:05.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lerna">
-<meta name="twitter:description" content="Lerna 管理多个独立的包结构  常用命令行1$ lerna init         #初始化或更新已有版本的lerna repo 1$ lerna bootstrap    #根据每个包的package.json来安装当前lerna repo下所有包的依赖 1234567$ lerna add &amp;lt;package&amp;gt;[@version] [--dev]    #安装某个依赖，同时会将">
+<meta name="twitter:title" content="webpack+react简单使用">
+<meta name="twitter:description" content="webpack 搭建 react项目 （ 简易版） webpack :   加载器（Loaders）的概念 pipelineLESS文件先通过less-load处理成css，然后再通过css-loader加载成css模块，最后由style-loader加载器对其做最后的处理，从而运行时可以通过style标签将其应用到最终的浏览器环境。 webpack is a module bundler for">
 
 
 
@@ -87,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="lerna" height="28">
+                <img src="/images/logo.svg" alt="webpack+react简单使用" height="28">
             
             </a>
         </div>
@@ -143,13 +143,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-03-28T04:42:33.000Z">2018-03-28</time>
+                <time class="level-item has-text-grey" datetime="2018-07-28T15:13:06.000Z">2018-07-28</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 280 words)
+                    5 minutes read (About 704 words)
                 </span>
                 
             </div>
@@ -157,29 +157,71 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                lerna
+                webpack+react简单使用
             
         </h1>
         <div class="content">
-            <h2 id="Lerna"><a href="#Lerna" class="headerlink" title="Lerna"></a>Lerna</h2><blockquote>
-<p>管理多个独立的包结构</p>
+            <h3 id="webpack-搭建-react项目-（-简易版）"><a href="#webpack-搭建-react项目-（-简易版）" class="headerlink" title="webpack 搭建 react项目 （ 简易版）"></a>webpack 搭建 react项目 （ 简易版）</h3><blockquote>
+<h5 id="webpack-加载器（Loaders）的概念-pipeline"><a href="#webpack-加载器（Loaders）的概念-pipeline" class="headerlink" title="webpack :   加载器（Loaders）的概念 pipeline"></a>webpack :   加载器（Loaders）的概念 pipeline</h5><p>LESS文件先通过less-load处理成css，然后再通过css-loader加载成css模块，最后由style-loader加载器对其做最后的处理，从而运行时可以通过style标签将其应用到最终的浏览器环境。</p>
+<p><em>webpack</em> is a <em>module bundler</em> for modern JavaScript applications. When webpack processes your application, it recursively builds a <em>dependency graph</em> that includes every module your application needs, then packages all of those modules into a small number of <em>bundles</em> - often only one - to be loaded by the browser.   </p>
+<p>​                                                                       — <a href="https://webpack.js.org/concepts/" target="_blank" rel="external">https://webpack.js.org/concepts/</a></p>
 </blockquote>
-<h4 id="常用命令行"><a href="#常用命令行" class="headerlink" title="常用命令行"></a>常用命令行</h4><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ lerna init         <span class="hljs-comment">#初始化或更新已有版本的lerna repo</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ lerna bootstrap    <span class="hljs-comment">#根据每个包的package.json来安装当前lerna repo下所有包的依赖</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ lerna add &lt;package&gt;[@version] [--dev]    </div><div class="line"><span class="hljs-comment">#安装某个依赖，同时会将安装的依赖信息添加到对应的package.json文件中</span></div><div class="line"></div><div class="line">i.e: </div><div class="line">$ lerna add webpack  <span class="hljs-comment">#给当前lerna repo中所有的包安装webpack依赖</span></div><div class="line">$ lerna add webpack --dev <span class="hljs-comment">#指定依赖安装到对应包的dev dependencies中 </span></div><div class="line">$ lerna add webpack --scope=module-1   <span class="hljs-comment">#这里的scope相当于是作用域，将webpack依赖添加到到module-1的包中</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ lerna clean   <span class="hljs-comment">#移除所有package下的node_modules,相当于移除所有已安装的依赖</span></div></pre></td></tr></table></figure>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ lerna ls      <span class="hljs-comment">#列出当前lerna repo下的包</span></div><div class="line"></div><div class="line">i.e</div><div class="line">$ lerna ls --json  </div><div class="line">返回如下结构： </div><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="hljs-string">"name"</span>: <span class="hljs-string">"package"</span>,</div><div class="line">    <span class="hljs-string">"version"</span>: <span class="hljs-string">"1.0.0"</span>,</div><div class="line">    <span class="hljs-string">"private"</span>: <span class="hljs-literal">false</span></div><div class="line">  &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ lerna run &lt;script&gt;     <span class="hljs-comment">#在所有包下执行该npm script脚本(前提是script存在)</span></div><div class="line">$ lerna run &lt;script&gt; -- [...args]  <span class="hljs-comment">#执行npm script脚本时 带对应参数</span></div><div class="line">i.e </div><div class="line">	<span class="hljs-variable">$lerna</span> run build -- env=production</div></pre></td></tr></table></figure>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ lerna <span class="hljs-built_in">exec</span> -- &lt;<span class="hljs-built_in">command</span>&gt; [...args]      <span class="hljs-comment"># runs the command in all packages</span></div><div class="line"></div><div class="line"><span class="hljs-comment"># 不局限于 lerna run &lt;script&gt; 的 npm script 命令。</span></div></pre></td></tr></table></figure>
-<p> [ ‘@xindaijia/utils’, ‘crm’ ]</p>
-
+<h4 id="webpack-config-js-主要有三部分组成-：entry、output、module、"><a href="#webpack-config-js-主要有三部分组成-：entry、output、module、" class="headerlink" title="webpack.config.js :   主要有三部分组成 ：entry、output、module、"></a>webpack.config.js :   主要有三部分组成 ：entry、output、module、</h4><h3 id="1、entry"><a href="#1、entry" class="headerlink" title="1、entry"></a>1、entry</h3><blockquote>
+<p>The <em>entry point</em> tells webpack <strong>where to start</strong> and follows the graph of dependencies to know <strong>what to bundle</strong>. </p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-built_in">module</span>.exports = &#123;</div><div class="line">&gt;   entry: <span class="hljs-string">'./path/to/my/entry/file.js'</span></div><div class="line">&gt; &#125;;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+</blockquote>
+<h3 id="2、output"><a href="#2、output" class="headerlink" title="2、output"></a>2、output</h3><blockquote>
+<p>tells webpack <strong>how to treat bundled code</strong>.</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)</div><div class="line">&gt; <span class="hljs-built_in">module</span>.exports = &#123;</div><div class="line">&gt;     entry: <span class="hljs-string">'./path/to/my/entry/file.js'</span></div><div class="line">&gt;     output: &#123;</div><div class="line">&gt;   	   path: path.resolve(__dirname,<span class="hljs-string">'dist'</span>),</div><div class="line">&gt;        filename: <span class="hljs-string">'[name].js'</span></div><div class="line">&gt;   	   chunkFilename:<span class="hljs-string">"[id].chunk.js"</span>  <span class="hljs-comment">//affect output files for on-demand-loaded chunks</span></div><div class="line">&gt;   	   publicPath:</div><div class="line">&gt; 	&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="3、Loaders"><a href="#3、Loaders" class="headerlink" title="3、Loaders"></a>3、Loaders</h3><blockquote>
+<ol>
+<li><p>Identify which file or files should <strong>be transformed</strong> by a certain Loader. (<code>test</code> property)</p>
+</li>
+<li><p>Transform those files so that they can be added to your dependency graph (and eventually your bundle). (<code>use</code> property)</p>
+</li>
+<li><p>webpack treats <a href="https://webpack.js.org/concepts/modules" target="_blank" rel="external">every file (.css, .html, .scss, .jpg, etc.) as a module</a>.</p>
+<p>​</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&gt;    <span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)</div><div class="line">&gt;    <span class="hljs-built_in">module</span>.exports = &#123;</div><div class="line">&gt;        entry: <span class="hljs-string">'./path/to/my/entry/file.js'</span></div><div class="line">&gt;        output: &#123;</div><div class="line">&gt;      	   path: path.resolve(__dirname,<span class="hljs-string">'dist'</span>),</div><div class="line">&gt;           filename: <span class="hljs-string">'bundle.js'</span></div><div class="line">&gt;    	&#125;,</div><div class="line">&gt;        <span class="hljs-built_in">module</span>: &#123;</div><div class="line">&gt;            rules:[</div><div class="line">&gt;                &#123; <span class="hljs-attr">test</span>: <span class="hljs-string">'/\.txt$/'</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'raw-loader'</span> &#125;</div><div class="line">&gt;            ]</div><div class="line">&gt;        &#125;</div><div class="line">&gt;    &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>   “Hey webpack compiler, when you come across a path that resolves to a ‘.txt’ file inside of a <code>require()</code>/<code>import</code> statement, <strong>use</strong> the <code>raw-loader</code> to transform it before you add it to the bundle.”</p>
+<p>   ​</p>
+<p>   There are <strong>three ways</strong> to use loaders in your application:</p>
+<ul>
+<li>Configuration (<strong>recommended</strong>): Specify them in your <strong>webpack.config.js</strong> file.</li>
+<li>Inline: Specify them explicitly in each <code>import</code> statement.</li>
+<li>CLI: Specify them within a shell command.</li>
+</ul>
+</blockquote>
+<h3 id="4、Plugins"><a href="#4、Plugins" class="headerlink" title="4、Plugins"></a>4、Plugins</h3><blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>); <span class="hljs-comment">//installed via npm</span></div><div class="line">&gt; <span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>); <span class="hljs-comment">//to access built-in plugins</span></div><div class="line">&gt; <span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">const</span> config = &#123;</div><div class="line">&gt;   entry: <span class="hljs-string">'./path/to/my/entry/file.js'</span>,</div><div class="line">&gt;   output: &#123;</div><div class="line">&gt;     path: path.resolve(__dirname, <span class="hljs-string">'dist'</span>),</div><div class="line">&gt;     filename: <span class="hljs-string">'my-first-webpack.bundle.js'</span></div><div class="line">&gt;   &#125;,</div><div class="line">&gt;   <span class="hljs-built_in">module</span>: &#123;</div><div class="line">&gt;     rules: [</div><div class="line">&gt;       &#123; <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.txt$/</span>, <span class="hljs-attr">use</span>: <span class="hljs-string">'raw-loader'</span> &#125;</div><div class="line">&gt;     ]</div><div class="line">&gt;   &#125;,</div><div class="line">&gt;   plugins: [</div><div class="line">&gt;     <span class="hljs-keyword">new</span> webpack.optimize.UglifyJsPlugin(),</div><div class="line">&gt;     <span class="hljs-keyword">new</span> HtmlWebpackPlugin(&#123;<span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>&#125;)</div><div class="line">&gt;   ]</div><div class="line">&gt; &#125;;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-built_in">module</span>.exports = config;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>serve the purpose of doing <strong>anything else</strong> that a <a href="https://webpack.js.org/concepts/loaders" target="_blank" rel="external">loader</a> cannot do.  </p>
+<p><strong>Function.prototype.apply</strong>    this method you can pass any function as plugin (<code>this</code> will point to the <code>compiler</code>). You can use this style to inline custom plugins in your configuration.</p>
+<h5 id="context-The-base-directory-absolute-path-for-resolving-the-entryoption-If-output-pathinfo-is-set-the-included-pathinfo-is-shortened-to-this-directory-Default-process-cwd"><a href="#context-The-base-directory-absolute-path-for-resolving-the-entryoption-If-output-pathinfo-is-set-the-included-pathinfo-is-shortened-to-this-directory-Default-process-cwd" class="headerlink" title="context : The base directory (absolute path!) for resolving the entryoption. If output.pathinfo is set, the included pathinfo is shortened to this directory.   (Default : process.cwd())"></a>context : The base directory (absolute path!) for resolving the <code>entry</code>option. If <code>output.pathinfo</code> is set, the included pathinfo is shortened to this directory.   (Default : process.cwd())</h5></blockquote>
+<h2 id="Other-Features-of-webpack-dev-server"><a href="#Other-Features-of-webpack-dev-server" class="headerlink" title="Other Features of webpack-dev-server"></a>Other Features of <em>webpack-dev-server</em></h2><p>WDS provides functionality beyond what was covered above. There are a couple of relevant fields that you should be aware of:</p>
+<ul>
+<li><code>devServer.contentBase</code> - Assuming you don’t generate <em>index.html</em> dynamically and prefer to maintain it yourself in a specific directory, you need to point WDS to it. <code>contentBase</code>accepts either a path (e.g., <code>&#39;build&#39;</code>) or an array of paths (e.g., <code>[&#39;build&#39;, &#39;images&#39;]</code>). This defaults to the project root.</li>
+<li><code>devServer.proxy</code> - If you are using multiple servers, you have to proxy WDS to them. The proxy setting accepts an object of proxy mappings (e.g., <code>{ &#39;/api&#39;: &#39;http://localhost:3000/api&#39; }</code>) that resolve matching queries to another server. Proxy settings are disabled by default.</li>
+<li><code>devServer.headers</code> - Attach custom headers to your requests here. </li>
+</ul>
+<h4 id="Enode-modules-bin-eslint-—init"><a href="#Enode-modules-bin-eslint-—init" class="headerlink" title="Enode_modules/.bin/eslint —init"></a>Enode_modules/.bin/eslint —init</h4><h4 id="Since-inlining-CSS-isn’t-a-good-idea-for-production-usage-it-makes-sense-to-use-ExtractTextPlugin-to-generate-a-separate-CSS-file-You-will-do-this-in-the-next-chapter"><a href="#Since-inlining-CSS-isn’t-a-good-idea-for-production-usage-it-makes-sense-to-use-ExtractTextPlugin-to-generate-a-separate-CSS-file-You-will-do-this-in-the-next-chapter" class="headerlink" title="Since inlining CSS isn’t a good idea for production usage, it makes sense to use ExtractTextPlugin to generate a separate CSS file. You will do this in the next chapter."></a>Since inlining CSS isn’t a good idea for production usage, it makes sense to use <code>ExtractTextPlugin</code> to generate a separate CSS file. You will do this in the next chapter.</h4>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Tool/">Tool</a>
+                    <a class="has-link-grey -link" href="/tags/webpack/">webpack</a>
                 </div>
             </div>
         </div>
@@ -212,16 +254,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/07/28/webpack-react/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/08/24/装饰器/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">webpack+react简单使用</span>
+                <span class="level-item">装饰器</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/03/12/函数式攻城指南/">
-                <span class="level-item">函数式攻城指南.md</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/03/28/lerna/">
+                <span class="level-item">lerna</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1090,7 +1132,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="lerna" height="28">
+                    <img src="/images/logo.svg" alt="webpack+react简单使用" height="28">
                 
                 </a>
                 <p class="is-size-7">
