@@ -142,6 +142,101 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 268 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/03/19/JavaScript中的module/">JavaScript中的module</a>
+            
+        </h1>
+        <div class="content">
+            <h5 id="1、CommonJS：运行时确定模块间的依赖关系"><a href="#1、CommonJS：运行时确定模块间的依赖关系" class="headerlink" title="1、CommonJS：运行时确定模块间的依赖关系"></a>1、CommonJS：运行时确定模块间的依赖关系</h5><p>用于服务器，<strong>对象就是模块</strong>，输出的是值的缓存，不存在动态更新。</p>
+<h5 id="2、AMD：运行时确定模块间的依赖关系"><a href="#2、AMD：运行时确定模块间的依赖关系" class="headerlink" title="2、AMD：运行时确定模块间的依赖关系"></a>2、AMD：运行时确定模块间的依赖关系</h5><p>用于浏览器中。</p>
+<h5 id="3、ES6的模块加载方案：设计思想是尽量静态化，使得编译时就能确定模块间的依赖关系，静态优化-静态分析-例如宏和类型检验只能靠静态分析实现"><a href="#3、ES6的模块加载方案：设计思想是尽量静态化，使得编译时就能确定模块间的依赖关系，静态优化-静态分析-例如宏和类型检验只能靠静态分析实现" class="headerlink" title="3、ES6的模块加载方案：设计思想是尽量静态化，使得编译时就能确定模块间的依赖关系，静态优化, 静态分析(例如宏和类型检验只能靠静态分析实现)"></a>3、ES6的模块加载方案：设计思想是尽量静态化，使得编译时就能确定模块间的依赖关系，静态优化, 静态分析(例如宏和类型检验只能靠静态分析实现)</h5><p>浏览器通用解决方案，<strong>模块不是对象。</strong></p>
+<p>export:  输出的是接口，不是值。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">export</span> <span class="hljs-number">1</span>;  <span class="hljs-comment">// error</span></div><div class="line"><span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;</div><div class="line"><span class="hljs-keyword">export</span> a; <span class="hljs-comment">// error</span></div><div class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>; <span class="hljs-comment">// ok</span></div><div class="line"></div><div class="line"><span class="hljs-keyword">if</span>(...)&#123;</div><div class="line">   <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;  <span class="hljs-comment">// error 块级作用域内无法做静态优化</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>import:  输入的是只读接口，<strong>编译阶段执行，在代码运行之前</strong>，所以不允许使用表达式和变量。Singleton 模式，多次加载只会执行一次import语句。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-built_in">console</span>.log(a)</div><div class="line"><span class="hljs-keyword">import</span> &#123;a&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'util'</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>UMD模块格式：</p>
+<p>静态编译：</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 136 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/13/process模块/">process模块</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="process-argv"><a href="#process-argv" class="headerlink" title="process.argv"></a>process.argv</h1><p>@return <string[]></string[]></p>
+<p>启动Node进程时传入的命令行参数,返回一个数组</p>
+<p><strong>第一个元素</strong>是process.execPath，即启动进程的可执行文件的绝对路径　</p>
+<p><strong>第二个元素</strong>是正在执行的JavaScript文件的路径<br>　<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">!#/usr/bin/env node</div><div class="line"></div><div class="line">process.argv.forEach((arg,index) =&gt; &#123;</div><div class="line">    console.log(&apos;index:&apos;,index,&apos;;arg:&apos;,arg)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">input: </div><div class="line">$ node process.js one &#123;two:true&#125; three </div><div class="line"></div><div class="line">output: </div><div class="line">index: 0; arg: /Users/joeng/.nvm/versions/node/v10.12.0/bin/node</div><div class="line">index: 1; arg: /Users/joeng/Training/processor.js</div><div class="line">index: 2; arg: one</div><div class="line">index: 3; arg: &#123;two:true&#125;</div><div class="line">index: 4; arg: three</div></pre></td></tr></table></figure></p>
+<p>npm package: yargs 可解析参数<br><a href="https://github.com/yargs/yargs/blob/master/docs/api.md" target="_blank" rel="external">https://github.com/yargs/yargs/blob/master/docs/api.md</a></p>
+<hr>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-01-19T07:04:39.000Z">2019-01-19</time>
                 
                 
@@ -1207,7 +1302,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        18
                     </p>
                 </div>
             </div>
@@ -1227,7 +1322,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        13
                     </p>
                 </div>
             </div>
@@ -1258,7 +1353,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -1286,6 +1381,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
+                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/13/process模块/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
+                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1344,44 +1477,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/12/06/类型签名/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="类型签名">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-06T03:22:52.000Z">2018-12-06</time></div>
-                    <a href="/2018/12/06/类型签名/" class="has-link-black-ter is-size-6">类型签名</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/25/前端缓存/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="前端缓存">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-25T05:39:00.000Z">2018-09-25</time></div>
-                    <a href="/2018/09/25/前端缓存/" class="has-link-black-ter is-size-6">前端缓存</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1393,6 +1488,28 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -1573,6 +1690,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/node-js/">
+                        <span class="level-start">
+                            <span class="level-item">node.js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
@@ -1587,6 +1715,17 @@
                     <a class="level is-marginless" href="/tags/webpack/">
                         <span class="level-start">
                             <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/前端工程化/">
+                        <span class="level-start">
+                            <span class="level-item">前端工程化</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1644,6 +1783,44 @@
         
         <article class="media">
             
+            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
+                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/02/13/process模块/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
+                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/19/some-thing-about-react/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="some_thing_about_react">
@@ -1699,44 +1876,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2018/12/06/类型签名/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="类型签名">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-06T03:22:52.000Z">2018-12-06</time></div>
-                    <a href="/2018/12/06/类型签名/" class="has-link-black-ter is-size-6">类型签名</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2018/09/25/前端缓存/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="前端缓存">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-09-25T05:39:00.000Z">2018-09-25</time></div>
-                    <a href="/2018/09/25/前端缓存/" class="has-link-black-ter is-size-6">前端缓存</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1748,6 +1887,28 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
@@ -1928,6 +2089,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/node-js/">
+                        <span class="level-start">
+                            <span class="level-item">node.js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
@@ -1942,6 +2114,17 @@
                     <a class="level is-marginless" href="/tags/webpack/">
                         <span class="level-start">
                             <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/前端工程化/">
+                        <span class="level-start">
+                            <span class="level-item">前端工程化</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
