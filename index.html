@@ -142,13 +142,95 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 133 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/03/ReactFiber初识/">ReactFiber初识</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h4><p><strong>why</strong>:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。</p>
+<blockquote>
+<p>浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。<strong>GUI渲染线程与JS引擎线程互斥</strong>。</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 43 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/04/01/Promise实现/">Promise实现</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="基于PromiseA-规范实现简易版的Promise"><a href="#基于PromiseA-规范实现简易版的Promise" class="headerlink" title="基于PromiseA+规范实现简易版的Promise"></a>基于PromiseA+规范实现简易版的Promise</h3><h4 id="Promise-一个具有then方法的对象或函数。"><a href="#Promise-一个具有then方法的对象或函数。" class="headerlink" title="Promise: 一个具有then方法的对象或函数。"></a>Promise: 一个具有then方法的对象或函数。</h4><h4 id="thenable-一个定义了then方法的对象或函数。"><a href="#thenable-一个定义了then方法的对象或函数。" class="headerlink" title="thenable: 一个定义了then方法的对象或函数。"></a>thenable: 一个定义了then方法的对象或函数。</h4>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 268 words)
+                    2 minutes read (About 332 words)
                 </span>
                 
             </div>
@@ -167,6 +249,9 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">export</span> <span class="hljs-number">1</span>;  <span class="hljs-comment">// error</span></div><div class="line"><span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;</div><div class="line"><span class="hljs-keyword">export</span> a; <span class="hljs-comment">// error</span></div><div class="line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>; <span class="hljs-comment">// ok</span></div><div class="line"></div><div class="line"><span class="hljs-keyword">if</span>(...)&#123;</div><div class="line">   <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;  <span class="hljs-comment">// error 块级作用域内无法做静态优化</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>import:  输入的是只读接口，<strong>编译阶段执行，在代码运行之前</strong>，所以不允许使用表达式和变量。Singleton 模式，多次加载只会执行一次import语句。</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-built_in">console</span>.log(a)</div><div class="line"><span class="hljs-keyword">import</span> &#123;a&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'util'</span></div></pre></td></tr></table></figure>
+<p>export default: 本质上是输出了一个名字叫default的变量</p>
+<p>export 与 import 复合写法</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">export</span> &#123; a, b &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'util'</span>  <span class="hljs-comment">// 相当于对外转发了a,b这俩个接口，在当前模块中并没有导入这俩个变量。</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>UMD模块格式：</p>
 <p>静态编译：</p>
@@ -1302,7 +1387,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        20
                     </p>
                 </div>
             </div>
@@ -1322,7 +1407,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        15
                     </p>
                 </div>
             </div>
@@ -1353,7 +1438,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -1381,6 +1466,44 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/03/ReactFiber初识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ReactFiber初识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time></div>
+                    <a href="/2019/06/03/ReactFiber初识/" class="has-link-black-ter is-size-6">ReactFiber初识</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/01/Promise实现/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
+                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1439,44 +1562,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/缓存的使用/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP缓存的使用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T10:13:49.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/缓存的使用/" class="has-link-black-ter is-size-6">HTTP缓存的使用</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/10/Iterator/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Iterator">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-10T11:58:01.000Z">2019-01-10</time></div>
-                    <a href="/2019/01/10/Iterator/" class="has-link-black-ter is-size-6">Iterator</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1488,6 +1573,28 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
@@ -1649,6 +1756,28 @@
                     <a class="level is-marginless" href="/tags/JavaScript/">
                         <span class="level-start">
                             <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Promise/">
+                        <span class="level-start">
+                            <span class="level-item">Promise</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/React/">
+                        <span class="level-start">
+                            <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1783,6 +1912,44 @@
         
         <article class="media">
             
+            <a href="/2019/06/03/ReactFiber初识/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ReactFiber初识">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time></div>
+                    <a href="/2019/06/03/ReactFiber初识/" class="has-link-black-ter is-size-6">ReactFiber初识</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/04/01/Promise实现/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
+                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/03/19/JavaScript中的module/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
@@ -1838,44 +2005,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/13/缓存的使用/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="HTTP缓存的使用">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-13T10:13:49.000Z">2019-01-13</time></div>
-                    <a href="/2019/01/13/缓存的使用/" class="has-link-black-ter is-size-6">HTTP缓存的使用</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/01/10/Iterator/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Iterator">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-10T11:58:01.000Z">2019-01-10</time></div>
-                    <a href="/2019/01/10/Iterator/" class="has-link-black-ter is-size-6">Iterator</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1887,6 +2016,28 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
@@ -2048,6 +2199,28 @@
                     <a class="level is-marginless" href="/tags/JavaScript/">
                         <span class="level-start">
                             <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Promise/">
+                        <span class="level-start">
+                            <span class="level-item">Promise</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/React/">
+                        <span class="level-start">
+                            <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
