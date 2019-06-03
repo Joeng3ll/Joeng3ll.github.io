@@ -2,20 +2,22 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>Tag: JavaScript - Joeng_ll</title>
+<title>Decorator修饰器 - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="FrontEnd">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Joeng_ll">
-<meta property="og:url" content="http://yoursite.com/tags/JavaScript/index.html">
+    <meta name="description" content="Decorator配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。12345678910111213141516171819202122// .babelrc /* *  @babel/preset-env 可以理解为预设的浏览器环境，可以在代码中使用最新的JavaScript代码，而不用针对不同兼         容性的代码去做不同的转换。 preset">
+<meta name="keywords" content="ES7">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Decorator修饰器">
+<meta property="og:url" content="http://yoursite.com/2019/06/03/Decorator修饰器/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="FrontEnd">
+<meta property="og:description" content="Decorator配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。12345678910111213141516171819202122// .babelrc /* *  @babel/preset-env 可以理解为预设的浏览器环境，可以在代码中使用最新的JavaScript代码，而不用针对不同兼         容性的代码去做不同的转换。 preset">
+<meta property="og:updated_time" content="2019-06-03T12:54:26.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Joeng_ll">
-<meta name="twitter:description" content="FrontEnd">
+<meta name="twitter:title" content="Decorator修饰器">
+<meta name="twitter:description" content="Decorator配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。12345678910111213141516171819202122// .babelrc /* *  @babel/preset-env 可以理解为预设的浏览器环境，可以在代码中使用最新的JavaScript代码，而不用针对不同兼         容性的代码去做不同的转换。 preset">
 
 
 
@@ -85,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.svg" alt="Joeng_ll" height="28">
+                <img src="/images/favicon.svg" alt="Decorator修饰器" height="28">
             
             </a>
         </div>
@@ -136,29 +138,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">JavaScript</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-03-11T04:19:02.000Z">2018-03-11</time>
+                <time class="level-item has-text-grey" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 387 words)
+                    2 minutes read (About 362 words)
                 </span>
                 
             </div>
@@ -166,24 +157,26 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2018/03/11/节流和防抖动/">节流和防抖动</a>
+                Decorator修饰器
             
         </h1>
         <div class="content">
-            <blockquote>
-<p>函数的执行通常有三个阶段，分别为：<strong>请求</strong>、<strong>执行</strong>、<strong>响应</strong></p>
-<p>当某些场景下，比如监听滚动、鼠标滑动轨迹等触发频率比较高的事件时，若处理函数稍为复杂，很容易使响应速度跟不上请求速度，这时就会造成页面卡顿、假死现象，非常不友好。</p>
-<p>在无法提升硬件水平以及资源有限的情况下，解决方法是只响应部分请求。</p>
-<p>throttle 和 debounce 是解决请求和响应不匹配问题的两个方案，差异在于不同的策略。</p>
-</blockquote>
-<h3 id="电梯超时"><a href="#电梯超时" class="headerlink" title="电梯超时"></a>电梯超时</h3><p>​        将电梯运送一次比做一次函数的执行与响应，有两种运行策略，设定 超时时间为 15秒</p>
-<ul>
-<li>Throttle 策略：第一个人进电梯后，开始计时，15秒后，准时运行，不等待。没有人，则待机。</li>
-<li>Debounce策略：第一个人进电梯后，开始计时，若在15秒内再次有人进电梯，重新开始15秒计时，若超出15秒，没有人进入，则电梯运行。</li>
-</ul>
-<p>概括来说，节流策略就是在指定时间间隔内只执行任务一次，防抖策略是指在任务频繁触发的情况下，只有任务触发的间隔超过指定间隔时，才会执行。</p>
-<p><a href="https://github.com/stephenLYZ/stephenLYZ.github.io/issues/17" target="_blank" rel="external">https://github.com/stephenLYZ/stephenLYZ.github.io/issues/17</a>   示例图比较直观</p>
+            <h4 id="Decorator"><a href="#Decorator" class="headerlink" title="Decorator"></a>Decorator</h4><h5 id="配置：-decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。"><a href="#配置：-decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。" class="headerlink" title="配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。"></a>配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// .babelrc </span></div><div class="line"><span class="hljs-comment">/*</span></div><div class="line"> *  @babel/preset-env 可以理解为预设的浏览器环境，可以在代码中使用最新的JavaScript代码，而不用针对不同兼         容性的代码去做不同的转换。 presets数组的解析顺序是数组的逆序，在此例中先使用@babel/preset-react，再使用@babel/preset-env,而plugins的解析顺序则与presets解析顺序相反，是数组的正序。</div><div class="line">* 注意：@babel/plugin-proposal-decorators一定要写在@babel/plugin-proposal-class-properties之前</div><div class="line">*/</div><div class="line">&#123;</div><div class="line">    <span class="hljs-string">"presets"</span>: [<span class="hljs-string">"@babel/preset-env"</span>, <span class="hljs-string">"@babel/preset-react"</span>], </div><div class="line">    <span class="hljs-string">"plugins"</span>: [</div><div class="line">        [<span class="hljs-string">"import"</span>, &#123;</div><div class="line">            <span class="hljs-string">"libraryName"</span>: <span class="hljs-string">"antd"</span>,</div><div class="line">            <span class="hljs-comment">// "libraryDirectory": "es",</span></div><div class="line">            <span class="hljs-string">"style"</span>: <span class="hljs-string">"css"</span></div><div class="line">        &#125;],</div><div class="line">        [<span class="hljs-string">"@babel/plugin-proposal-decorators"</span>, &#123;</div><div class="line">            <span class="hljs-comment">// "decoratorsBeforeExport": false, // 不能和proposal-class-properties一起使用</span></div><div class="line">            <span class="hljs-string">"legacy"</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// 使用es-2015 stage-1 阶段</span></div><div class="line">        &#125;],</div><div class="line">        [<span class="hljs-string">"@babel/plugin-proposal-class-properties"</span>, &#123;</div><div class="line">            <span class="hljs-string">"loose"</span>: <span class="hljs-literal">true</span></div><div class="line">        &#125;],</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Decorator语法：</p>
+<p>1、修饰类</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@fly         </div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">/*</span></div><div class="line">*  由于此时还没有生成类的实例，所以这里的target为Person类</div><div class="line">*  </div><div class="line">*/</div><div class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fly</span>(<span class="hljs-params">target</span>)</span>&#123;</div><div class="line">  target.canFly = <span class="hljs-literal">true</span></div><div class="line">  <span class="hljs-keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.canFly  <span class="hljs-comment">// true</span></div><div class="line"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> Person() </div><div class="line">p1.canFly <span class="hljs-comment">// undefined,如果想要类的实例也有这个属性，则可以在fly函数中: target.prototype.canFly = true</span></div></pre></td></tr></table></figure>
+<p>2、修饰类的方法</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// App.js</div><div class="line">class App extends Component &#123;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    window.addEventListener(&quot;scroll&quot;, this.scroll, false);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @throttle</div><div class="line">  scroll() &#123;</div><div class="line">    console.log(&quot;scroll&quot;);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render()&#123;</div><div class="line">    return &lt;div/&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// util.js</div><div class="line">/*</div><div class="line">*  函数节流，</div><div class="line">*/</div><div class="line">export function throttle(target, name, descriptor) &#123;</div><div class="line">  const initialValue = descriptor.value;</div><div class="line">  const interval = 1000;</div><div class="line">  let timer = undefined;</div><div class="line">  descriptor.value = function(...args) &#123;</div><div class="line">    if (timer) return;</div><div class="line">    timer = setTimeout(() =&gt; &#123;</div><div class="line">      clearTimeout(timer);</div><div class="line">      timer = undefined;</div><div class="line">    &#125;, interval);</div><div class="line">    initialValue.call(this, args);      // 执行原函数</div><div class="line">  &#125;;</div><div class="line">  return descriptor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/ES7/">ES7</a>
+                </div>
+            </div>
         </div>
         
         
@@ -195,7 +188,19 @@
 
 
 
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/03/ReactFiber初识/">
+                <span class="level-item">ReactFiber初识</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -1207,7 +1212,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.svg" alt="Joeng_ll" height="28">
+                    <img src="/images/favicon.svg" alt="Decorator修饰器" height="28">
                 
                 </a>
                 <p class="is-size-7">

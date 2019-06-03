@@ -142,6 +142,51 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 362 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/03/Decorator修饰器/">Decorator修饰器</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="Decorator"><a href="#Decorator" class="headerlink" title="Decorator"></a>Decorator</h4><h5 id="配置：-decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。"><a href="#配置：-decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。" class="headerlink" title="配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。"></a>配置： decorator是ES7中的提案，所以需要babel转译后才能被现代浏览器解析。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// .babelrc </span></div><div class="line"><span class="hljs-comment">/*</span></div><div class="line"> *  @babel/preset-env 可以理解为预设的浏览器环境，可以在代码中使用最新的JavaScript代码，而不用针对不同兼         容性的代码去做不同的转换。 presets数组的解析顺序是数组的逆序，在此例中先使用@babel/preset-react，再使用@babel/preset-env,而plugins的解析顺序则与presets解析顺序相反，是数组的正序。</div><div class="line">* 注意：@babel/plugin-proposal-decorators一定要写在@babel/plugin-proposal-class-properties之前</div><div class="line">*/</div><div class="line">&#123;</div><div class="line">    <span class="hljs-string">"presets"</span>: [<span class="hljs-string">"@babel/preset-env"</span>, <span class="hljs-string">"@babel/preset-react"</span>], </div><div class="line">    <span class="hljs-string">"plugins"</span>: [</div><div class="line">        [<span class="hljs-string">"import"</span>, &#123;</div><div class="line">            <span class="hljs-string">"libraryName"</span>: <span class="hljs-string">"antd"</span>,</div><div class="line">            <span class="hljs-comment">// "libraryDirectory": "es",</span></div><div class="line">            <span class="hljs-string">"style"</span>: <span class="hljs-string">"css"</span></div><div class="line">        &#125;],</div><div class="line">        [<span class="hljs-string">"@babel/plugin-proposal-decorators"</span>, &#123;</div><div class="line">            <span class="hljs-comment">// "decoratorsBeforeExport": false, // 不能和proposal-class-properties一起使用</span></div><div class="line">            <span class="hljs-string">"legacy"</span>: <span class="hljs-literal">true</span> <span class="hljs-comment">// 使用es-2015 stage-1 阶段</span></div><div class="line">        &#125;],</div><div class="line">        [<span class="hljs-string">"@babel/plugin-proposal-class-properties"</span>, &#123;</div><div class="line">            <span class="hljs-string">"loose"</span>: <span class="hljs-literal">true</span></div><div class="line">        &#125;],</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Decorator语法：</p>
+<p>1、修饰类</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@fly         </div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">/*</span></div><div class="line">*  由于此时还没有生成类的实例，所以这里的target为Person类</div><div class="line">*  </div><div class="line">*/</div><div class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fly</span>(<span class="hljs-params">target</span>)</span>&#123;</div><div class="line">  target.canFly = <span class="hljs-literal">true</span></div><div class="line">  <span class="hljs-keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.canFly  <span class="hljs-comment">// true</span></div><div class="line"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> Person() </div><div class="line">p1.canFly <span class="hljs-comment">// undefined,如果想要类的实例也有这个属性，则可以在fly函数中: target.prototype.canFly = true</span></div></pre></td></tr></table></figure>
+<p>2、修饰类的方法</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// App.js</div><div class="line">class App extends Component &#123;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    window.addEventListener(&quot;scroll&quot;, this.scroll, false);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @throttle</div><div class="line">  scroll() &#123;</div><div class="line">    console.log(&quot;scroll&quot;);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render()&#123;</div><div class="line">    return &lt;div/&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// util.js</div><div class="line">/*</div><div class="line">*  函数节流，</div><div class="line">*/</div><div class="line">export function throttle(target, name, descriptor) &#123;</div><div class="line">  const initialValue = descriptor.value;</div><div class="line">  const interval = 1000;</div><div class="line">  let timer = undefined;</div><div class="line">  descriptor.value = function(...args) &#123;</div><div class="line">    if (timer) return;</div><div class="line">    timer = setTimeout(() =&gt; &#123;</div><div class="line">      clearTimeout(timer);</div><div class="line">      timer = undefined;</div><div class="line">    &#125;, interval);</div><div class="line">    initialValue.call(this, args);      // 执行原函数</div><div class="line">  &#125;;</div><div class="line">  return descriptor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time>
                 
                 
@@ -1387,7 +1432,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        21
                     </p>
                 </div>
             </div>
@@ -1407,7 +1452,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        15
+                        16
                     </p>
                 </div>
             </div>
@@ -1438,7 +1483,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -1466,6 +1511,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/03/Decorator修饰器/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time></div>
+                    <a href="/2019/06/03/Decorator修饰器/" class="has-link-black-ter is-size-6">Decorator修饰器</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1543,25 +1607,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/19/some-thing-about-react/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="some_thing_about_react">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T07:04:39.000Z">2019-01-19</time></div>
-                    <a href="/2019/01/19/some-thing-about-react/" class="has-link-black-ter is-size-6">some_thing_about_react</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1580,7 +1625,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1726,6 +1771,17 @@
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/ES7/">
+                        <span class="level-start">
+                            <span class="level-item">ES7</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
                         </span>
                     </a>
                 </li>
@@ -1912,6 +1968,25 @@
         
         <article class="media">
             
+            <a href="/2019/06/03/Decorator修饰器/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time></div>
+                    <a href="/2019/06/03/Decorator修饰器/" class="has-link-black-ter is-size-6">Decorator修饰器</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/06/03/ReactFiber初识/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="ReactFiber初识">
@@ -1986,25 +2061,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/19/some-thing-about-react/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="some_thing_about_react">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-19T07:04:39.000Z">2019-01-19</time></div>
-                    <a href="/2019/01/19/some-thing-about-react/" class="has-link-black-ter is-size-6">some_thing_about_react</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2023,7 +2079,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -2169,6 +2225,17 @@
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">3</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/ES7/">
+                        <span class="level-start">
+                            <span class="level-item">ES7</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
                         </span>
                     </a>
                 </li>
