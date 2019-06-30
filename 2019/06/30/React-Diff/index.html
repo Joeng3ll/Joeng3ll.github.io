@@ -2,22 +2,22 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>some_thing_about_react - Joeng_ll</title>
+<title>React-Diff - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="一、React Components &amp;amp; React Elements &amp;amp; Instancecomponents: 输入props,输出element Tree. 单一数据流。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051// 1、作为func">
-<meta name="keywords" content="react">
+    <meta name="description" content="建立在以下三个方面的前提成立的React Diff优化策略：1、跨层级的DOM移动操作较少，可以忽略不计。 2、同一层级的一组子节点可以通过唯一id区分。 3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。 优化策略分为三部分：1、Tree Diff只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新">
+<meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="some_thing_about_react">
-<meta property="og:url" content="http://yoursite.com/2019/01/19/some-thing-about-react/index.html">
+<meta property="og:title" content="React-Diff">
+<meta property="og:url" content="http://yoursite.com/2019/06/30/React-Diff/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="一、React Components &amp;amp; React Elements &amp;amp; Instancecomponents: 输入props,输出element Tree. 单一数据流。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051// 1、作为func">
-<meta property="og:updated_time" content="2019-01-19T09:03:49.567Z">
+<meta property="og:description" content="建立在以下三个方面的前提成立的React Diff优化策略：1、跨层级的DOM移动操作较少，可以忽略不计。 2、同一层级的一组子节点可以通过唯一id区分。 3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。 优化策略分为三部分：1、Tree Diff只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新">
+<meta property="og:updated_time" content="2019-06-30T14:14:11.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="some_thing_about_react">
-<meta name="twitter:description" content="一、React Components &amp;amp; React Elements &amp;amp; Instancecomponents: 输入props,输出element Tree. 单一数据流。123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051// 1、作为func">
+<meta name="twitter:title" content="React-Diff">
+<meta name="twitter:description" content="建立在以下三个方面的前提成立的React Diff优化策略：1、跨层级的DOM移动操作较少，可以忽略不计。 2、同一层级的一组子节点可以通过唯一id区分。 3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。 优化策略分为三部分：1、Tree Diff只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新">
 
 
 
@@ -87,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.svg" alt="some_thing_about_react" height="28">
+                <img src="/images/favicon.svg" alt="React-Diff" height="28">
             
             </a>
         </div>
@@ -143,13 +143,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-19T07:04:39.000Z">2019-01-19</time>
+                <time class="level-item has-text-grey" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 307 words)
+                    2 minutes read (About 255 words)
                 </span>
                 
             </div>
@@ -157,23 +157,23 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                some_thing_about_react
+                React-Diff
             
         </h1>
         <div class="content">
-            <h3 id="一、React-Components-amp-React-Elements-amp-Instance"><a href="#一、React-Components-amp-React-Elements-amp-Instance" class="headerlink" title="一、React Components &amp; React Elements &amp; Instance"></a>一、React Components &amp; React Elements &amp; Instance</h3><h5 id="components-输入props-输出element-Tree-单一数据流。"><a href="#components-输入props-输出element-Tree-单一数据流。" class="headerlink" title="components: 输入props,输出element Tree. 单一数据流。"></a>components: 输入props,输出element Tree. 单一数据流。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 1、作为functions定义</span></div><div class="line"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">&#123;children, color&#125;</span>) =&gt;</span> (&#123;</div><div class="line">    <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">    <span class="hljs-attr">props</span>: &#123;</div><div class="line">        <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span>+color,</div><div class="line">        <span class="hljs-attr">children</span>: &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">children</span>: children</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、使用React.createClass()</span></div><div class="line"><span class="hljs-keyword">const</span> Button = React.createClass(&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span> + color,</div><div class="line">                <span class="hljs-attr">children</span>: &#123;</div><div class="line">                    <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">                    <span class="hljs-attr">props</span>: &#123;</div><div class="line">                        <span class="hljs-attr">children</span>:children</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="hljs-comment">//3、使用ES6的class继承自React.Component</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span> + color</div><div class="line">                children: &#123;</div><div class="line">               		<span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">                    <span class="hljs-attr">props</span>: &#123;</div><div class="line">                		<span class="hljs-attr">children</span>: children</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。"><a href="#elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。" class="headerlink" title="elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。"></a>elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="hljs-attr">type</span>: (string | ReactClass),</div><div class="line">    <span class="hljs-attr">props</span>: <span class="hljs-built_in">Object</span>，</div><div class="line">    $$<span class="hljs-keyword">typeof</span>: <span class="hljs-built_in">Symbol</span>.for(<span class="hljs-string">'react.element'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">i.e.</div><div class="line">&#123;</div><div class="line">    <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">    <span class="hljs-attr">props</span>: &#123;</div><div class="line">       <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-blue'</span>,</div><div class="line">       <span class="hljs-attr">children</span>: &#123;</div><div class="line">         <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">         <span class="hljs-attr">props</span>: &#123;</div><div class="line">             <span class="hljs-attr">children</span>: <span class="hljs-string">'ok'</span></div><div class="line">         &#125;</div><div class="line">       &#125;     </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">得到以下结果:</div><div class="line">&lt;button className='button button-blue'&gt;</div><div class="line">    &lt;b&gt;</div><div class="line">    	ok</div><div class="line">    &lt;/b&gt;</div><div class="line">&lt;/button&gt;</div><div class="line"></div><div class="line"><span class="hljs-comment">// 1、通过React.createElement创建React element</span></div><div class="line">React.createElement(</div><div class="line">  type, </div><div class="line">  [props],</div><div class="line">  [...children]</div><div class="line">)</div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、JSX</span></div><div class="line"><span class="hljs-keyword">const</span> name = <span class="hljs-string">'joeng'</span></div><div class="line"><span class="hljs-keyword">const</span> Ele = &lt;div&gt;hello,&#123;name&#125;&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line"><span class="hljs-comment">// 校验是否是React Element </span></div><div class="line">React.isValidElement(object)</div></pre></td></tr></table></figure>
-<ul>
-<li>$$typeof : react用这个属性来安全的区分普通的对象与react Elements, 详细可参考官方文档: <a href="https://github.com/facebook/react/pull/4832" target="_blank" rel="external">https://github.com/facebook/react/pull/4832</a> </li>
-</ul>
-<h5 id="instances-只有用class声明的React-Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。"><a href="#instances-只有用class声明的React-Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。" class="headerlink" title="instances: 只有用class声明的React Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。"></a>instances: 只有用class声明的React Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。</h5>
+            <h4 id="建立在以下三个方面的前提成立的React-Diff优化策略："><a href="#建立在以下三个方面的前提成立的React-Diff优化策略：" class="headerlink" title="建立在以下三个方面的前提成立的React Diff优化策略："></a>建立在以下三个方面的前提成立的React Diff优化策略：</h4><p>1、跨层级的DOM移动操作较少，可以忽略不计。</p>
+<p>2、同一层级的一组子节点可以通过唯一id区分。</p>
+<p>3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。</p>
+<h4 id="优化策略分为三部分："><a href="#优化策略分为三部分：" class="headerlink" title="优化策略分为三部分："></a>优化策略分为三部分：</h4><h5 id="1、Tree-Diff"><a href="#1、Tree-Diff" class="headerlink" title="1、Tree Diff"></a>1、Tree Diff</h5><p>只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新建节点。</p>
+<h5 id="2、Component-Diff"><a href="#2、Component-Diff" class="headerlink" title="2、Component Diff"></a>2、Component Diff</h5><p>如果是同一类型的组件，按照原策略进行Virtual Dom tree Diff,允许用户直接通过shouldComponent来判断是否需要Diff;如果不是同一类型的组件，则直接标记为dirtyComponent,从而替换整个组件下的子节点。</p>
+<h5 id="3、Element-Diff"><a href="#3、Element-Diff" class="headerlink" title="3、Element Diff"></a>3、Element Diff</h5>
         </div>
         
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/react/">react</a>
+                    <a class="has-link-grey -link" href="/tags/React/">React</a>
                 </div>
             </div>
         </div>
@@ -190,17 +190,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/13/process模块/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">process模块</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/13/缓存的使用/">
-                <span class="level-item">HTTP缓存的使用</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/06/27/redux异步处理中间件/">
+                <span class="level-item">redux异步处理中间件</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1262,7 +1255,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.svg" alt="some_thing_about_react" height="28">
+                    <img src="/images/favicon.svg" alt="React-Diff" height="28">
                 
                 </a>
                 <p class="is-size-7">

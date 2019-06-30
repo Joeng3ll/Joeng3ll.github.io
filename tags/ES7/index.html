@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 362 words)
+                    2 minutes read (About 371 words)
                 </span>
                 
             </div>
@@ -176,6 +176,9 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@fly         </div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">/*</span></div><div class="line">*  由于此时还没有生成类的实例，所以这里的target为Person类</div><div class="line">*  </div><div class="line">*/</div><div class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fly</span>(<span class="hljs-params">target</span>)</span>&#123;</div><div class="line">  target.canFly = <span class="hljs-literal">true</span></div><div class="line">  <span class="hljs-keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.canFly  <span class="hljs-comment">// true</span></div><div class="line"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> Person() </div><div class="line">p1.canFly <span class="hljs-comment">// undefined,如果想要类的实例也有这个属性，则可以在fly函数中: target.prototype.canFly = true</span></div></pre></td></tr></table></figure>
 <p>2、修饰类的方法</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// App.js</div><div class="line">class App extends Component &#123;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    window.addEventListener(&quot;scroll&quot;, this.scroll, false);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @throttle</div><div class="line">  scroll() &#123;</div><div class="line">    console.log(&quot;scroll&quot;);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render()&#123;</div><div class="line">    return &lt;div/&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// util.js</div><div class="line">/*</div><div class="line">*  函数节流，</div><div class="line">*/</div><div class="line">export function throttle(target, name, descriptor) &#123;</div><div class="line">  const initialValue = descriptor.value;</div><div class="line">  const interval = 1000;</div><div class="line">  let timer = undefined;</div><div class="line">  descriptor.value = function(...args) &#123;</div><div class="line">    if (timer) return;</div><div class="line">    timer = setTimeout(() =&gt; &#123;</div><div class="line">      clearTimeout(timer);</div><div class="line">      timer = undefined;</div><div class="line">    &#125;, interval);</div><div class="line">    initialValue.call(this, args);      // 执行原函数</div><div class="line">  &#125;;</div><div class="line">  return descriptor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://juejin.im/post/5cbeadb95188250aa52c7b1b" target="_blank" rel="external">https://juejin.im/post/5cbeadb95188250aa52c7b1b</a></p>
+</blockquote>
 
         </div>
         
@@ -232,7 +235,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        24
                     </p>
                 </div>
             </div>
@@ -252,7 +255,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        18
                     </p>
                 </div>
             </div>
@@ -283,7 +286,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -311,6 +314,63 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/30/React-Diff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
+                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/redux异步处理中间件/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="redux异步处理中间件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/redux异步处理中间件/" class="has-link-black-ter is-size-6">redux异步处理中间件</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/flex布局/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -350,63 +410,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/01/Promise实现/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
-                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/13/process模块/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -425,7 +428,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -636,7 +639,7 @@
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -675,6 +678,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -689,6 +703,17 @@
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/redux/">
+                        <span class="level-start">
+                            <span class="level-item">redux</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -768,6 +793,63 @@
         
         <article class="media">
             
+            <a href="/2019/06/30/React-Diff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
+                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/redux异步处理中间件/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="redux异步处理中间件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/redux异步处理中间件/" class="has-link-black-ter is-size-6">redux异步处理中间件</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/flex布局/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/06/03/Decorator修饰器/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
@@ -804,63 +886,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/01/Promise实现/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
-                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/13/process模块/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -879,7 +904,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1090,7 +1115,7 @@
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -1129,6 +1154,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -1143,6 +1179,17 @@
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/redux/">
+                        <span class="level-start">
+                            <span class="level-item">redux</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>

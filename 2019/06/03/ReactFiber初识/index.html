@@ -7,17 +7,17 @@
 
 
 
-    <meta name="description" content="React Fiberwhy:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。  浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。GUI渲染线程与JS引擎线程互斥。">
+    <meta name="description" content="React Fiber主要目标： 1、能够把可中断的任务做切片处理。 2、能够调整优先级，重置并复用任务。 用于解决stack reconcile中的固有问题，将React中同步的计算过程做拆分，使主线程不会一直处于占用的状态，因而其他IO操作，比如动画、手势等得以执行。 why:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ReactFiber初识">
 <meta property="og:url" content="http://yoursite.com/2019/06/03/ReactFiber初识/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="React Fiberwhy:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。  浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。GUI渲染线程与JS引擎线程互斥。">
-<meta property="og:updated_time" content="2019-06-03T12:51:13.035Z">
+<meta property="og:description" content="React Fiber主要目标： 1、能够把可中断的任务做切片处理。 2、能够调整优先级，重置并复用任务。 用于解决stack reconcile中的固有问题，将React中同步的计算过程做拆分，使主线程不会一直处于占用的状态，因而其他IO操作，比如动画、手势等得以执行。 why:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造">
+<meta property="og:updated_time" content="2019-06-05T02:46:34.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactFiber初识">
-<meta name="twitter:description" content="React Fiberwhy:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。  浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。GUI渲染线程与JS引擎线程互斥。">
+<meta name="twitter:description" content="React Fiber主要目标： 1、能够把可中断的任务做切片处理。 2、能够调整优先级，重置并复用任务。 用于解决stack reconcile中的固有问题，将React中同步的计算过程做拆分，使主线程不会一直处于占用的状态，因而其他IO操作，比如动画、手势等得以执行。 why:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造">
 
 
 
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 133 words)
+                    3 minutes read (About 386 words)
                 </span>
                 
             </div>
@@ -161,7 +161,12 @@
             
         </h1>
         <div class="content">
-            <h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h4><p><strong>why</strong>:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。</p>
+            <h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h4><p>主要目标：</p>
+<p>1、能够把<strong>可中断</strong>的任务做<strong>切片</strong>处理。</p>
+<p>2、能够<strong>调整优先级</strong>，<strong>重置</strong>并<strong>复用</strong>任务。</p>
+<p>用于解决stack reconcile中的固有问题，将React中同步的计算过程做拆分，使主线程不会一直处于占用的状态，因而其他IO操作，比如动画、手势等得以执行。</p>
+<p><strong>why</strong>:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。</p>
+<p>历史原因: 在React15版本中，用到的核心算法是Reconcile,理解为stack Reconcile, 采用自顶向下递归，从根组件或者触发setState的子组件向下递归，更新过程中主要涉及俩步：1、Diff，比较prevInstance和nextInstance，找出差异及VDOM Change，本质上是一些计算（遍历、比较），在这一过程中是无法执行IO操作的；2、Patch，将Diff出来的差异队列更新到DOM节点上。Patch是批量执行的，并不是有差异就会执行。</p>
 <blockquote>
 <p>浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。<strong>GUI渲染线程与JS引擎线程互斥</strong>。</p>
 </blockquote>
@@ -249,7 +254,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        24
                     </p>
                 </div>
             </div>
@@ -269,7 +274,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        18
                     </p>
                 </div>
             </div>
@@ -300,7 +305,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -328,6 +333,63 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/30/React-Diff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
+                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/redux异步处理中间件/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="redux异步处理中间件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/redux异步处理中间件/" class="has-link-black-ter is-size-6">redux异步处理中间件</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/flex布局/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -367,63 +429,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/01/Promise实现/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
-                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/13/process模块/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -442,7 +447,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -653,7 +658,7 @@
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -692,6 +697,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -706,6 +722,17 @@
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/redux/">
+                        <span class="level-start">
+                            <span class="level-item">redux</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -785,6 +812,63 @@
         
         <article class="media">
             
+            <a href="/2019/06/30/React-Diff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
+                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/redux异步处理中间件/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="redux异步处理中间件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/redux异步处理中间件/" class="has-link-black-ter is-size-6">redux异步处理中间件</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/flex布局/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/06/03/Decorator修饰器/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
@@ -821,63 +905,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/01/Promise实现/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
-                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/13/process模块/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -896,7 +923,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1107,7 +1134,7 @@
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -1146,6 +1173,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -1160,6 +1198,17 @@
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/redux/">
+                        <span class="level-start">
+                            <span class="level-item">redux</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>

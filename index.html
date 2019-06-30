@@ -142,13 +142,156 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 255 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/30/React-Diff/">React-Diff</a>
+            
+        </h1>
+        <div class="content">
+            <h4 id="建立在以下三个方面的前提成立的React-Diff优化策略："><a href="#建立在以下三个方面的前提成立的React-Diff优化策略：" class="headerlink" title="建立在以下三个方面的前提成立的React Diff优化策略："></a>建立在以下三个方面的前提成立的React Diff优化策略：</h4><p>1、跨层级的DOM移动操作较少，可以忽略不计。</p>
+<p>2、同一层级的一组子节点可以通过唯一id区分。</p>
+<p>3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。</p>
+<h4 id="优化策略分为三部分："><a href="#优化策略分为三部分：" class="headerlink" title="优化策略分为三部分："></a>优化策略分为三部分：</h4><h5 id="1、Tree-Diff"><a href="#1、Tree-Diff" class="headerlink" title="1、Tree Diff"></a>1、Tree Diff</h5><p>只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新建节点。</p>
+<h5 id="2、Component-Diff"><a href="#2、Component-Diff" class="headerlink" title="2、Component Diff"></a>2、Component Diff</h5><p>如果是同一类型的组件，按照原策略进行Virtual Dom tree Diff,允许用户直接通过shouldComponent来判断是否需要Diff;如果不是同一类型的组件，则直接标记为dirtyComponent,从而替换整个组件下的子节点。</p>
+<h5 id="3、Element-Diff"><a href="#3、Element-Diff" class="headerlink" title="3、Element Diff"></a>3、Element Diff</h5>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 232 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/27/redux异步处理中间件/">redux异步处理中间件</a>
+            
+        </h1>
+        <div class="content">
+            <p>redux中的reducer是纯函数，即不会产生副作用。所以需要中间件来处理一些有副作用的事件，比如某些ajax请求。</p>
+<p>比较具有代表性的俩个中间件：redux-thunk 与 redux-saga，前者主要是扩展了action，使得action从一个对象变成了一个函数，而后者则是将异步任务进行了统一处理。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// redux-thunk</span></div><div class="line">dispatch(<span class="hljs-function">(<span class="hljs-params">dispatch</span>)=&gt;</span>&#123;</div><div class="line">  dispatch(&#123;<span class="hljs-attr">type</span>:<span class="hljs-string">"FEICH_USERS_START"</span>&#125;)</div><div class="line">  <span class="hljs-comment">// do something async </span></div><div class="line">  axios.get(<span class="hljs-string">'api/get/users'</span>)</div><div class="line">    .then(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>&#123; dispatch(&#123;<span class="hljs-attr">type</span>:<span class="hljs-string">"FEICH_USERS_SUCCESS"</span>,<span class="hljs-attr">payload</span>:response.data&#125;)&#125; )</div><div class="line">    .catch(<span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>&#123; dispatch(&#123;<span class="hljs-attr">type</span>:<span class="hljs-string">"FEICH_USERS_FAILED"</span>,<span class="hljs-attr">payload</span>:response.data&#125;)&#125; )</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>thunk: 无需传入参数，一切都准备就绪， 只需调用就会返回某些值的函数。</p>
+</blockquote>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// redux-sagas</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>一个sagas包含三个部分，用以执行联合任务:</p>
+<p>1、worker saga  // 主要调用者，请求接口，返回数据等。</p>
+<p>2、watcher saga</p>
+<p>3、root saga  // 调用sagas的唯一入口</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 207 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/06/27/flex布局/">flex布局</a>
+            
+        </h1>
+        <div class="content">
+            <p>flex是一维的布局，一次只能处理一个维度上的元素布局，而Grid布局则是二维的。flex布局有一条主轴和一条交叉轴，交叉轴永远与主轴垂直，flexbox的特性是沿着主轴或者交叉轴对齐其中的元素。</p>
+<p>如果将一个容器的display属性设置为flex或者inline-flex,则这个容器的所有直系子元素都会变成flex元素，都将有以下行为：</p>
+<p>1、元素排列为一行（flex-direction初始值为row）</p>
+<p>2、元素从主轴的起始线开始</p>
+<p>3、元素不会在主维度上拉伸，但是可以缩小。</p>
+<p>4、元素被拉伸来填充交叉轴大小。</p>
+<p>5、flex-basis属性为auto</p>
+<p>6、flex-wrap为nowrap</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 362 words)
+                    2 minutes read (About 371 words)
                 </span>
                 
             </div>
@@ -166,6 +309,9 @@
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@fly         </div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="hljs-comment">/*</span></div><div class="line">*  由于此时还没有生成类的实例，所以这里的target为Person类</div><div class="line">*  </div><div class="line">*/</div><div class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fly</span>(<span class="hljs-params">target</span>)</span>&#123;</div><div class="line">  target.canFly = <span class="hljs-literal">true</span></div><div class="line">  <span class="hljs-keyword">return</span> target</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.canFly  <span class="hljs-comment">// true</span></div><div class="line"><span class="hljs-keyword">const</span> p1 = <span class="hljs-keyword">new</span> Person() </div><div class="line">p1.canFly <span class="hljs-comment">// undefined,如果想要类的实例也有这个属性，则可以在fly函数中: target.prototype.canFly = true</span></div></pre></td></tr></table></figure>
 <p>2、修饰类的方法</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">// App.js</div><div class="line">class App extends Component &#123;</div><div class="line">  componentDidMount() &#123;</div><div class="line">    window.addEventListener(&quot;scroll&quot;, this.scroll, false);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  @throttle</div><div class="line">  scroll() &#123;</div><div class="line">    console.log(&quot;scroll&quot;);</div><div class="line">  &#125;</div><div class="line">  </div><div class="line">  render()&#123;</div><div class="line">    return &lt;div/&gt;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// util.js</div><div class="line">/*</div><div class="line">*  函数节流，</div><div class="line">*/</div><div class="line">export function throttle(target, name, descriptor) &#123;</div><div class="line">  const initialValue = descriptor.value;</div><div class="line">  const interval = 1000;</div><div class="line">  let timer = undefined;</div><div class="line">  descriptor.value = function(...args) &#123;</div><div class="line">    if (timer) return;</div><div class="line">    timer = setTimeout(() =&gt; &#123;</div><div class="line">      clearTimeout(timer);</div><div class="line">      timer = undefined;</div><div class="line">    &#125;, interval);</div><div class="line">    initialValue.call(this, args);      // 执行原函数</div><div class="line">  &#125;;</div><div class="line">  return descriptor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://juejin.im/post/5cbeadb95188250aa52c7b1b" target="_blank" rel="external">https://juejin.im/post/5cbeadb95188250aa52c7b1b</a></p>
+</blockquote>
 
         </div>
         
@@ -193,7 +339,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 133 words)
+                    3 minutes read (About 386 words)
                 </span>
                 
             </div>
@@ -205,7 +351,12 @@
             
         </h1>
         <div class="content">
-            <h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h4><p><strong>why</strong>:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。</p>
+            <h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h4><p>主要目标：</p>
+<p>1、能够把<strong>可中断</strong>的任务做<strong>切片</strong>处理。</p>
+<p>2、能够<strong>调整优先级</strong>，<strong>重置</strong>并<strong>复用</strong>任务。</p>
+<p>用于解决stack reconcile中的固有问题，将React中同步的计算过程做拆分，使主线程不会一直处于占用的状态，因而其他IO操作，比如动画、手势等得以执行。</p>
+<p><strong>why</strong>:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。</p>
+<p>历史原因: 在React15版本中，用到的核心算法是Reconcile,理解为stack Reconcile, 采用自顶向下递归，从根组件或者触发setState的子组件向下递归，更新过程中主要涉及俩步：1、Diff，比较prevInstance和nextInstance，找出差异及VDOM Change，本质上是一些计算（遍历、比较），在这一过程中是无法执行IO操作的；2、Patch，将Diff出来的差异队列更新到DOM节点上。Patch是批量执行的，并不是有差异就会执行。</p>
 <blockquote>
 <p>浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。<strong>GUI渲染线程与JS引擎线程互斥</strong>。</p>
 </blockquote>
@@ -1432,7 +1583,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        21
+                        24
                     </p>
                 </div>
             </div>
@@ -1452,7 +1603,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        16
+                        18
                     </p>
                 </div>
             </div>
@@ -1483,7 +1634,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -1511,6 +1662,63 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/06/30/React-Diff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
+                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/redux异步处理中间件/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="redux异步处理中间件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/redux异步处理中间件/" class="has-link-black-ter is-size-6">redux异步处理中间件</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/flex布局/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1550,63 +1758,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/01/Promise实现/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
-                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/13/process模块/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1625,7 +1776,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1836,7 +1987,7 @@
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -1875,6 +2026,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -1889,6 +2051,17 @@
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/redux/">
+                        <span class="level-start">
+                            <span class="level-item">redux</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1968,6 +2141,63 @@
         
         <article class="media">
             
+            <a href="/2019/06/30/React-Diff/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
+                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/redux异步处理中间件/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="redux异步处理中间件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T14:01:11.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/redux异步处理中间件/" class="has-link-black-ter is-size-6">redux异步处理中间件</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/06/27/flex布局/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
+                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/06/03/Decorator修饰器/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
@@ -2004,63 +2234,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/04/01/Promise实现/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Promise实现">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-01T11:49:38.000Z">2019-04-01</time></div>
-                    <a href="/2019/04/01/Promise实现/" class="has-link-black-ter is-size-6">Promise实现</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/03/19/JavaScript中的module/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="JavaScript中的module">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-19T13:13:23.000Z">2019-03-19</time></div>
-                    <a href="/2019/03/19/JavaScript中的module/" class="has-link-black-ter is-size-6">JavaScript中的module</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/02/13/process模块/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="process模块">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T07:36:27.000Z">2019-02-13</time></div>
-                    <a href="/2019/02/13/process模块/" class="has-link-black-ter is-size-6">process模块</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2079,7 +2252,7 @@
                     <span class="level-item">June 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -2290,7 +2463,7 @@
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -2329,6 +2502,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/css/">
+                        <span class="level-start">
+                            <span class="level-item">css</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -2343,6 +2527,17 @@
                     <a class="level is-marginless" href="/tags/react/">
                         <span class="level-start">
                             <span class="level-item">react</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/redux/">
+                        <span class="level-start">
+                            <span class="level-item">redux</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
