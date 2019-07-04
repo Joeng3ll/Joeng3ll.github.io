@@ -142,13 +142,60 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 189 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/04/Rx/">Rx</a>
+            
+        </h1>
+        <div class="content">
+            <p>Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库</p>
+<p>Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念</p>
+<p>How: 组合不同的操作符，观察者模式和迭代器模式的组合observable</p>
+<blockquote>
+<p>数据生产者和数据消费者之间有俩种模式进行数据的交流：</p>
+<p>1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。</p>
+<p>2、Push推送，数据生产者决定何时将数据发送给数据消费者，后者对数据接收这个动作是无意识的。</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 255 words)
+                    2 minutes read (About 303 words)
                 </span>
                 
             </div>
@@ -163,9 +210,10 @@
             <h4 id="建立在以下三个方面的前提成立的React-Diff优化策略："><a href="#建立在以下三个方面的前提成立的React-Diff优化策略：" class="headerlink" title="建立在以下三个方面的前提成立的React Diff优化策略："></a>建立在以下三个方面的前提成立的React Diff优化策略：</h4><p>1、跨层级的DOM移动操作较少，可以忽略不计。</p>
 <p>2、同一层级的一组子节点可以通过唯一id区分。</p>
 <p>3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。</p>
-<h4 id="优化策略分为三部分："><a href="#优化策略分为三部分：" class="headerlink" title="优化策略分为三部分："></a>优化策略分为三部分：</h4><h5 id="1、Tree-Diff"><a href="#1、Tree-Diff" class="headerlink" title="1、Tree Diff"></a>1、Tree Diff</h5><p>只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新建节点。</p>
+<h4 id="优化策略分为三部分："><a href="#优化策略分为三部分：" class="headerlink" title="优化策略分为三部分："></a>优化策略分为三部分：</h4><h5 id="1、Tree-Diff-分层求异"><a href="#1、Tree-Diff-分层求异" class="headerlink" title="1、Tree Diff  分层求异"></a>1、Tree Diff  分层求异</h5><p>只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新建节点。</p>
 <h5 id="2、Component-Diff"><a href="#2、Component-Diff" class="headerlink" title="2、Component Diff"></a>2、Component Diff</h5><p>如果是同一类型的组件，按照原策略进行Virtual Dom tree Diff,允许用户直接通过shouldComponent来判断是否需要Diff;如果不是同一类型的组件，则直接标记为dirtyComponent,从而替换整个组件下的子节点。</p>
-<h5 id="3、Element-Diff"><a href="#3、Element-Diff" class="headerlink" title="3、Element Diff"></a>3、Element Diff</h5>
+<h5 id="3、Element-Diff-设置唯一-key"><a href="#3、Element-Diff-设置唯一-key" class="headerlink" title="3、Element Diff    设置唯一 key"></a>3、Element Diff    <strong>设置唯一 key</strong></h5><p>通过key来判断当前节点是否可复用；尽量减少类似将最后一个节点移动到列表首部的操作</p>
+
         </div>
         
         
@@ -1583,7 +1631,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        24
+                        25
                     </p>
                 </div>
             </div>
@@ -1603,7 +1651,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        19
                     </p>
                 </div>
             </div>
@@ -1634,7 +1682,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Rx-js/" style="font-size: 10px;">Rx.js</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -1662,6 +1710,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/04/Rx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Rx">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">Rx</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1739,25 +1806,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/ReactFiber初识/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ReactFiber初识">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/ReactFiber初识/" class="has-link-black-ter is-size-6">ReactFiber初识</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1769,6 +1817,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/06/">
@@ -1988,6 +2047,17 @@
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Rx-js/">
+                        <span class="level-start">
+                            <span class="level-item">Rx.js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
                         </span>
                     </a>
                 </li>
@@ -2141,6 +2211,25 @@
         
         <article class="media">
             
+            <a href="/2019/07/04/Rx/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Rx">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
+                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">Rx</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/06/30/React-Diff/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
@@ -2215,25 +2304,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/ReactFiber初识/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="ReactFiber初识">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/ReactFiber初识/" class="has-link-black-ter is-size-6">ReactFiber初识</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2245,6 +2315,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/06/">
@@ -2464,6 +2545,17 @@
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">2</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Rx-js/">
+                        <span class="level-start">
+                            <span class="level-item">Rx.js</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
                         </span>
                     </a>
                 </li>
