@@ -2,22 +2,22 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>Rx - Joeng_ll</title>
+<title>RxJS - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库 Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念 How: 组合不同的操作符，观察者模式和迭代器模式的组合observable  数据生产者和数据消费者之间有俩种模式进行数据的交流： 1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。 2、Push推送，">
-<meta name="keywords" content="Rx.js">
+    <meta name="description" content="Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库 Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念 How: 组合不同的操作符，观察者模式和迭代器模式的组合observable  前言：数据生产者和数据消费者之间有俩种模式进行数据的交流： 1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。JavaScr">
+<meta name="keywords" content="RxJS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rx">
+<meta property="og:title" content="RxJS">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/Rx/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库 Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念 How: 组合不同的操作符，观察者模式和迭代器模式的组合observable  数据生产者和数据消费者之间有俩种模式进行数据的交流： 1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。 2、Push推送，">
-<meta property="og:updated_time" content="2019-07-04T13:53:58.078Z">
+<meta property="og:description" content="Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库 Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念 How: 组合不同的操作符，观察者模式和迭代器模式的组合observable  前言：数据生产者和数据消费者之间有俩种模式进行数据的交流： 1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。JavaScr">
+<meta property="og:updated_time" content="2019-07-04T14:07:28.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rx">
-<meta name="twitter:description" content="Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库 Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念 How: 组合不同的操作符，观察者模式和迭代器模式的组合observable  数据生产者和数据消费者之间有俩种模式进行数据的交流： 1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。 2、Push推送，">
+<meta name="twitter:title" content="RxJS">
+<meta name="twitter:description" content="Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库 Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念 How: 组合不同的操作符，观察者模式和迭代器模式的组合observable  前言：数据生产者和数据消费者之间有俩种模式进行数据的交流： 1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。JavaScr">
 
 
 
@@ -87,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.svg" alt="Rx" height="28">
+                <img src="/images/favicon.svg" alt="RxJS" height="28">
             
             </a>
         </div>
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 189 words)
+                    2 minutes read (About 315 words)
                 </span>
                 
             </div>
@@ -157,17 +157,17 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Rx
+                RxJS
             
         </h1>
         <div class="content">
-            <p>Key Words: 响应式编程、函数式编程、相当于事件处理的lodash库</p>
+            <p>Key Words: <strong>响应式编程</strong>、<strong>函数式编程</strong>、相当于事件处理的lodash库</p>
 <p>Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念</p>
-<p>How: 组合不同的操作符，观察者模式和迭代器模式的组合observable</p>
+<p>How: 组合不同的操作符，<strong>观察者模式</strong>和<strong>迭代器模式</strong>的组合observable</p>
 <blockquote>
-<p>数据生产者和数据消费者之间有俩种模式进行数据的交流：</p>
-<p>1、Pull 拉取，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。</p>
-<p>2、Push推送，数据生产者决定何时将数据发送给数据消费者，后者对数据接收这个动作是无意识的。</p>
+<p>前言：数据生产者和数据消费者之间有俩种模式进行数据的交流：</p>
+<p>1、<strong>Pull 拉取</strong>，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。JavaScript中的函数就是y这种拉取的系统，函数本身作为数据生产者，代码通过”拉取”的方式拿到该函数被调用执行后的一个返回值。ES7中的generator生成器函数也是这种模式,调用iterator.next()的代码作为数据消费者，iterator作为数据生产者。</p>
+<p>2、<strong>Push推送</strong>，数据生产者决定何时将数据发送给数据消费者，后者对数据接收这个动作是无意识的。例如ES6中的Promise(数据生产者)。<strong>RxJS中的Observable也采用了Push模式来推送数据</strong>。</p>
 </blockquote>
 
         </div>
@@ -176,7 +176,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Rx-js/">Rx.js</a>
+                    <a class="has-link-grey -link" href="/tags/RxJS/">RxJS</a>
                 </div>
             </div>
         </div>
@@ -243,7 +243,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         25
@@ -253,7 +253,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -263,7 +263,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -273,7 +273,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/joeng3ll">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -295,9 +295,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/Rx-js/" style="font-size: 10px;">Rx.js</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -310,7 +310,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -323,21 +323,21 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
             
             <a href="/2019/07/04/Rx/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Rx">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RxJS">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">Rx</a>
+                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">RxJS</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -429,7 +429,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -574,7 +574,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <ul class="menu-list">
                 
@@ -667,9 +667,9 @@
                 </li>
                 
                 <li>
-                    <a class="level is-marginless" href="/tags/Rx-js/">
+                    <a class="level is-marginless" href="/tags/RxJS/">
                         <span class="level-start">
-                            <span class="level-item">Rx.js</span>
+                            <span class="level-item">RxJS</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -808,7 +808,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -821,21 +821,21 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
             
             <a href="/2019/07/04/Rx/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Rx">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RxJS">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">Rx</a>
+                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">RxJS</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -927,7 +927,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1072,7 +1072,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <ul class="menu-list">
                 
@@ -1165,9 +1165,9 @@
                 </li>
                 
                 <li>
-                    <a class="level is-marginless" href="/tags/Rx-js/">
+                    <a class="level is-marginless" href="/tags/RxJS/">
                         <span class="level-start">
-                            <span class="level-item">Rx.js</span>
+                            <span class="level-item">RxJS</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1302,7 +1302,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.svg" alt="Rx" height="28">
+                    <img src="/images/favicon.svg" alt="RxJS" height="28">
                 
                 </a>
                 <p class="is-size-7">
@@ -1446,10 +1446,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
