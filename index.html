@@ -148,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 315 words)
+                    3 minutes read (About 514 words)
                 </span>
                 
             </div>
@@ -160,14 +160,17 @@
             
         </h1>
         <div class="content">
-            <p>Key Words: <strong>响应式编程</strong>、<strong>函数式编程</strong>、相当于事件处理的lodash库</p>
-<p>Why Rx:  处理同步和异步的事件流、复杂问题简单化、数据流的概念</p>
-<p>How: 组合不同的操作符，<strong>观察者模式</strong>和<strong>迭代器模式</strong>的组合observable</p>
+            <p><strong>Key Words</strong>: <strong>响应式编程</strong>、<strong>函数式编程</strong>、相当于事件处理的lodash库</p>
+<p><strong>Why Rx</strong>:  处理同步和异步的事件流、复杂问题简单化、数据流的概念</p>
+<p><strong>How</strong>: 组合不同的操作符，<strong>观察者模式</strong>和<strong>迭代器模式</strong>的组合observable</p>
 <blockquote>
 <p>前言：数据生产者和数据消费者之间有俩种模式进行数据的交流：</p>
 <p>1、<strong>Pull 拉取</strong>，取决于数据消费者何时去接收数据，数据生产者对数据何时被消费者接收是无意识的。JavaScript中的函数就是y这种拉取的系统，函数本身作为数据生产者，代码通过”拉取”的方式拿到该函数被调用执行后的一个返回值。ES7中的generator生成器函数也是这种模式,调用iterator.next()的代码作为数据消费者，iterator作为数据生产者。</p>
 <p>2、<strong>Push推送</strong>，数据生产者决定何时将数据发送给数据消费者，后者对数据接收这个动作是无意识的。例如ES6中的Promise(数据生产者)。<strong>RxJS中的Observable也采用了Push模式来推送数据</strong>。</p>
 </blockquote>
+<p><strong>What</strong>: 主要理解 <strong>Observable</strong> &amp;&amp; <strong>Operators</strong>  </p>
+<p>Observable: 可观察的数据流，可以理解为是数据生产者（Data Producer）。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 1、通过Observable构造函数新建</span></div><div class="line"><span class="hljs-comment">// Data Producer 数据生产者，只关注如何产出数据</span></div><div class="line"><span class="hljs-keyword">const</span> observable = <span class="hljs-keyword">new</span> Observable(<span class="hljs-function">(<span class="hljs-params">subscriber</span>)=&gt;</span>&#123;</div><div class="line">  <span class="hljs-keyword">try</span>&#123;</div><div class="line">    subscriber.next(<span class="hljs-string">'step1'</span>)</div><div class="line">    subscriber.next(<span class="hljs-string">'step2'</span>)</div><div class="line">    subscriber.next(<span class="hljs-string">'step3'</span>)</div><div class="line">    <span class="hljs-comment">// only execute once </span></div><div class="line">    subscriber.complete(<span class="hljs-string">'step complete'</span>)</div><div class="line">  &#125;<span class="hljs-keyword">catch</span>(e)&#123;</div><div class="line">    <span class="hljs-comment">// only execute once  </span></div><div class="line">    subscriber.error(<span class="hljs-string">'step error'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="hljs-comment">// Data Consumer 数据消费者，决定如何消费数据，即如果处理数据</span></div><div class="line"><span class="hljs-keyword">const</span> theObserver = <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(value)</div><div class="line"><span class="hljs-comment">// 数据生产者 与 数据消费者 俩者是独立的，只有通过以下方式建立关系，数据消费者才能拿到数据生产者的数据。</span></div><div class="line">observable.subscribe(theObserver) <span class="hljs-comment">// 控制台按顺序输出：step1 step2 step3 step complete</span></div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、通过creator operator操作符生成的observable</span></div></pre></td></tr></table></figure>
 
         </div>
         
@@ -1628,7 +1631,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
                         25
@@ -1638,7 +1641,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -1648,7 +1651,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -1658,7 +1661,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/joeng3ll">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -1680,7 +1683,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
         <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
@@ -1695,7 +1698,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             
@@ -1708,7 +1711,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
@@ -1814,7 +1817,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -1959,7 +1962,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <ul class="menu-list">
                 
@@ -2193,7 +2196,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             
@@ -2206,7 +2209,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
@@ -2312,7 +2315,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -2457,7 +2460,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <ul class="menu-list">
                 
@@ -2831,10 +2834,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
