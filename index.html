@@ -142,13 +142,83 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 408 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/07/30/TS-Module-Resolution/">TS-Module-Resolution</a>
+            
+        </h1>
+        <div class="content">
+            <h5 id="TS-Module-Resolution"><a href="#TS-Module-Resolution" class="headerlink" title="TS Module Resolution"></a>TS Module Resolution</h5><ul>
+<li><p><strong>Classic</strong>  [default] </p>
+<p>前提：模块引入语句在文件( /root/src/folder/A.ts )中</p>
+</li>
+</ul>
+<p>​       1、以相对路径的方式引入， import { b } from ‘./moduleB’ ，ts就会按照以下去查找b变量：</p>
+<p>​            a. /root/src/folder/moduleB.ts</p>
+<p>​            b. /root/src/folder/moduleB.d.ts</p>
+<p>​     2、非相对路径的方式引入，即直接引入模块名(  import { b } from ‘moduleB’ )，则模块解析路径为:</p>
+<p>​            a./root/src/folder/moduleB.ts</p>
+<p>​            b. /root/src/folder/moduleB.d.ts</p>
+<p>​            c./root/src/moduleB.ts</p>
+<p>​            d… 即一层层向上找，直到根目录</p>
+<ul>
+<li><p><strong>Node</strong> </p>
+<p>前提：模块引入语句在文件( /root/src/moduleA.ts )中</p>
+</li>
+</ul>
+<p>​       1、相对路径方式的引入：var x = require(“./moduleB”)，Node解析路径只会找这个相对路径下符合的模块，不会向上递归查找。</p>
+<p>​       a. /root/src/moduleB.js 如果这个路径下的moduleB文件存在。</p>
+<p>​       b. /root/src/moduleB 查找moduleB这个文件夹下是否存在package.json，并且package.json中包含{“main”: “lib/mainModule.js”}，如果存在，Node.js就会从/root/src/moduleB/lib/mainModule.js中解析。</p>
+<p>​       2、非相对路径方式的模块名引入：var x = require(“moduleB”) ，Node会向上递归解析路径，直到找到符合的模块。</p>
+<p>​        a. /root/src/node_modules/moduleB.js</p>
+<p>​        b. /root/src/node_modules/moduleB/package.json (if it specifies a “main” property)</p>
+<p>​        c. /root/src/node_modules/moduleB/index.js </p>
+<p>​        d. /root/node_modules/moduleB.js</p>
+<p>​        e. /root/node_modules/moduleB/package.json (if it specifies a “main” property)</p>
+<p>​        f. /root/node_modules/moduleB/index.js </p>
+<p>​        g. /node_modules/moduleB.js</p>
+<p>​        h. /node_modules/moduleB/package.json (if it specifies a “main” property)</p>
+<p>​        I. /node_modules/moduleB/index.js</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 514 words)
+                    5 minutes read (About 688 words)
                 </span>
                 
             </div>
@@ -170,7 +240,13 @@
 </blockquote>
 <p><strong>What</strong>: 主要理解 <strong>Observable</strong> &amp;&amp; <strong>Operators</strong>  </p>
 <p>Observable: 可观察的数据流，可以理解为是数据生产者（Data Producer）。</p>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 1、通过Observable构造函数新建</span></div><div class="line"><span class="hljs-comment">// Data Producer 数据生产者，只关注如何产出数据</span></div><div class="line"><span class="hljs-keyword">const</span> observable = <span class="hljs-keyword">new</span> Observable(<span class="hljs-function">(<span class="hljs-params">subscriber</span>)=&gt;</span>&#123;</div><div class="line">  <span class="hljs-keyword">try</span>&#123;</div><div class="line">    subscriber.next(<span class="hljs-string">'step1'</span>)</div><div class="line">    subscriber.next(<span class="hljs-string">'step2'</span>)</div><div class="line">    subscriber.next(<span class="hljs-string">'step3'</span>)</div><div class="line">    <span class="hljs-comment">// only execute once </span></div><div class="line">    subscriber.complete(<span class="hljs-string">'step complete'</span>)</div><div class="line">  &#125;<span class="hljs-keyword">catch</span>(e)&#123;</div><div class="line">    <span class="hljs-comment">// only execute once  </span></div><div class="line">    subscriber.error(<span class="hljs-string">'step error'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="hljs-comment">// Data Consumer 数据消费者，决定如何消费数据，即如果处理数据</span></div><div class="line"><span class="hljs-keyword">const</span> theObserver = <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(value)</div><div class="line"><span class="hljs-comment">// 数据生产者 与 数据消费者 俩者是独立的，只有通过以下方式建立关系，数据消费者才能拿到数据生产者的数据。</span></div><div class="line">observable.subscribe(theObserver) <span class="hljs-comment">// 控制台按顺序输出：step1 step2 step3 step complete</span></div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、通过creator operator操作符生成的observable</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 1、通过Observable构造函数新建</span></div><div class="line"><span class="hljs-comment">// Data Producer 数据生产者，只关注如何产出数据</span></div><div class="line"><span class="hljs-keyword">import</span> &#123; observable &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs'</span></div><div class="line"><span class="hljs-keyword">const</span> observable = <span class="hljs-keyword">new</span> Observable(<span class="hljs-function">(<span class="hljs-params">subscriber</span>)=&gt;</span>&#123;</div><div class="line">  <span class="hljs-keyword">try</span>&#123;</div><div class="line">    subscriber.next(<span class="hljs-string">'step1'</span>)</div><div class="line">    subscriber.next(<span class="hljs-string">'step2'</span>)</div><div class="line">    subscriber.next(<span class="hljs-string">'step3'</span>)</div><div class="line">    <span class="hljs-comment">// only execute once </span></div><div class="line">    subscriber.complete(<span class="hljs-string">'step complete'</span>)</div><div class="line">  &#125;<span class="hljs-keyword">catch</span>(e)&#123;</div><div class="line">    <span class="hljs-comment">// only execute once  </span></div><div class="line">    subscriber.error(<span class="hljs-string">'step error'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"><span class="hljs-comment">// Data Consumer 数据消费者，决定如何消费数据，即如果处理数据</span></div><div class="line"><span class="hljs-keyword">const</span> theObserver = <span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(value)</div><div class="line"><span class="hljs-comment">// 数据生产者 与 数据消费者 俩者是独立的，只有通过以下方式建立关系，数据消费者才能拿到数据生产者的数据。</span></div><div class="line">observable.subscribe(theObserver) </div><div class="line"><span class="hljs-comment">// 控制台按顺序输出：step1 step2 step3 step complete</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 2、通过creator operator操作符生成的observable </span></div><div class="line"><span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">of</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs'</span></div><div class="line"><span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>).subscribe(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(value))</div><div class="line"><span class="hljs-comment">// 控制台顺序输出：1，2，3</span></div></pre></td></tr></table></figure>
+<p>operators: 本质上是函数，主要分为俩类: pipe operators &amp;&amp; creation operators</p>
+<p>1、pipe operators </p>
+<p>可以理解为是一个管道，将流进管道的数据流做处理后再输出新的处理完后的数据流，并且不会改变原数据流，与函数式编程中的Pure Function类似，(如果订阅了输出后的数据流，则对同时订阅输入的数据流Subscribing to the output Observable will also subscribe to the input Observable)?。</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">of</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs'</span>;</div><div class="line"><span class="hljs-keyword">import</span> &#123; map &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'rxjs/operators'</span>;</div><div class="line"></div><div class="line">map(<span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x * x)(<span class="hljs-keyword">of</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)).subscribe(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`value: <span class="hljs-subst">$&#123;v&#125;</span>`</span>));</div><div class="line"></div><div class="line"><span class="hljs-comment">// Logs:</span></div><div class="line"><span class="hljs-comment">// value: 1 </span></div><div class="line"><span class="hljs-comment">// value: 4</span></div><div class="line"><span class="hljs-comment">// value: 9</span></div></pre></td></tr></table></figure>
+<p>2、creation operators</p>
 
         </div>
         
@@ -1631,17 +1707,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
-                        25
+                        26
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -1651,7 +1727,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -1661,7 +1737,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/joeng3ll">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -1683,9 +1759,9 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 15px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -1698,7 +1774,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -1711,8 +1787,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/30/TS-Module-Resolution/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TS-Module-Resolution">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time></div>
+                    <a href="/2019/07/30/TS-Module-Resolution/" class="has-link-black-ter is-size-6">TS-Module-Resolution</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1790,25 +1885,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/Decorator修饰器/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/Decorator修饰器/" class="has-link-black-ter is-size-6">Decorator修饰器</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1817,7 +1893,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1827,7 +1903,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1962,7 +2038,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <ul class="menu-list">
                 
@@ -2082,7 +2158,7 @@
                             <span class="level-item">TypeScript</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -2196,7 +2272,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -2209,8 +2285,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/07/30/TS-Module-Resolution/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TS-Module-Resolution">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time></div>
+                    <a href="/2019/07/30/TS-Module-Resolution/" class="has-link-black-ter is-size-6">TS-Module-Resolution</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2288,25 +2383,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/03/Decorator修饰器/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Decorator修饰器">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-03T12:53:10.000Z">2019-06-03</time></div>
-                    <a href="/2019/06/03/Decorator修饰器/" class="has-link-black-ter is-size-6">Decorator修饰器</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -2315,7 +2391,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -2325,7 +2401,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -2460,7 +2536,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <ul class="menu-list">
                 
@@ -2580,7 +2656,7 @@
                             <span class="level-item">TypeScript</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -2834,10 +2910,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',

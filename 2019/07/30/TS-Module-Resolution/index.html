@@ -2,22 +2,22 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>Proxy - Joeng_ll</title>
+<title>TS-Module-Resolution - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Proxy ( 语言层面做出修改 对编程语言进行编程 meta programming )1234567891011121314151617// 重新定义了obj的get、set方法const obj = new Proxy(  &amp;#123;&amp;#125;,  &amp;#123;    get: function(target, key, receiver) &amp;#123;      console.log">
-<meta name="keywords" content="ES6">
+    <meta name="description" content="TS Module Resolution Classic  [default]  前提：模块引入语句在文件( /root/src/folder/A.ts )中   ​       1、以相对路径的方式引入， import { b } from ‘./moduleB’ ，ts就会按照以下去查找b变量： ​            a. /root/src/folder/moduleB.ts ​">
+<meta name="keywords" content="TypeScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Proxy">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/Proxy/index.html">
+<meta property="og:title" content="TS-Module-Resolution">
+<meta property="og:url" content="http://yoursite.com/2019/07/30/TS-Module-Resolution/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="Proxy ( 语言层面做出修改 对编程语言进行编程 meta programming )1234567891011121314151617// 重新定义了obj的get、set方法const obj = new Proxy(  &amp;#123;&amp;#125;,  &amp;#123;    get: function(target, key, receiver) &amp;#123;      console.log">
-<meta property="og:updated_time" content="2019-01-11T07:17:04.679Z">
+<meta property="og:description" content="TS Module Resolution Classic  [default]  前提：模块引入语句在文件( /root/src/folder/A.ts )中   ​       1、以相对路径的方式引入， import { b } from ‘./moduleB’ ，ts就会按照以下去查找b变量： ​            a. /root/src/folder/moduleB.ts ​">
+<meta property="og:updated_time" content="2019-08-01T07:13:09.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Proxy">
-<meta name="twitter:description" content="Proxy ( 语言层面做出修改 对编程语言进行编程 meta programming )1234567891011121314151617// 重新定义了obj的get、set方法const obj = new Proxy(  &amp;#123;&amp;#125;,  &amp;#123;    get: function(target, key, receiver) &amp;#123;      console.log">
+<meta name="twitter:title" content="TS-Module-Resolution">
+<meta name="twitter:description" content="TS Module Resolution Classic  [default]  前提：模块引入语句在文件( /root/src/folder/A.ts )中   ​       1、以相对路径的方式引入， import { b } from ‘./moduleB’ ，ts就会按照以下去查找b变量： ​            a. /root/src/folder/moduleB.ts ​">
 
 
 
@@ -87,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.svg" alt="Proxy" height="28">
+                <img src="/images/favicon.svg" alt="TS-Module-Resolution" height="28">
             
             </a>
         </div>
@@ -143,13 +143,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-08-24T09:22:56.000Z">2018-08-24</time>
+                <time class="level-item has-text-grey" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 95 words)
+                    3 minutes read (About 408 words)
                 </span>
                 
             </div>
@@ -157,12 +157,41 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Proxy
+                TS-Module-Resolution
             
         </h1>
         <div class="content">
-            <h3 id="Proxy-语言层面做出修改-对编程语言进行编程-meta-programming"><a href="#Proxy-语言层面做出修改-对编程语言进行编程-meta-programming" class="headerlink" title="Proxy ( 语言层面做出修改 对编程语言进行编程 meta programming )"></a>Proxy ( 语言层面做出修改 对编程语言进行编程 meta programming )</h3><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 重新定义了obj的get、set方法</span></div><div class="line"><span class="hljs-keyword">const</span> obj = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(</div><div class="line">  &#123;&#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, key, receiver</span>) </span>&#123;</div><div class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`getting <span class="hljs-subst">$&#123;key&#125;</span>!`</span>);</div><div class="line">      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.get(target, key, receiver);</div><div class="line">    &#125;,</div><div class="line">    <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">target, key, value, receiver</span>) </span>&#123;</div><div class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`setting <span class="hljs-subst">$&#123;key&#125;</span>!`</span>);</div><div class="line">      <span class="hljs-keyword">return</span> <span class="hljs-built_in">Reflect</span>.set(target, key, value, receiver);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">);</div><div class="line"></div><div class="line">obj.count = <span class="hljs-number">1</span> <span class="hljs-comment">// setting count!</span></div><div class="line">++ obj.count <span class="hljs-comment">// getting count!        setting count!</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ES6原生提供的<span class="hljs-built_in">Proxy</span>构造函数:</div><div class="line"><span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>()</div></pre></td></tr></table></figure>
+            <h5 id="TS-Module-Resolution"><a href="#TS-Module-Resolution" class="headerlink" title="TS Module Resolution"></a>TS Module Resolution</h5><ul>
+<li><p><strong>Classic</strong>  [default] </p>
+<p>前提：模块引入语句在文件( /root/src/folder/A.ts )中</p>
+</li>
+</ul>
+<p>​       1、以相对路径的方式引入， import { b } from ‘./moduleB’ ，ts就会按照以下去查找b变量：</p>
+<p>​            a. /root/src/folder/moduleB.ts</p>
+<p>​            b. /root/src/folder/moduleB.d.ts</p>
+<p>​     2、非相对路径的方式引入，即直接引入模块名(  import { b } from ‘moduleB’ )，则模块解析路径为:</p>
+<p>​            a./root/src/folder/moduleB.ts</p>
+<p>​            b. /root/src/folder/moduleB.d.ts</p>
+<p>​            c./root/src/moduleB.ts</p>
+<p>​            d… 即一层层向上找，直到根目录</p>
+<ul>
+<li><p><strong>Node</strong> </p>
+<p>前提：模块引入语句在文件( /root/src/moduleA.ts )中</p>
+</li>
+</ul>
+<p>​       1、相对路径方式的引入：var x = require(“./moduleB”)，Node解析路径只会找这个相对路径下符合的模块，不会向上递归查找。</p>
+<p>​       a. /root/src/moduleB.js 如果这个路径下的moduleB文件存在。</p>
+<p>​       b. /root/src/moduleB 查找moduleB这个文件夹下是否存在package.json，并且package.json中包含{“main”: “lib/mainModule.js”}，如果存在，Node.js就会从/root/src/moduleB/lib/mainModule.js中解析。</p>
+<p>​       2、非相对路径方式的模块名引入：var x = require(“moduleB”) ，Node会向上递归解析路径，直到找到符合的模块。</p>
+<p>​        a. /root/src/node_modules/moduleB.js</p>
+<p>​        b. /root/src/node_modules/moduleB/package.json (if it specifies a “main” property)</p>
+<p>​        c. /root/src/node_modules/moduleB/index.js </p>
+<p>​        d. /root/node_modules/moduleB.js</p>
+<p>​        e. /root/node_modules/moduleB/package.json (if it specifies a “main” property)</p>
+<p>​        f. /root/node_modules/moduleB/index.js </p>
+<p>​        g. /node_modules/moduleB.js</p>
+<p>​        h. /node_modules/moduleB/package.json (if it specifies a “main” property)</p>
+<p>​        I. /node_modules/moduleB/index.js</p>
 
         </div>
         
@@ -170,7 +199,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/ES6/">ES6</a>
+                    <a class="has-link-grey -link" href="/tags/TypeScript/">TypeScript</a>
                 </div>
             </div>
         </div>
@@ -187,17 +216,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/09/10/record-for-ts/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">record-for-ts</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/08/24/装饰器/">
-                <span class="level-item">装饰器</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/04/Rx/">
+                <span class="level-item">RxJS</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -1303,7 +1325,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.svg" alt="Proxy" height="28">
+                    <img src="/images/favicon.svg" alt="TS-Module-Resolution" height="28">
                 
                 </a>
                 <p class="is-size-7">
