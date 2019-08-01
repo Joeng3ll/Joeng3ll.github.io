@@ -2,7 +2,7 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>Etiqueta: TypeScript - Joeng_ll</title>
+<title>Tag: TypeScript - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
@@ -139,7 +139,7 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Etiquetas</a></li>
+            <li><a href="/tags">Tags</a></li>
             <li class="is-active"><a href="#" aria-current="page">TypeScript</a></li>
         </ul>
         </nav>
@@ -158,7 +158,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 408 words)
+                    4 minutes read (About 640 words)
                 </span>
                 
             </div>
@@ -184,7 +184,7 @@
 <p>​            c./root/src/moduleB.ts</p>
 <p>​            d… 即一层层向上找，直到根目录</p>
 <ul>
-<li><p><strong>Node</strong> </p>
+<li><p><strong>Node</strong> （TS中Node模式的模块解析方式相较与于Node.js来说是简化了的）</p>
 <p>前提：模块引入语句在文件( /root/src/moduleA.ts )中</p>
 </li>
 </ul>
@@ -201,7 +201,14 @@
 <p>​        g. /node_modules/moduleB.js</p>
 <p>​        h. /node_modules/moduleB/package.json (if it specifies a “main” property)</p>
 <p>​        I. /node_modules/moduleB/index.js</p>
-
+<h4 id="TS中与模块解析相关的配置"><a href="#TS中与模块解析相关的配置" class="headerlink" title="TS中与模块解析相关的配置:"></a>TS中与模块解析相关的配置:</h4><h5 id="一、baseUrl"><a href="#一、baseUrl" class="headerlink" title="一、baseUrl"></a>一、baseUrl</h5><h6 id="1、在命令行中配置，可参考http-www-typescriptlang-org-docs-handbook-module-resolution-html-classic"><a href="#1、在命令行中配置，可参考http-www-typescriptlang-org-docs-handbook-module-resolution-html-classic" class="headerlink" title="1、在命令行中配置，可参考http://www.typescriptlang.org/docs/handbook/module-resolution.html#classic"></a>1、在命令行中配置，可参考<a href="http://www.typescriptlang.org/docs/handbook/module-resolution.html#classic" target="_blank" rel="external">http://www.typescriptlang.org/docs/handbook/module-resolution.html#classic</a></h6><h6 id="2、在tsconfig-json中配置baseUrl"><a href="#2、在tsconfig-json中配置baseUrl" class="headerlink" title="2、在tsconfig.json中配置baseUrl"></a>2、在tsconfig.json中配置baseUrl</h6><blockquote>
+<p>为什么需要baseUrl ?</p>
+<p>某些模块名与模块文件名不一致，baseUrl可以告诉TS Compiler去哪里寻找这些模块。</p>
+</blockquote>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	"compilerOptions":&#123;</div><div class="line">     "baseUrl": ".", // 如果写了paths配置项，那么baseUrl是必填项</div><div class="line">     "paths": &#123;</div><div class="line">       "jquery": ["node_modules/jquery/dist/jquery"] // 相对路径 相对于baseUrl 拼接起来就是./node_modules/jquery/dist/jquery</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">projectRoot</div><div class="line">├── folder1</div><div class="line">│   ├── file1.ts (imports &apos;folder1/file2&apos; and &apos;folder2/file3&apos;)</div><div class="line">│   └── file2.ts</div><div class="line">├── generated</div><div class="line">│   ├── folder1</div><div class="line">│   └── folder2</div><div class="line">│       └── file3.ts</div><div class="line">└── tsconfig.json</div></pre></td></tr></table></figure>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "compilerOptions": &#123;</div><div class="line">    "baseUrl": ".",</div><div class="line">    "paths": &#123;</div><div class="line">      "*": [</div><div class="line">        "*", // 1 </div><div class="line">        "generated/*"   // 2</div><div class="line">      ]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">1、"*": 模块名即路径名 &lt;moduleName&gt; =&gt; &lt;baseUrl&gt;/&lt;moduleName&gt;</div><div class="line">2、"generated/*":  &lt;moduleName&gt; =&gt; &lt;baseUrl&gt;/&lt;generated&gt;/&lt;moduleName&gt;</div></pre></td></tr></table></figure>
+<h5 id="二、rootDirs"><a href="#二、rootDirs" class="headerlink" title="二、rootDirs"></a>二、rootDirs</h5>
         </div>
         
         
@@ -354,7 +361,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
                         26
@@ -364,7 +371,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -374,7 +381,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -384,7 +391,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/joeng3ll">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -406,7 +413,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
         <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 15px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
@@ -421,7 +428,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             
@@ -434,7 +441,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
@@ -540,7 +547,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -685,7 +692,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <ul class="menu-list">
                 
@@ -919,7 +926,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             
@@ -932,7 +939,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
@@ -1038,7 +1045,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -1183,7 +1190,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <ul class="menu-list">
                 
@@ -1557,10 +1564,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
