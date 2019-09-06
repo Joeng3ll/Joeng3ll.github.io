@@ -2,7 +2,7 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>Tag: React - Joeng_ll</title>
+<title>Etiqueta: react - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
@@ -10,7 +10,7 @@
     <meta name="description" content="FrontEnd">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Joeng_ll">
-<meta property="og:url" content="http://yoursite.com/tags/React/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/react/index.html">
 <meta property="og:site_name" content="Joeng_ll">
 <meta property="og:description" content="FrontEnd">
 <meta name="twitter:card" content="summary">
@@ -139,8 +139,8 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">React</a></li>
+            <li><a href="/tags">Etiquetas</a></li>
+            <li class="is-active"><a href="#" aria-current="page">react</a></li>
         </ul>
         </nav>
     </div>
@@ -152,13 +152,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time>
+                <time class="level-item has-text-grey" datetime="2019-01-19T07:04:39.000Z">2019-01-19</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 303 words)
+                    2 minutes read (About 307 words)
                 </span>
                 
             </div>
@@ -166,65 +166,16 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/06/30/React-Diff/">React-Diff</a>
+                <a class="has-link-black-ter" href="/2019/01/19/some-thing-about-react/">some_thing_about_react</a>
             
         </h1>
         <div class="content">
-            <h4 id="建立在以下三个方面的前提成立的React-Diff优化策略："><a href="#建立在以下三个方面的前提成立的React-Diff优化策略：" class="headerlink" title="建立在以下三个方面的前提成立的React Diff优化策略："></a>建立在以下三个方面的前提成立的React Diff优化策略：</h4><p>1、跨层级的DOM移动操作较少，可以忽略不计。</p>
-<p>2、同一层级的一组子节点可以通过唯一id区分。</p>
-<p>3、拥有相同类的两个组件将会生成相似的树结构，拥有不同类的俩个组件则生成不同的树结构。</p>
-<h4 id="优化策略分为三部分："><a href="#优化策略分为三部分：" class="headerlink" title="优化策略分为三部分："></a>优化策略分为三部分：</h4><h5 id="1、Tree-Diff-分层求异"><a href="#1、Tree-Diff-分层求异" class="headerlink" title="1、Tree Diff  分层求异"></a>1、Tree Diff  分层求异</h5><p>只比较同一层级的节点，这样只需要对树进行一次遍历。因此尽量保持稳定的DOM结构，通过隐藏显示的方式，而不是删除和新建节点。</p>
-<h5 id="2、Component-Diff"><a href="#2、Component-Diff" class="headerlink" title="2、Component Diff"></a>2、Component Diff</h5><p>如果是同一类型的组件，按照原策略进行Virtual Dom tree Diff,允许用户直接通过shouldComponent来判断是否需要Diff;如果不是同一类型的组件，则直接标记为dirtyComponent,从而替换整个组件下的子节点。</p>
-<h5 id="3、Element-Diff-设置唯一-key"><a href="#3、Element-Diff-设置唯一-key" class="headerlink" title="3、Element Diff    设置唯一 key"></a>3、Element Diff    <strong>设置唯一 key</strong></h5><p>通过key来判断当前节点是否可复用；尽量减少类似将最后一个节点移动到列表首部的操作</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-03T12:50:20.000Z">2019-06-03</time>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 386 words)
-                </span>
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/06/03/ReactFiber初识/">ReactFiber初识</a>
-            
-        </h1>
-        <div class="content">
-            <h4 id="React-Fiber"><a href="#React-Fiber" class="headerlink" title="React Fiber"></a>React Fiber</h4><p>主要目标：</p>
-<p>1、能够把<strong>可中断</strong>的任务做<strong>切片</strong>处理。</p>
-<p>2、能够<strong>调整优先级</strong>，<strong>重置</strong>并<strong>复用</strong>任务。</p>
-<p>用于解决stack reconcile中的固有问题，将React中同步的计算过程做拆分，使主线程不会一直处于占用的状态，因而其他IO操作，比如动画、手势等得以执行。</p>
-<p><strong>why</strong>:  长时间运行的JS会影响动画、布局和手势，原因是JS引擎线程与GUI页面渲染线程是互斥的，所以长时间执行JS可能会造成页面假死、掉帧的现象。</p>
-<p>历史原因: 在React15版本中，用到的核心算法是Reconcile,理解为stack Reconcile, 采用自顶向下递归，从根组件或者触发setState的子组件向下递归，更新过程中主要涉及俩步：1、Diff，比较prevInstance和nextInstance，找出差异及VDOM Change，本质上是一些计算（遍历、比较），在这一过程中是无法执行IO操作的；2、Patch，将Diff出来的差异队列更新到DOM节点上。Patch是批量执行的，并不是有差异就会执行。</p>
-<blockquote>
-<p>浏览器中的渲染进程是多线程的，分为GUI渲染线程、JS引擎线程、事件触发线程、定时触发器线程、异步http请求线程。<strong>GUI渲染线程与JS引擎线程互斥</strong>。</p>
-</blockquote>
-
+            <h3 id="一、React-Components-amp-React-Elements-amp-Instance"><a href="#一、React-Components-amp-React-Elements-amp-Instance" class="headerlink" title="一、React Components &amp; React Elements &amp; Instance"></a>一、React Components &amp; React Elements &amp; Instance</h3><h5 id="components-输入props-输出element-Tree-单一数据流。"><a href="#components-输入props-输出element-Tree-单一数据流。" class="headerlink" title="components: 输入props,输出element Tree. 单一数据流。"></a>components: 输入props,输出element Tree. 单一数据流。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 1、作为functions定义</span></div><div class="line"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">&#123;children, color&#125;</span>) =&gt;</span> (&#123;</div><div class="line">    <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">    <span class="hljs-attr">props</span>: &#123;</div><div class="line">        <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span>+color,</div><div class="line">        <span class="hljs-attr">children</span>: &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">children</span>: children</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、使用React.createClass()</span></div><div class="line"><span class="hljs-keyword">const</span> Button = React.createClass(&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span> + color,</div><div class="line">                <span class="hljs-attr">children</span>: &#123;</div><div class="line">                    <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">                    <span class="hljs-attr">props</span>: &#123;</div><div class="line">                        <span class="hljs-attr">children</span>:children</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="hljs-comment">//3、使用ES6的class继承自React.Component</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span> + color</div><div class="line">                children: &#123;</div><div class="line">               		<span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">                    <span class="hljs-attr">props</span>: &#123;</div><div class="line">                		<span class="hljs-attr">children</span>: children</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。"><a href="#elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。" class="headerlink" title="elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。"></a>elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="hljs-attr">type</span>: (string | ReactClass),</div><div class="line">    <span class="hljs-attr">props</span>: <span class="hljs-built_in">Object</span>，</div><div class="line">    $$<span class="hljs-keyword">typeof</span>: <span class="hljs-built_in">Symbol</span>.for(<span class="hljs-string">'react.element'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">i.e.</div><div class="line">&#123;</div><div class="line">    <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">    <span class="hljs-attr">props</span>: &#123;</div><div class="line">       <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-blue'</span>,</div><div class="line">       <span class="hljs-attr">children</span>: &#123;</div><div class="line">         <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">         <span class="hljs-attr">props</span>: &#123;</div><div class="line">             <span class="hljs-attr">children</span>: <span class="hljs-string">'ok'</span></div><div class="line">         &#125;</div><div class="line">       &#125;     </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">得到以下结果:</div><div class="line">&lt;button className='button button-blue'&gt;</div><div class="line">    &lt;b&gt;</div><div class="line">    	ok</div><div class="line">    &lt;/b&gt;</div><div class="line">&lt;/button&gt;</div><div class="line"></div><div class="line"><span class="hljs-comment">// 1、通过React.createElement创建React element</span></div><div class="line">React.createElement(</div><div class="line">  type, </div><div class="line">  [props],</div><div class="line">  [...children]</div><div class="line">)</div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、JSX</span></div><div class="line"><span class="hljs-keyword">const</span> name = <span class="hljs-string">'joeng'</span></div><div class="line"><span class="hljs-keyword">const</span> Ele = &lt;div&gt;hello,&#123;name&#125;&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line"><span class="hljs-comment">// 校验是否是React Element </span></div><div class="line">React.isValidElement(object)</div></pre></td></tr></table></figure>
+<ul>
+<li>$$typeof : react用这个属性来安全的区分普通的对象与react Elements, 详细可参考官方文档: <a href="https://github.com/facebook/react/pull/4832" target="_blank" rel="external">https://github.com/facebook/react/pull/4832</a> </li>
+</ul>
+<h5 id="instances-只有用class声明的React-Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。"><a href="#instances-只有用class声明的React-Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。" class="headerlink" title="instances: 只有用class声明的React Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。"></a>instances: 只有用class声明的React Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。</h5>
         </div>
         
         
@@ -277,17 +228,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
-                        26
+                        27
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         0
@@ -297,7 +248,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -307,7 +258,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/joeng3ll">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -329,7 +280,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 15px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
@@ -344,7 +295,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -357,8 +308,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/25/React中的竞态/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React中的竞态">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-25T02:16:24.000Z">2019-08-25</time></div>
+                    <a href="/2019/08/25/React中的竞态/" class="has-link-black-ter is-size-6">React中的竞态</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -436,25 +406,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/27/flex布局/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
-                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -463,9 +414,20 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -608,7 +570,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <ul class="menu-list">
                 
@@ -842,7 +804,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             
@@ -855,8 +817,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/08/25/React中的竞态/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React中的竞态">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-25T02:16:24.000Z">2019-08-25</time></div>
+                    <a href="/2019/08/25/React中的竞态/" class="has-link-black-ter is-size-6">React中的竞态</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -934,25 +915,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/06/27/flex布局/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="flex布局">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-27T10:06:18.000Z">2019-06-27</time></div>
-                    <a href="/2019/06/27/flex布局/" class="has-link-black-ter is-size-6">flex布局</a>
-                    <p class="is-size-7 is-uppercase">
-                        
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -961,9 +923,20 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2019/07/">
@@ -1106,7 +1079,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <ul class="menu-list">
                 
@@ -1480,237 +1453,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
-                UNTITLED: '(Untitled)',
-            },
-            CONTENT_URL: '/content.json',
-        };
-        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-    })(window);
-</script>
-<script src="/js/insight.js" defer></script>
-<link rel="stylesheet" href="/css/search.css">
-<link rel="stylesheet" href="/css/insight.css">
-    
-</body>
-</html>       <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/redux/">
-                        <span class="level-start">
-                            <span class="level-item">redux</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/webpack/">
-                        <span class="level-start">
-                            <span class="level-item">webpack</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/前端工程化/">
-                        <span class="level-start">
-                            <span class="level-item">前端工程化</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/缓存/">
-                        <span class="level-start">
-                            <span class="level-item">缓存</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">3</span>
-                        </span>
-                    </a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-</div>
-
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-    <div class="container">
-        <div class="level">
-            <div class="level-start has-text-centered-mobile">
-                <a class="footer-logo is-block has-mb-6" href="/">
-                
-                    <img src="/images/favicon.svg" alt="Joeng_ll" height="28">
-                
-                </a>
-                <p class="is-size-7">
-                &copy; 2019 Joeng_ll&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
-                </p>
-            </div>
-            <div class="level-end">
-            
-                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
-                
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
-                        
-                        <i class="fab fa-creative-commons"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
-                        
-                        <i class="fab fa-creative-commons-by"></i>
-                        
-                    </a>
-                </p>
-                
-                <p class="control">
-                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
-                        
-                        <i class="fab fa-github"></i>
-                        
-                    </a>
-                </p>
-                
-                </div>
-            
-            </div>
-        </div>
-    </div>
-</footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
-<script>moment.locale("en");</script>
-
-
-    
-    
-    
-    <script src="/js/animation.js"></script>
-    
-
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
-    <script src="/js/gallery.js" defer></script>
-    
-
-    
-    
-
-<div id="outdated">
-    <h6>Your browser is out-of-date!</h6>
-    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
-            my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'flex'
-        });
-    });
-</script>
-
-
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    MathJax.Hub.Config({
-        'HTML-CSS': {matchFontHeight: false},
-        SVG: {matchFontHeight: false},
-        CommonHTML: {matchFontHeight: false}
-    });
-});
-</script>
-
-    
-    
-
-<a id="back-to-top" title="Back to Top" href="javascript:;">
-    <i class="fas fa-chevron-up"></i>
-</a>
-<script src="/js/back-to-top.js" defer></script>
-
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
-    <script src="/js/clipboard.js" defer></script>
-    
-
-    
-
-
-<script src="/js/main.js" defer></script>
-
-    
-    <div class="searchbox ins-search">
-    <div class="searchbox-container ins-search-container">
-        <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
-            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="searchbox-result-wrapper ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-    (function (window) {
-        var INSIGHT_CONFIG = {
-            TRANSLATION: {
-                POSTS: 'Posts',
-                PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
