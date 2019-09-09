@@ -2,22 +2,22 @@
 <html >
 <head>
     <meta charset="utf-8">
-<title>类型签名 - Joeng_ll</title>
+<title>Google关于TypeScript3.5版本的反馈[译] - Joeng_ll</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Hindley Milner 类型签名 代码最好的文档  标明输入和输入 Compile time checks  HM系统中，用a,b类似这样的来代表类型，a引用代表的一定是同一个类型，a和b一定是不同的类型。">
-<meta name="keywords" content="Functional Programming">
+    <meta name="description" content="故事是从Google团队升级了TypeScript的版本至3.5后开始的： 1、泛型的隐式默认值(Implicit default for generics) 这是3.5版本升级后破坏性的主要变化 [升级日志]: https://github.com/microsoft/TypeScript/wiki/Breaking-Changes#generic-type-parameters-are-imp">
+<meta name="keywords" content="TypeScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类型签名">
-<meta property="og:url" content="http://yoursite.com/2018/12/06/类型签名/index.html">
+<meta property="og:title" content="Google关于TypeScript3.5版本的反馈[译]">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/Google关于TypeScript3-5版本的反馈/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="Hindley Milner 类型签名 代码最好的文档  标明输入和输入 Compile time checks  HM系统中，用a,b类似这样的来代表类型，a引用代表的一定是同一个类型，a和b一定是不同的类型。">
-<meta property="og:updated_time" content="2019-01-11T07:18:42.946Z">
+<meta property="og:description" content="故事是从Google团队升级了TypeScript的版本至3.5后开始的： 1、泛型的隐式默认值(Implicit default for generics) 这是3.5版本升级后破坏性的主要变化 [升级日志]: https://github.com/microsoft/TypeScript/wiki/Breaking-Changes#generic-type-parameters-are-imp">
+<meta property="og:updated_time" content="2019-09-09T09:33:28.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类型签名">
-<meta name="twitter:description" content="Hindley Milner 类型签名 代码最好的文档  标明输入和输入 Compile time checks  HM系统中，用a,b类似这样的来代表类型，a引用代表的一定是同一个类型，a和b一定是不同的类型。">
+<meta name="twitter:title" content="Google关于TypeScript3.5版本的反馈[译]">
+<meta name="twitter:description" content="故事是从Google团队升级了TypeScript的版本至3.5后开始的： 1、泛型的隐式默认值(Implicit default for generics) 这是3.5版本升级后破坏性的主要变化 [升级日志]: https://github.com/microsoft/TypeScript/wiki/Breaking-Changes#generic-type-parameters-are-imp">
 
 
 
@@ -87,7 +87,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.svg" alt="类型签名" height="28">
+                <img src="/images/favicon.svg" alt="Google关于TypeScript3.5版本的反馈[译]" height="28">
             
             </a>
         </div>
@@ -143,13 +143,13 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-12-06T03:22:52.000Z">2018-12-06</time>
+                <time class="level-item has-text-grey" datetime="2019-09-09T07:47:27.000Z">2019-09-09</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 69 words)
+                    2 minutes read (About 258 words)
                 </span>
                 
             </div>
@@ -157,16 +157,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                类型签名
+                Google关于TypeScript3.5版本的反馈[译]
             
         </h1>
         <div class="content">
-            <h3 id="Hindley-Milner-类型签名"><a href="#Hindley-Milner-类型签名" class="headerlink" title="Hindley Milner 类型签名"></a>Hindley Milner 类型签名</h3><ul>
-<li>代码最好的文档 </li>
-<li>标明输入和输入</li>
-<li>Compile time checks</li>
-</ul>
-<p>HM系统中，用a,b类似这样的来代表类型，a引用代表的一定是同一个类型，a和b一定是不同的类型。</p>
+            <p>故事是从Google团队升级了TypeScript的版本至3.5后开始的：</p>
+<h4 id="1、泛型的隐式默认值-Implicit-default-for-generics"><a href="#1、泛型的隐式默认值-Implicit-default-for-generics" class="headerlink" title="1、泛型的隐式默认值(Implicit default for generics)"></a>1、泛型的隐式默认值(Implicit default for generics)</h4><blockquote>
+<p>这是3.5版本升级后破坏性的主要变化</p>
+<p>[升级日志]: <a href="https://github.com/microsoft/TypeScript/wiki/Breaking-Changes#generic-type-parameters-are-implicitly-constrained-to-unknown" target="_blank" rel="external">https://github.com/microsoft/TypeScript/wiki/Breaking-Changes#generic-type-parameters-are-implicitly-constrained-to-unknown</a>    “breaking changes is 3.5”</p>
+</blockquote>
+<p>主要异常表现：代码中使用到泛型，但是代码并不关注泛型做了什么。</p>
+<p>下面是一个🌰</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// i.e 下面的Promise中resolve返回一个值，但是Promise本身并不关注这个值是什么</span></div><div class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dontCarePromise</span>(<span class="hljs-params"></span>) </span>&#123;</div><div class="line">  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>)=&gt;</span>&#123;</div><div class="line">     resolve()</div><div class="line">  &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在3.4版本及以下，泛型是宽松的，这里的Promise实际是Promise&lt;{}&gt;，然而在3.5中被解释成Promise<unknown> </unknown></p>
+<p>那么问题来了，如果有个人在自己的项目中大量写了下面的代码：</p>
+<figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">const</span> myPromise: <span class="hljs-built_in">Promise</span>&lt;&#123;&#125;&gt; = dontCarePromise()</div></pre></td></tr></table></figure>
+<p>就造成了对使用者无意义的类型报错，此次版本升级中关于泛型的改变所带来的缺失就和上述现象相似。</p>
 
         </div>
         
@@ -174,7 +180,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Functional-Programming/">Functional Programming</a>
+                    <a class="has-link-grey -link" href="/tags/TypeScript/">TypeScript</a>
                 </div>
             </div>
         </div>
@@ -191,17 +197,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/10/Iterator/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Iterator</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2018/09/25/前端缓存/">
-                <span class="level-item">前端缓存</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/25/React中的竞态/">
+                <span class="level-item">React中的竞态</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -221,7 +220,7 @@
     js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2018/12/06/类型签名/" data-num-posts="5"></div>
+<div class="fb-comments" data-width="100%" data-href="http://yoursite.com/2019/09/09/Google关于TypeScript3-5版本的反馈/" data-num-posts="5"></div>
 
     </div>
 </div>
@@ -1366,7 +1365,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.svg" alt="类型签名" height="28">
+                    <img src="/images/favicon.svg" alt="Google关于TypeScript3.5版本的反馈[译]" height="28">
                 
                 </a>
                 <p class="is-size-7">
