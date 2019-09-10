@@ -148,7 +148,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 258 words)
+                    2 minutes read (About 270 words)
                 </span>
                 
             </div>
@@ -171,7 +171,8 @@
 <p>在3.4版本及以下，泛型是宽松的，这里的Promise实际是Promise&lt;{}&gt;，然而在3.5中被解释成Promise<unknown> </unknown></p>
 <p>那么问题来了，如果有个人在自己的项目中大量写了下面的代码：</p>
 <figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-keyword">const</span> myPromise: <span class="hljs-built_in">Promise</span>&lt;&#123;&#125;&gt; = dontCarePromise()</div></pre></td></tr></table></figure>
-<p>就造成了对使用者无意义的类型报错，此次版本升级中关于泛型的改变所带来的缺失就和上述现象相似。</p>
+<p>就造成了对使用者没有任何益处的类型报错，此次版本升级中关于泛型的改变所带来的缺失就和上述现象相似。</p>
+<p>比如d3的类型声明库</p>
 
         </div>
         
