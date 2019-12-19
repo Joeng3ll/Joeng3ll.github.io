@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html >
-<head>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>record-for-ts - Joeng_ll</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="一、基础类型 数组 : 123&amp;gt; const list:number[] = [1,2,3]     // 方式一 &amp;gt; const list:Array&amp;lt;number&amp;gt; = [1,2,3] // 方式二&amp;gt;  &amp;gt;  元祖 tuple 123456&amp;gt; let x: [string, number]&amp;gt; x = [&apos;hello&apos;,2] // ok &amp;gt;">
+    <meta name="description" content="一、基础类型 数组 : 123&amp;gt; const list:number[] = [1,2,3]     // 方式一 &amp;gt; const list:Array&amp;lt;number&amp;gt; = [1,2,3] // 方式二&amp;gt;   元祖 tuple 123456&amp;gt; let x: [string, number]&amp;gt; x = [&apos;hello&apos;,2] // ok &amp;gt; x = [">
 <meta name="keywords" content="TypeScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="record-for-ts">
 <meta property="og:url" content="http://yoursite.com/2018/09/10/record-for-ts/index.html">
 <meta property="og:site_name" content="Joeng_ll">
-<meta property="og:description" content="一、基础类型 数组 : 123&amp;gt; const list:number[] = [1,2,3]     // 方式一 &amp;gt; const list:Array&amp;lt;number&amp;gt; = [1,2,3] // 方式二&amp;gt;  &amp;gt;  元祖 tuple 123456&amp;gt; let x: [string, number]&amp;gt; x = [&apos;hello&apos;,2] // ok &amp;gt;">
+<meta property="og:description" content="一、基础类型 数组 : 123&amp;gt; const list:number[] = [1,2,3]     // 方式一 &amp;gt; const list:Array&amp;lt;number&amp;gt; = [1,2,3] // 方式二&amp;gt;   元祖 tuple 123456&amp;gt; let x: [string, number]&amp;gt; x = [&apos;hello&apos;,2] // ok &amp;gt; x = [">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-01-11T07:16:35.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="record-for-ts">
-<meta name="twitter:description" content="一、基础类型 数组 : 123&amp;gt; const list:number[] = [1,2,3]     // 方式一 &amp;gt; const list:Array&amp;lt;number&amp;gt; = [1,2,3] // 方式二&amp;gt;  &amp;gt;  元祖 tuple 123456&amp;gt; let x: [string, number]&amp;gt; x = [&apos;hello&apos;,2] // ok &amp;gt;">
+<meta name="twitter:description" content="一、基础类型 数组 : 123&amp;gt; const list:number[] = [1,2,3]     // 方式一 &amp;gt; const list:Array&amp;lt;number&amp;gt; = [1,2,3] // 方式二&amp;gt;   元祖 tuple 123456&amp;gt; let x: [string, number]&amp;gt; x = [&apos;hello&apos;,2] // ok &amp;gt; x = [">
 
 
 
@@ -95,20 +96,15 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
-                <a class="navbar-item"
-                href="/archives">Archives</a>
+                <a class="navbar-item" href="/archives">Archives</a>
                 
-                <a class="navbar-item"
-                href="/categories">Categories</a>
+                <a class="navbar-item" href="/categories">Categories</a>
                 
-                <a class="navbar-item"
-                href="/tags">Tags</a>
+                <a class="navbar-item" href="/tags">Tags</a>
                 
-                <a class="navbar-item"
-                href="/about">About</a>
+                <a class="navbar-item" href="/about">About</a>
                 
             </div>
             
@@ -163,64 +159,52 @@
         <div class="content">
             <h5 id="一、基础类型"><a href="#一、基础类型" class="headerlink" title="一、基础类型"></a>一、基础类型</h5><blockquote>
 <p><strong>数组 :</strong></p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">const</span> list:<span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]     <span class="hljs-comment">// 方式一 </span></div><div class="line">&gt; <span class="hljs-keyword">const</span> list:<span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] <span class="hljs-comment">// 方式二</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">const</span> list:<span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]     <span class="hljs-comment">// 方式一 </span></span><br><span class="line">&gt; <span class="hljs-keyword">const</span> list:<span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">number</span>&gt; = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>] <span class="hljs-comment">// 方式二</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
 <p><strong>元祖 tuple</strong></p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">let</span> x: [<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>]</div><div class="line">&gt; x = [<span class="hljs-string">'hello'</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">// ok </span></div><div class="line">&gt; x = [<span class="hljs-number">2</span>, <span class="hljs-string">'hello'</span>] <span class="hljs-comment">//Error</span></div><div class="line">&gt; x[<span class="hljs-number">3</span>] = <span class="hljs-string">'world'</span> <span class="hljs-comment">// ok </span></div><div class="line">&gt; x[<span class="hljs-number">4</span>] = <span class="hljs-literal">true</span> <span class="hljs-comment">// Error, 布尔不是string</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">let</span> x: [<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>]</span><br><span class="line">&gt; x = [<span class="hljs-string">'hello'</span>,<span class="hljs-number">2</span>] <span class="hljs-comment">// ok </span></span><br><span class="line">&gt; x = [<span class="hljs-number">2</span>, <span class="hljs-string">'hello'</span>] <span class="hljs-comment">//Error</span></span><br><span class="line">&gt; x[<span class="hljs-number">3</span>] = <span class="hljs-string">'world'</span> <span class="hljs-comment">// ok </span></span><br><span class="line">&gt; x[<span class="hljs-number">4</span>] = <span class="hljs-literal">true</span> <span class="hljs-comment">// Error, 布尔不是string</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
 <p><strong>枚举</strong>  枚举类型是对javascript标准数据结构的一个补充 为一组数值赋予优雅的名字</p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">enum</span> Color &#123;Red, Green, Blue&#125;</div><div class="line">&gt; <span class="hljs-keyword">let</span> x: Color = Color.Green <span class="hljs-comment">// 1 默认情况下从0为元素编号</span></div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// 手动进行编号</span></div><div class="line">&gt; <span class="hljs-keyword">enum</span> Color &#123;Red:<span class="hljs-number">1</span>, Green:<span class="hljs-number">4</span>, Blue:<span class="hljs-number">6</span>&#125;</div><div class="line">&gt; <span class="hljs-keyword">let</span> x: Color = Color.Green <span class="hljs-comment">// 4 </span></div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// 枚举值提供的便利： 可以由枚举的值得到它的名字 </span></div><div class="line">&gt; <span class="hljs-keyword">let</span> colorName: <span class="hljs-built_in">string</span> = Color[<span class="hljs-number">4</span>]  <span class="hljs-comment">// Green</span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">enum</span> Color &#123;Red, Green, Blue&#125;</span><br><span class="line">&gt; <span class="hljs-keyword">let</span> x: Color = Color.Green <span class="hljs-comment">// 1 默认情况下从0为元素编号</span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// 手动进行编号</span></span><br><span class="line">&gt; <span class="hljs-keyword">enum</span> Color &#123;Red:<span class="hljs-number">1</span>, Green:<span class="hljs-number">4</span>, Blue:<span class="hljs-number">6</span>&#125;</span><br><span class="line">&gt; <span class="hljs-keyword">let</span> x: Color = Color.Green <span class="hljs-comment">// 4 </span></span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// 枚举值提供的便利： 可以由枚举的值得到它的名字 </span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> colorName: <span class="hljs-built_in">string</span> = Color[<span class="hljs-number">4</span>]  <span class="hljs-comment">// Green</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
 <p><strong>void</strong> 空值 函数返回 只能被赋予<strong>undefined null</strong>  </p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">warnUser</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span></span>&#123;</div><div class="line">&gt;    alert(<span class="hljs-string">"This is a warning message!"</span>) </div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">warnUser</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span></span>&#123;</span><br><span class="line">&gt;    alert(<span class="hljs-string">"This is a warning message!"</span>) </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
 <p><strong>never</strong> 永远不存在 </p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-comment">// 返回never的函数必须存在无法达到的终点</span></div><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">error</span>(<span class="hljs-params">message: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">never</span></span>&#123;</div><div class="line">&gt;     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(message)</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">infiniteLoop</span>(<span class="hljs-params"></span>): <span class="hljs-title">never</span></span>&#123;</div><div class="line">&gt;     <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// 返回never的函数必须存在无法达到的终点</span></span><br><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">error</span>(<span class="hljs-params">message: <span class="hljs-built_in">string</span></span>): <span class="hljs-title">never</span></span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(message)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">infiniteLoop</span>(<span class="hljs-params"></span>): <span class="hljs-title">never</span></span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;&#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
 <p><strong>类型断言</strong>  只在编译阶段起作用，假设已经进行了必须的检查</p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-comment">// 写法一  "尖括号"写法</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">"this is a string"</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (&lt;<span class="hljs-built_in">string</span>&gt;someValue).length</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// 写法二  "as" 语法   jsx里只允许 as语法</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">"this is a string"</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (someValue <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>).length</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// 写法一  "尖括号"写法</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">"this is a string"</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (&lt;<span class="hljs-built_in">string</span>&gt;someValue).length</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// 写法二  "as" 语法   jsx里只允许 as语法</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> someValue: <span class="hljs-built_in">any</span> = <span class="hljs-string">"this is a string"</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> strLength: <span class="hljs-built_in">number</span> = (someValue <span class="hljs-keyword">as</span> <span class="hljs-built_in">string</span>).length</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h4 id="二、接口-TS核心原则之一-“鸭式辩型法”"><a href="#二、接口-TS核心原则之一-“鸭式辩型法”" class="headerlink" title="二、接口      TS核心原则之一  “鸭式辩型法”"></a>二、接口      TS核心原则之一  “鸭式辩型法”</h4><blockquote>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printLabel</span>(<span class="hljs-params">labelObj:&#123;label: <span class="hljs-built_in">string</span>&#125;</span>)</span>&#123;</div><div class="line">&gt;     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'label:'</span>, labelObj.label)</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">let</span> myObj = &#123;size: <span class="hljs-number">10</span>, label: <span class="hljs-string">'Size 10 Object'</span>&#125;</div><div class="line">&gt; printLabel(myObj)</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// use interface</span></div><div class="line">&gt; <span class="hljs-keyword">interface</span> labelValue &#123;</div><div class="line">&gt;     label: <span class="hljs-built_in">string</span>;</div><div class="line">&gt;     name?: <span class="hljs-built_in">string</span>;    <span class="hljs-comment">// 可选属性</span></div><div class="line">&gt;     readonly count: <span class="hljs-built_in">number</span>; <span class="hljs-comment">// 只读属性   只能在创建对象时修改值 作为属性使用时 </span></div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// ReadonlyArray </span></div><div class="line">&gt; <span class="hljs-keyword">let</span> ro:ReadonlyArray&lt;<span class="hljs-built_in">number</span>&gt;  = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printLabel</span>(<span class="hljs-params">labelObj: labelValue</span>)</span>&#123;</div><div class="line">&gt;     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'label:'</span>,labelObj.label)</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printLabel</span>(<span class="hljs-params">labelObj:&#123;label: <span class="hljs-built_in">string</span>&#125;</span>)</span>&#123;</span><br><span class="line">&gt;     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'label:'</span>, labelObj.label)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">let</span> myObj = &#123;size: <span class="hljs-number">10</span>, label: <span class="hljs-string">'Size 10 Object'</span>&#125;</span><br><span class="line">&gt; printLabel(myObj)</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// use interface</span></span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> labelValue &#123;</span><br><span class="line">&gt;     label: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt;     name?: <span class="hljs-built_in">string</span>;    <span class="hljs-comment">// 可选属性</span></span><br><span class="line">&gt;     readonly count: <span class="hljs-built_in">number</span>; <span class="hljs-comment">// 只读属性   只能在创建对象时修改值 作为属性使用时 </span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// ReadonlyArray </span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> ro:ReadonlyArray&lt;<span class="hljs-built_in">number</span>&gt;  = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printLabel</span>(<span class="hljs-params">labelObj: labelValue</span>)</span>&#123;</span><br><span class="line">&gt;     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'label:'</span>,labelObj.label)</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
-<h5 id="额外的属性检查-ts中，对象字面量会经过额外属性检查"><a href="#额外的属性检查-ts中，对象字面量会经过额外属性检查" class="headerlink" title="额外的属性检查:  ts中，对象字面量会经过额外属性检查"></a>额外的属性检查:  ts中，对象字面量会经过额外属性检查</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">interface</span> SquareConfig &#123;</div><div class="line">&gt;     color?: <span class="hljs-built_in">string</span>;</div><div class="line">&gt;     width?: <span class="hljs-built_in">number</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createSquare</span>(<span class="hljs-params">config: SquareConfig</span>): </span>&#123;color: <span class="hljs-built_in">string</span>; area:<span class="hljs-built_in">number</span>&#125;&#123;</div><div class="line">&gt;     <span class="hljs-comment">// ...    </span></div><div class="line">&gt; &#125;</div><div class="line">&gt; <span class="hljs-comment">// error: 'colour' not expected in type 'SquareConfig'</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> mySquare = createSquare(&#123;colour:<span class="hljs-string">'red'</span>, width: <span class="hljs-number">100</span>&#125;)</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// 绕开额外的类型检查 方法一 使用类型断言</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> mySquare = createSquare(&#123;colour:<span class="hljs-string">'red'</span>,width:<span class="hljs-number">100</span>&#125; <span class="hljs-keyword">as</span> SquareConfig)</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// 最佳方式 添加字符串索引签名</span></div><div class="line">&gt; <span class="hljs-keyword">interface</span> SquareConfig &#123;</div><div class="line">&gt;     color?: <span class="hljs-built_in">string</span>;</div><div class="line">&gt;     <span class="hljs-built_in">number</span>?: <span class="hljs-built_in">number</span>;</div><div class="line">&gt;     [propName:<span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h5 id="额外的属性检查-ts中，对象字面量会经过额外属性检查"><a href="#额外的属性检查-ts中，对象字面量会经过额外属性检查" class="headerlink" title="额外的属性检查:  ts中，对象字面量会经过额外属性检查"></a>额外的属性检查:  ts中，对象字面量会经过额外属性检查</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">interface</span> SquareConfig &#123;</span><br><span class="line">&gt;     color?: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt;     width?: <span class="hljs-built_in">number</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createSquare</span>(<span class="hljs-params">config: SquareConfig</span>): </span>&#123;color: <span class="hljs-built_in">string</span>; area:<span class="hljs-built_in">number</span>&#125;&#123;</span><br><span class="line">&gt;     <span class="hljs-comment">// ...    </span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; <span class="hljs-comment">// error: 'colour' not expected in type 'SquareConfig'</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> mySquare = createSquare(&#123;colour:<span class="hljs-string">'red'</span>, width: <span class="hljs-number">100</span>&#125;)</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// 绕开额外的类型检查 方法一 使用类型断言</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> mySquare = createSquare(&#123;colour:<span class="hljs-string">'red'</span>,width:<span class="hljs-number">100</span>&#125; <span class="hljs-keyword">as</span> SquareConfig)</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// 最佳方式 添加字符串索引签名</span></span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> SquareConfig &#123;</span><br><span class="line">&gt;     color?: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt;     <span class="hljs-built_in">number</span>?: <span class="hljs-built_in">number</span>;</span><br><span class="line">&gt;     [propName:<span class="hljs-built_in">string</span>]: <span class="hljs-built_in">any</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
-<h5 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">interface</span> SearchFunc &#123;</div><div class="line">&gt;     (source:<span class="hljs-built_in">string</span>, subString: <span class="hljs-built_in">string</span>):<span class="hljs-built_in">boolean</span></div><div class="line">&gt; &#125;</div><div class="line">&gt; <span class="hljs-comment">// 检查对应位置上的参数类型 并不要求参数名字相同</span></div><div class="line">&gt; <span class="hljs-keyword">let</span> mySearch: SearchFunc</div><div class="line">&gt; mySearch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source:<span class="hljs-built_in">string</span>, subString:<span class="hljs-built_in">string</span></span>)</span>&#123;</div><div class="line">&gt;     <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span></div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h5 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">interface</span> SearchFunc &#123;</span><br><span class="line">&gt;     (source:<span class="hljs-built_in">string</span>, subString: <span class="hljs-built_in">string</span>):<span class="hljs-built_in">boolean</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; <span class="hljs-comment">// 检查对应位置上的参数类型 并不要求参数名字相同</span></span><br><span class="line">&gt; <span class="hljs-keyword">let</span> mySearch: SearchFunc</span><br><span class="line">&gt; mySearch = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source:<span class="hljs-built_in">string</span>, subString:<span class="hljs-built_in">string</span></span>)</span>&#123;</span><br><span class="line">&gt;     <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
-<h5 id="可索引的类型"><a href="#可索引的类型" class="headerlink" title="可索引的类型"></a>可索引的类型</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-comment">// 具有索引签名 表示当用number去索引StringArray时会得到string类型的返回值</span></div><div class="line">&gt; <span class="hljs-comment">/*</span></div><div class="line">&gt; * 索引签名： 支持两种类型 string | number </div><div class="line">&gt; */</div><div class="line">&gt; <span class="hljs-keyword">interface</span> StringArray &#123;</div><div class="line">&gt;     [index: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">string</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">let</span> myArray: StringArray</div><div class="line">&gt; myArray = [<span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Fred'</span>]</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">let</span> myStr:<span class="hljs-built_in">string</span> = myArray[<span class="hljs-number">0</span>]</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">/*</span></div><div class="line">&gt; * 可以支持同时使用 string | number两种索引类型 但是要求数字索引的返回值必须是字符串返回值类型的子类型</div><div class="line">&gt; */</div><div class="line">&gt; <span class="hljs-keyword">class</span> Animal &#123;</div><div class="line">&gt;     name: <span class="hljs-built_in">string</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">class</span> Dog <span class="hljs-keyword">extends</span> Animal &#123;</div><div class="line">&gt;     breed: <span class="hljs-built_in">string</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; <span class="hljs-comment">// Error! </span></div><div class="line">&gt; <span class="hljs-keyword">interface</span> NotOkay &#123;</div><div class="line">&gt;     [x: <span class="hljs-built_in">number</span>]: Animal,</div><div class="line">&gt;     [x: <span class="hljs-built_in">string</span>]: Dog</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h5 id="可索引的类型"><a href="#可索引的类型" class="headerlink" title="可索引的类型"></a>可索引的类型</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// 具有索引签名 表示当用number去索引StringArray时会得到string类型的返回值</span></span><br><span class="line">&gt; <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">&gt; * 索引签名： 支持两种类型 string | number </span></span><br><span class="line"><span class="hljs-comment">&gt; */</span></span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> StringArray &#123;</span><br><span class="line">&gt;     [index: <span class="hljs-built_in">number</span>]: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">let</span> myArray: StringArray</span><br><span class="line">&gt; myArray = [<span class="hljs-string">'Bob'</span>, <span class="hljs-string">'Fred'</span>]</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">let</span> myStr:<span class="hljs-built_in">string</span> = myArray[<span class="hljs-number">0</span>]</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">/*</span></span><br><span class="line"><span class="hljs-comment">&gt; * 可以支持同时使用 string | number两种索引类型 但是要求数字索引的返回值必须是字符串返回值类型的子类型</span></span><br><span class="line"><span class="hljs-comment">&gt; */</span></span><br><span class="line">&gt; <span class="hljs-keyword">class</span> Animal &#123;</span><br><span class="line">&gt;     name: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">class</span> Dog <span class="hljs-keyword">extends</span> Animal &#123;</span><br><span class="line">&gt;     breed: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; <span class="hljs-comment">// Error! </span></span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> NotOkay &#123;</span><br><span class="line">&gt;     [x: <span class="hljs-built_in">number</span>]: Animal,</span><br><span class="line">&gt;     [x: <span class="hljs-built_in">string</span>]: Dog</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
 <h5 id="类类型"><a href="#类类型" class="headerlink" title="类类型"></a>类类型</h5><p><strong>类具有两个类型： 静态部分的类型和实例的类型 </strong></p>
-<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-comment">// 实现接口</span></div><div class="line">&gt; <span class="hljs-keyword">interface</span> ClockInterface &#123;</div><div class="line">&gt;     currentTime: <span class="hljs-built_in">Date</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">class</span> Clock <span class="hljs-keyword">implements</span> ClockInterface &#123;</div><div class="line">&gt;     currentTime: <span class="hljs-built_in">Date</span>;</div><div class="line">&gt;     <span class="hljs-keyword">constructor</span>(<span class="hljs-params">h:<span class="hljs-built_in">number</span>, m:<span class="hljs-built_in">number</span></span>)&#123;&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// 类静态部分与实例部分的区别 </span></div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-comment">// 实现接口</span></span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> ClockInterface &#123;</span><br><span class="line">&gt;     currentTime: <span class="hljs-built_in">Date</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">class</span> Clock <span class="hljs-keyword">implements</span> ClockInterface &#123;</span><br><span class="line">&gt;     currentTime: <span class="hljs-built_in">Date</span>;</span><br><span class="line">&gt;     <span class="hljs-keyword">constructor</span>(<span class="hljs-params">h:<span class="hljs-built_in">number</span>, m:<span class="hljs-built_in">number</span></span>)&#123;&#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// 类静态部分与实例部分的区别 </span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
-<h5 id="继承接口"><a href="#继承接口" class="headerlink" title="继承接口"></a>继承接口</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">interface</span> Shape &#123; </div><div class="line">&gt; color: <span class="hljs-built_in">string</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">interface</span> PenStoke &#123;</div><div class="line">&gt; penWidth: <span class="hljs-built_in">number</span>;    </div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">interface</span> Square <span class="hljs-keyword">extends</span> Shape, PenStoke &#123;</div><div class="line">&gt;     sideLength: <span class="hljs-built_in">number</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">let</span> square = &lt;Square&gt;&#123;&#125;</div><div class="line">&gt; square.color = <span class="hljs-string">'red'</span>;</div><div class="line">&gt; square.penWidth = <span class="hljs-number">10</span>;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h5 id="继承接口"><a href="#继承接口" class="headerlink" title="继承接口"></a>继承接口</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">interface</span> Shape &#123; </span><br><span class="line">&gt; color: <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> PenStoke &#123;</span><br><span class="line">&gt; penWidth: <span class="hljs-built_in">number</span>;    </span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> Square <span class="hljs-keyword">extends</span> Shape, PenStoke &#123;</span><br><span class="line">&gt;     sideLength: <span class="hljs-built_in">number</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">let</span> square = &lt;Square&gt;&#123;&#125;</span><br><span class="line">&gt; square.color = <span class="hljs-string">'red'</span>;</span><br><span class="line">&gt; square.penWidth = <span class="hljs-number">10</span>;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
-<h5 id="混合类型-一个对象可以同时作为函数和对象使用，并带有额外属性"><a href="#混合类型-一个对象可以同时作为函数和对象使用，并带有额外属性" class="headerlink" title="混合类型 一个对象可以同时作为函数和对象使用，并带有额外属性"></a>混合类型 一个对象可以同时作为函数和对象使用，并带有额外属性</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">interface</span> Counter &#123;</div><div class="line">&gt;   (start: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span>;</div><div class="line">&gt;   interval: <span class="hljs-built_in">number</span>;</div><div class="line">&gt;   reset(): <span class="hljs-built_in">void</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCounter</span>(<span class="hljs-params"></span>): <span class="hljs-title">Counter</span> </span>&#123;</div><div class="line">&gt;   <span class="hljs-keyword">let</span> counter = &lt;Counter&gt;<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">start: <span class="hljs-built_in">number</span></span>) </span>&#123;&#125;;</div><div class="line">&gt;   counter.interval = <span class="hljs-number">123</span>;</div><div class="line">&gt;   counter.reset = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;;</div><div class="line">&gt;   <span class="hljs-keyword">return</span> counter;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h5 id="混合类型-一个对象可以同时作为函数和对象使用，并带有额外属性"><a href="#混合类型-一个对象可以同时作为函数和对象使用，并带有额外属性" class="headerlink" title="混合类型 一个对象可以同时作为函数和对象使用，并带有额外属性"></a>混合类型 一个对象可以同时作为函数和对象使用，并带有额外属性</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">interface</span> Counter &#123;</span><br><span class="line">&gt;   (start: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span>;</span><br><span class="line">&gt;   interval: <span class="hljs-built_in">number</span>;</span><br><span class="line">&gt;   reset(): <span class="hljs-built_in">void</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCounter</span>(<span class="hljs-params"></span>): <span class="hljs-title">Counter</span> </span>&#123;</span><br><span class="line">&gt;   <span class="hljs-keyword">let</span> counter = &lt;Counter&gt;<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">start: <span class="hljs-built_in">number</span></span>) </span>&#123;&#125;;</span><br><span class="line">&gt;   counter.interval = <span class="hljs-number">123</span>;</span><br><span class="line">&gt;   counter.reset = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;;</span><br><span class="line">&gt;   <span class="hljs-keyword">return</span> counter;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>&gt;</p>
 <blockquote>
-<h5 id="接口继承类"><a href="#接口继承类" class="headerlink" title="接口继承类"></a>接口继承类</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&gt; <span class="hljs-keyword">class</span> Control &#123;</div><div class="line">&gt;   <span class="hljs-keyword">private</span> state: <span class="hljs-built_in">any</span>; <span class="hljs-comment">// 私有成员</span></div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">interface</span> SelectableControl <span class="hljs-keyword">extends</span> Control &#123;</div><div class="line">&gt;   select(): <span class="hljs-built_in">void</span>;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">class</span> Button <span class="hljs-keyword">extends</span> Control <span class="hljs-keyword">implements</span> SelectableControl &#123;</div><div class="line">&gt;   select() &#123;&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-keyword">class</span> TextBox <span class="hljs-keyword">extends</span> Control &#123;</div><div class="line">&gt;   select() &#123;&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt; </div><div class="line">&gt; <span class="hljs-comment">// Error state missing</span></div><div class="line">&gt; <span class="hljs-keyword">class</span> Image <span class="hljs-keyword">implements</span> SelectableControl &#123;</div><div class="line">&gt;     select()&#123;&#125;</div><div class="line">&gt; &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<h5 id="接口继承类"><a href="#接口继承类" class="headerlink" title="接口继承类"></a>接口继承类</h5><figure class="highlight typescript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="hljs-keyword">class</span> Control &#123;</span><br><span class="line">&gt;   <span class="hljs-keyword">private</span> state: <span class="hljs-built_in">any</span>; <span class="hljs-comment">// 私有成员</span></span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">interface</span> SelectableControl <span class="hljs-keyword">extends</span> Control &#123;</span><br><span class="line">&gt;   select(): <span class="hljs-built_in">void</span>;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">class</span> Button <span class="hljs-keyword">extends</span> Control <span class="hljs-keyword">implements</span> SelectableControl &#123;</span><br><span class="line">&gt;   select() &#123;&#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-keyword">class</span> TextBox <span class="hljs-keyword">extends</span> Control &#123;</span><br><span class="line">&gt;   select() &#123;&#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt; </span><br><span class="line">&gt; <span class="hljs-comment">// Error state missing</span></span><br><span class="line">&gt; <span class="hljs-keyword">class</span> Image <span class="hljs-keyword">implements</span> SelectableControl &#123;</span><br><span class="line">&gt;     select()&#123;&#125;</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h4 id="三、类"><a href="#三、类" class="headerlink" title="三、类"></a>三、类</h4>
         </div>
@@ -321,7 +305,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        34
                     </p>
                 </div>
             </div>
@@ -341,7 +325,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        23
                     </p>
                 </div>
             </div>
@@ -354,8 +338,7 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="https://github.com/joeng3ll">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/joeng3ll">
                 
                 <i class="fab fa-github"></i>
                 
@@ -372,7 +355,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/互联网广告/" style="font-size: 10px;">互联网广告</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -403,16 +386,16 @@
         
         <article class="media">
             
-            <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="media-left">
+            <a href="/2019/12/19/关于Babel的一二三事/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Google关于TypeScript3.5版本的反馈[译]">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于Babel的一二三事">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-09T07:47:27.000Z">2019-09-09</time></div>
-                    <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="has-link-black-ter is-size-6">Google关于TypeScript3.5版本的反馈[译]</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T02:45:14.000Z">2019-12-19</time></div>
+                    <a href="/2019/12/19/关于Babel的一二三事/" class="has-link-black-ter is-size-6">关于Babel的一二三事</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -422,16 +405,16 @@
         
         <article class="media">
             
-            <a href="/2019/08/25/React中的竞态/" class="media-left">
+            <a href="/2019/11/27/virtualDOM/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React中的竞态">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="virtualDOM">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-25T02:16:24.000Z">2019-08-25</time></div>
-                    <a href="/2019/08/25/React中的竞态/" class="has-link-black-ter is-size-6">React中的竞态</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T02:15:31.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/virtualDOM/" class="has-link-black-ter is-size-6">virtualDOM</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -441,16 +424,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/30/TS-Module-Resolution/" class="media-left">
+            <a href="/2019/11/26/react16特性/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TS-Module-Resolution">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="react16特性">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/TS-Module-Resolution/" class="has-link-black-ter is-size-6">TS-Module-Resolution</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T13:44:06.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/react16特性/" class="has-link-black-ter is-size-6">react16特性</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -460,16 +443,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/04/Rx/" class="media-left">
+            <a href="/2019/11/26/http-proxy杂记/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RxJS">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="http-proxy杂记">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">RxJS</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T08:00:37.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/http-proxy杂记/" class="has-link-black-ter is-size-6">http-proxy杂记</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -479,16 +462,16 @@
         
         <article class="media">
             
-            <a href="/2019/06/30/React-Diff/" class="media-left">
+            <a href="/2019/09/26/互联网广告初识/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="互联网广告初识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
-                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-26T01:49:52.000Z">2019-09-26</time></div>
+                    <a href="/2019/09/26/互联网广告初识/" class="has-link-black-ter is-size-6">互联网广告初识</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -509,12 +492,34 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -676,6 +681,17 @@
             <ul class="menu-list">
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/Babel/">
+                        <span class="level-start">
+                            <span class="level-item">Babel</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/CSS/">
                         <span class="level-start">
                             <span class="level-item">CSS</span>
@@ -734,6 +750,17 @@
                     <a class="level is-marginless" href="/tags/JavaScript/">
                         <span class="level-start">
                             <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Node-js/">
+                        <span class="level-start">
+                            <span class="level-item">Node.js</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -819,6 +846,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/http/">
+                        <span class="level-start">
+                            <span class="level-item">http</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -835,7 +873,7 @@
                             <span class="level-item">react</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">3</span>
                         </span>
                     </a>
                 </li>
@@ -855,6 +893,17 @@
                     <a class="level is-marginless" href="/tags/webpack/">
                         <span class="level-start">
                             <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/互联网广告/">
+                        <span class="level-start">
+                            <span class="level-item">互联网广告</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -923,16 +972,16 @@
         
         <article class="media">
             
-            <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="media-left">
+            <a href="/2019/12/19/关于Babel的一二三事/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Google关于TypeScript3.5版本的反馈[译]">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于Babel的一二三事">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-09T07:47:27.000Z">2019-09-09</time></div>
-                    <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="has-link-black-ter is-size-6">Google关于TypeScript3.5版本的反馈[译]</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T02:45:14.000Z">2019-12-19</time></div>
+                    <a href="/2019/12/19/关于Babel的一二三事/" class="has-link-black-ter is-size-6">关于Babel的一二三事</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -942,16 +991,16 @@
         
         <article class="media">
             
-            <a href="/2019/08/25/React中的竞态/" class="media-left">
+            <a href="/2019/11/27/virtualDOM/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React中的竞态">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="virtualDOM">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-25T02:16:24.000Z">2019-08-25</time></div>
-                    <a href="/2019/08/25/React中的竞态/" class="has-link-black-ter is-size-6">React中的竞态</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T02:15:31.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/virtualDOM/" class="has-link-black-ter is-size-6">virtualDOM</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -961,16 +1010,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/30/TS-Module-Resolution/" class="media-left">
+            <a href="/2019/11/26/react16特性/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TS-Module-Resolution">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="react16特性">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/TS-Module-Resolution/" class="has-link-black-ter is-size-6">TS-Module-Resolution</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T13:44:06.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/react16特性/" class="has-link-black-ter is-size-6">react16特性</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -980,16 +1029,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/04/Rx/" class="media-left">
+            <a href="/2019/11/26/http-proxy杂记/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RxJS">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="http-proxy杂记">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">RxJS</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T08:00:37.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/http-proxy杂记/" class="has-link-black-ter is-size-6">http-proxy杂记</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -999,16 +1048,16 @@
         
         <article class="media">
             
-            <a href="/2019/06/30/React-Diff/" class="media-left">
+            <a href="/2019/09/26/互联网广告初识/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="互联网广告初识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
-                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-26T01:49:52.000Z">2019-09-26</time></div>
+                    <a href="/2019/09/26/互联网广告初识/" class="has-link-black-ter is-size-6">互联网广告初识</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1029,12 +1078,34 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1196,6 +1267,17 @@
             <ul class="menu-list">
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/Babel/">
+                        <span class="level-start">
+                            <span class="level-item">Babel</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/CSS/">
                         <span class="level-start">
                             <span class="level-item">CSS</span>
@@ -1254,6 +1336,17 @@
                     <a class="level is-marginless" href="/tags/JavaScript/">
                         <span class="level-start">
                             <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Node-js/">
+                        <span class="level-start">
+                            <span class="level-item">Node.js</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1339,6 +1432,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/http/">
+                        <span class="level-start">
+                            <span class="level-item">http</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -1355,7 +1459,7 @@
                             <span class="level-item">react</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">3</span>
                         </span>
                     </a>
                 </li>
@@ -1375,6 +1479,17 @@
                     <a class="level is-marginless" href="/tags/webpack/">
                         <span class="level-start">
                             <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/互联网广告/">
+                        <span class="level-start">
+                            <span class="level-item">互联网广告</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1426,8 +1541,7 @@
                 </a>
                 <p class="is-size-7">
                 &copy; 2019 Joeng_ll&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
             </div>
             <div class="level-end">
@@ -1553,7 +1667,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html >
-<head>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>Tag: react - Joeng_ll</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -13,6 +13,7 @@
 <meta property="og:url" content="http://yoursite.com/tags/react/index.html">
 <meta property="og:site_name" content="Joeng_ll">
 <meta property="og:description" content="FrontEnd">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Joeng_ll">
 <meta name="twitter:description" content="FrontEnd">
@@ -93,20 +94,15 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">Home</a>
+                <a class="navbar-item" href="/">Home</a>
                 
-                <a class="navbar-item"
-                href="/archives">Archives</a>
+                <a class="navbar-item" href="/archives">Archives</a>
                 
-                <a class="navbar-item"
-                href="/categories">Categories</a>
+                <a class="navbar-item" href="/categories">Categories</a>
                 
-                <a class="navbar-item"
-                href="/tags">Tags</a>
+                <a class="navbar-item" href="/tags">Tags</a>
                 
-                <a class="navbar-item"
-                href="/about">About</a>
+                <a class="navbar-item" href="/about">About</a>
                 
             </div>
             
@@ -152,6 +148,105 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T02:15:31.000Z">2019-11-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 233 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/27/virtualDOM/">virtualDOM</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>React中常见名词解释：</p>
+<ul>
+<li>Reconciliation 通过ReactDOM等类库与 “真实DOM” 同步</li>
+</ul>
+</blockquote>
+<p>virtualDOM是一种编程概念，UI以一种理想化的，虚拟的表现形式存在与内存中，通过virtualDOM这种方式，产生了声明式API的编程风格，相较于jquery，这种声明式的API帮助我们从以往的属性操作、事件处理和手动更新DOM这些必要的操作中解放出来。</p>
+<p>所以可以从以下几个点入手看看ReactDOM都做了哪些事情</p>
+<h5 id="1、事件处理"><a href="#1、事件处理" class="headerlink" title="1、事件处理"></a>1、事件处理</h5><p>提到virtualDOM，就不得不说以下React16中新加入的Fiber协调引擎，以及React fiber这种新的数据结构，他们的主要目的是使VirtualDOM可以进行<strong>增量式</strong>渲染。想了解更多的可以看这篇 <a href="https://github.com/acdlite/react-fiber-architecture" target="_blank" rel="noopener">https://github.com/acdlite/react-fiber-architecture</a></p>
+<p>源码分析：</p>
+<p>ReactDOM.render( childNode, domContainer )</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-26T13:44:06.000Z">2019-11-26</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 170 words)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/26/react16特性/">react16特性</a>
+            
+        </h1>
+        <div class="content">
+            <p>React16是一个重大更新，将React管理Reconciliation的算法全部重构了( group-up rewrite for how React manages reconciliation)。在兼容之前版本的主要API的情况下，还增加了以下新特性:</p>
+<ul>
+<li>具备将代码块中可中断的任务分割的能力</li>
+<li>能够将进程中的任务划分优先级( prioritize )执行</li>
+<li>异步渲染，利用React Fiber，这种新的数据结构（fiber reconciliation），原来是一种堆栈结构(stack reconciliation)</li>
+<li>完善了错误处理机制，不会因为一个子组件的崩溃导致整个应用崩溃。componentDidCatch</li>
+</ul>
+<blockquote>
+<p>Reconciliation: 通过ReactDOM等类库 与 真实DOM 同步 </p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-01-19T07:04:39.000Z">2019-01-19</time>
                 
                 
@@ -170,10 +265,10 @@
             
         </h1>
         <div class="content">
-            <h3 id="一、React-Components-amp-React-Elements-amp-Instance"><a href="#一、React-Components-amp-React-Elements-amp-Instance" class="headerlink" title="一、React Components &amp; React Elements &amp; Instance"></a>一、React Components &amp; React Elements &amp; Instance</h3><h5 id="components-输入props-输出element-Tree-单一数据流。"><a href="#components-输入props-输出element-Tree-单一数据流。" class="headerlink" title="components: 输入props,输出element Tree. 单一数据流。"></a>components: 输入props,输出element Tree. 单一数据流。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="hljs-comment">// 1、作为functions定义</span></div><div class="line"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">&#123;children, color&#125;</span>) =&gt;</span> (&#123;</div><div class="line">    <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">    <span class="hljs-attr">props</span>: &#123;</div><div class="line">        <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span>+color,</div><div class="line">        <span class="hljs-attr">children</span>: &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">children</span>: children</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、使用React.createClass()</span></div><div class="line"><span class="hljs-keyword">const</span> Button = React.createClass(&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span> + color,</div><div class="line">                <span class="hljs-attr">children</span>: &#123;</div><div class="line">                    <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">                    <span class="hljs-attr">props</span>: &#123;</div><div class="line">                        <span class="hljs-attr">children</span>:children</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="hljs-comment">//3、使用ES6的class继承自React.Component</span></div><div class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</div><div class="line">        <span class="hljs-keyword">return</span> &#123;</div><div class="line">            <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">            <span class="hljs-attr">props</span>: &#123;</div><div class="line">                <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-'</span> + color</div><div class="line">                children: &#123;</div><div class="line">               		<span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">                    <span class="hljs-attr">props</span>: &#123;</div><div class="line">                		<span class="hljs-attr">children</span>: children</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。"><a href="#elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。" class="headerlink" title="elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。"></a>elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="hljs-attr">type</span>: (string | ReactClass),</div><div class="line">    <span class="hljs-attr">props</span>: <span class="hljs-built_in">Object</span>，</div><div class="line">    $$<span class="hljs-keyword">typeof</span>: <span class="hljs-built_in">Symbol</span>.for(<span class="hljs-string">'react.element'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">i.e.</div><div class="line">&#123;</div><div class="line">    <span class="hljs-attr">type</span>: <span class="hljs-string">'button'</span>,</div><div class="line">    <span class="hljs-attr">props</span>: &#123;</div><div class="line">       <span class="hljs-attr">className</span>: <span class="hljs-string">'button button-blue'</span>,</div><div class="line">       <span class="hljs-attr">children</span>: &#123;</div><div class="line">         <span class="hljs-attr">type</span>: <span class="hljs-string">'b'</span>,</div><div class="line">         <span class="hljs-attr">props</span>: &#123;</div><div class="line">             <span class="hljs-attr">children</span>: <span class="hljs-string">'ok'</span></div><div class="line">         &#125;</div><div class="line">       &#125;     </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">得到以下结果:</div><div class="line">&lt;button className='button button-blue'&gt;</div><div class="line">    &lt;b&gt;</div><div class="line">    	ok</div><div class="line">    &lt;/b&gt;</div><div class="line">&lt;/button&gt;</div><div class="line"></div><div class="line"><span class="hljs-comment">// 1、通过React.createElement创建React element</span></div><div class="line">React.createElement(</div><div class="line">  type, </div><div class="line">  [props],</div><div class="line">  [...children]</div><div class="line">)</div><div class="line"></div><div class="line"><span class="hljs-comment">// 2、JSX</span></div><div class="line"><span class="hljs-keyword">const</span> name = <span class="hljs-string">'joeng'</span></div><div class="line"><span class="hljs-keyword">const</span> Ele = &lt;div&gt;hello,&#123;name&#125;&lt;/div&gt;</div><div class="line"></div><div class="line"></div><div class="line"><span class="hljs-comment">// 校验是否是React Element </span></div><div class="line">React.isValidElement(object)</div></pre></td></tr></table></figure>
+            <h3 id="一、React-Components-amp-React-Elements-amp-Instance"><a href="#一、React-Components-amp-React-Elements-amp-Instance" class="headerlink" title="一、React Components &amp; React Elements &amp; Instance"></a>一、React Components &amp; React Elements &amp; Instance</h3><h5 id="components-输入props-输出element-Tree-单一数据流。"><a href="#components-输入props-输出element-Tree-单一数据流。" class="headerlink" title="components: 输入props,输出element Tree. 单一数据流。"></a>components: 输入props,输出element Tree. 单一数据流。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 1、作为functions定义</span></span><br><span class="line"><span class="hljs-keyword">const</span> Button = <span class="hljs-function">(<span class="hljs-params">&#123;children, color&#125;</span>) =&gt;</span> (&#123;</span><br><span class="line">    type: <span class="hljs-string">'button'</span>,</span><br><span class="line">    props: &#123;</span><br><span class="line">        className: <span class="hljs-string">'button button-'</span>+color,</span><br><span class="line">        children: &#123;</span><br><span class="line">            type: <span class="hljs-string">'b'</span>,</span><br><span class="line">            props: &#123;</span><br><span class="line">                children: children</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 2、使用React.createClass()</span></span><br><span class="line"><span class="hljs-keyword">const</span> Button = React.createClass(&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</span><br><span class="line">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">            type: <span class="hljs-string">'button'</span>,</span><br><span class="line">            props: &#123;</span><br><span class="line">                className: <span class="hljs-string">'button button-'</span> + color,</span><br><span class="line">                children: &#123;</span><br><span class="line">                    type: <span class="hljs-string">'b'</span>,</span><br><span class="line">                    props: &#123;</span><br><span class="line">                        children:children</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//3、使用ES6的class继承自React.Component</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Button</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span></span>&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="hljs-keyword">const</span> &#123; children, color &#125; = <span class="hljs-keyword">this</span>.props</span><br><span class="line">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">            type: <span class="hljs-string">'button'</span>,</span><br><span class="line">            props: &#123;</span><br><span class="line">                className: <span class="hljs-string">'button button-'</span> + color</span><br><span class="line">                children: &#123;</span><br><span class="line">               		type: <span class="hljs-string">'b'</span>,</span><br><span class="line">                    props: &#123;</span><br><span class="line">                		children: children</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。"><a href="#elements-一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component-instance-和-DOM-Node，包括这俩者想要得到的属性。" class="headerlink" title="elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。"></a>elements: 一个不可变的描述对象，告诉react要绘制什么样的视图。element本质上只是普通对象，描述了component instance 和 DOM Node，包括这俩者想要得到的属性。</h5><figure class="highlight javascript hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    type: (string | ReactClass),</span><br><span class="line">    props: <span class="hljs-built_in">Object</span>，</span><br><span class="line">    $$<span class="hljs-keyword">typeof</span>: <span class="hljs-built_in">Symbol</span>.for(<span class="hljs-string">'react.element'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">i.e.</span><br><span class="line">&#123;</span><br><span class="line">    type: <span class="hljs-string">'button'</span>,</span><br><span class="line">    props: &#123;</span><br><span class="line">       className: <span class="hljs-string">'button button-blue'</span>,</span><br><span class="line">       children: &#123;</span><br><span class="line">         type: <span class="hljs-string">'b'</span>,</span><br><span class="line">         props: &#123;</span><br><span class="line">             children: <span class="hljs-string">'ok'</span></span><br><span class="line">         &#125;</span><br><span class="line">       &#125;     </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">得到以下结果:</span><br><span class="line">&lt;button className=<span class="hljs-string">'button button-blue'</span>&gt;</span><br><span class="line">    &lt;b&gt;</span><br><span class="line">    	ok</span><br><span class="line">    &lt;<span class="hljs-regexp">/b&gt;</span></span><br><span class="line"><span class="hljs-regexp">&lt;/</span>button&gt;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 1、通过React.createElement创建React element</span></span><br><span class="line">React.createElement(</span><br><span class="line">  type, </span><br><span class="line">  [props],</span><br><span class="line">  [...children]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 2、JSX</span></span><br><span class="line"><span class="hljs-keyword">const</span> name = <span class="hljs-string">'joeng'</span></span><br><span class="line"><span class="hljs-keyword">const</span> Ele = &lt;div&gt;hello,&#123;name&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 校验是否是React Element </span></span><br><span class="line">React.isValidElement(object)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>$$typeof : react用这个属性来安全的区分普通的对象与react Elements, 详细可参考官方文档: <a href="https://github.com/facebook/react/pull/4832" target="_blank" rel="external">https://github.com/facebook/react/pull/4832</a> </li>
+<li>$$typeof : react用这个属性来安全的区分普通的对象与react Elements, 详细可参考官方文档: <a href="https://github.com/facebook/react/pull/4832" target="_blank" rel="noopener">https://github.com/facebook/react/pull/4832</a> </li>
 </ul>
 <h5 id="instances-只有用class声明的React-Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。"><a href="#instances-只有用class声明的React-Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。" class="headerlink" title="instances: 只有用class声明的React Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。"></a>instances: 只有用class声明的React Components才有instance，instance是React创建和管理的，比起components和elements来说，instance显得不是那么重要。</h5>
         </div>
@@ -231,7 +326,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        28
+                        34
                     </p>
                 </div>
             </div>
@@ -251,7 +346,7 @@
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        23
                     </p>
                 </div>
             </div>
@@ -264,8 +359,7 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="https://github.com/joeng3ll">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/joeng3ll">
                 
                 <i class="fab fa-github"></i>
                 
@@ -282,7 +376,7 @@
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
+        <a href="/tags/Babel/" style="font-size: 10px;">Babel</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/ES6/" style="font-size: 20px;">ES6</a> <a href="/tags/ES7/" style="font-size: 10px;">ES7</a> <a href="/tags/Functional-Programming/" style="font-size: 15px;">Functional Programming</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Promise/" style="font-size: 10px;">Promise</a> <a href="/tags/React/" style="font-size: 15px;">React</a> <a href="/tags/RxJS/" style="font-size: 10px;">RxJS</a> <a href="/tags/Tool/" style="font-size: 10px;">Tool</a> <a href="/tags/TypeScript/" style="font-size: 20px;">TypeScript</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/react/" style="font-size: 20px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/互联网广告/" style="font-size: 10px;">互联网广告</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/缓存/" style="font-size: 20px;">缓存</a>
     </div>
 </div>
 
@@ -313,16 +407,16 @@
         
         <article class="media">
             
-            <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="media-left">
+            <a href="/2019/12/19/关于Babel的一二三事/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Google关于TypeScript3.5版本的反馈[译]">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于Babel的一二三事">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-09T07:47:27.000Z">2019-09-09</time></div>
-                    <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="has-link-black-ter is-size-6">Google关于TypeScript3.5版本的反馈[译]</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T02:45:14.000Z">2019-12-19</time></div>
+                    <a href="/2019/12/19/关于Babel的一二三事/" class="has-link-black-ter is-size-6">关于Babel的一二三事</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -332,16 +426,16 @@
         
         <article class="media">
             
-            <a href="/2019/08/25/React中的竞态/" class="media-left">
+            <a href="/2019/11/27/virtualDOM/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React中的竞态">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="virtualDOM">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-25T02:16:24.000Z">2019-08-25</time></div>
-                    <a href="/2019/08/25/React中的竞态/" class="has-link-black-ter is-size-6">React中的竞态</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T02:15:31.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/virtualDOM/" class="has-link-black-ter is-size-6">virtualDOM</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -351,16 +445,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/30/TS-Module-Resolution/" class="media-left">
+            <a href="/2019/11/26/react16特性/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TS-Module-Resolution">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="react16特性">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/TS-Module-Resolution/" class="has-link-black-ter is-size-6">TS-Module-Resolution</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T13:44:06.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/react16特性/" class="has-link-black-ter is-size-6">react16特性</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -370,16 +464,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/04/Rx/" class="media-left">
+            <a href="/2019/11/26/http-proxy杂记/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RxJS">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="http-proxy杂记">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">RxJS</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T08:00:37.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/http-proxy杂记/" class="has-link-black-ter is-size-6">http-proxy杂记</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -389,16 +483,16 @@
         
         <article class="media">
             
-            <a href="/2019/06/30/React-Diff/" class="media-left">
+            <a href="/2019/09/26/互联网广告初识/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="互联网广告初识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
-                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-26T01:49:52.000Z">2019-09-26</time></div>
+                    <a href="/2019/09/26/互联网广告初识/" class="has-link-black-ter is-size-6">互联网广告初识</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -419,12 +513,34 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -586,6 +702,17 @@
             <ul class="menu-list">
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/Babel/">
+                        <span class="level-start">
+                            <span class="level-item">Babel</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/CSS/">
                         <span class="level-start">
                             <span class="level-item">CSS</span>
@@ -644,6 +771,17 @@
                     <a class="level is-marginless" href="/tags/JavaScript/">
                         <span class="level-start">
                             <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Node-js/">
+                        <span class="level-start">
+                            <span class="level-item">Node.js</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -729,6 +867,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/http/">
+                        <span class="level-start">
+                            <span class="level-item">http</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -745,7 +894,7 @@
                             <span class="level-item">react</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">3</span>
                         </span>
                     </a>
                 </li>
@@ -765,6 +914,17 @@
                     <a class="level is-marginless" href="/tags/webpack/">
                         <span class="level-start">
                             <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/互联网广告/">
+                        <span class="level-start">
+                            <span class="level-item">互联网广告</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -833,16 +993,16 @@
         
         <article class="media">
             
-            <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="media-left">
+            <a href="/2019/12/19/关于Babel的一二三事/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Google关于TypeScript3.5版本的反馈[译]">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="关于Babel的一二三事">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-09T07:47:27.000Z">2019-09-09</time></div>
-                    <a href="/2019/09/09/Google关于TypeScript3-5版本的反馈/" class="has-link-black-ter is-size-6">Google关于TypeScript3.5版本的反馈[译]</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-19T02:45:14.000Z">2019-12-19</time></div>
+                    <a href="/2019/12/19/关于Babel的一二三事/" class="has-link-black-ter is-size-6">关于Babel的一二三事</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -852,16 +1012,16 @@
         
         <article class="media">
             
-            <a href="/2019/08/25/React中的竞态/" class="media-left">
+            <a href="/2019/11/27/virtualDOM/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React中的竞态">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="virtualDOM">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-25T02:16:24.000Z">2019-08-25</time></div>
-                    <a href="/2019/08/25/React中的竞态/" class="has-link-black-ter is-size-6">React中的竞态</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T02:15:31.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/virtualDOM/" class="has-link-black-ter is-size-6">virtualDOM</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -871,16 +1031,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/30/TS-Module-Resolution/" class="media-left">
+            <a href="/2019/11/26/react16特性/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TS-Module-Resolution">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="react16特性">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-30T10:45:33.000Z">2019-07-30</time></div>
-                    <a href="/2019/07/30/TS-Module-Resolution/" class="has-link-black-ter is-size-6">TS-Module-Resolution</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T13:44:06.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/react16特性/" class="has-link-black-ter is-size-6">react16特性</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -890,16 +1050,16 @@
         
         <article class="media">
             
-            <a href="/2019/07/04/Rx/" class="media-left">
+            <a href="/2019/11/26/http-proxy杂记/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="RxJS">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="http-proxy杂记">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-07-04T12:41:55.000Z">2019-07-04</time></div>
-                    <a href="/2019/07/04/Rx/" class="has-link-black-ter is-size-6">RxJS</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-26T08:00:37.000Z">2019-11-26</time></div>
+                    <a href="/2019/11/26/http-proxy杂记/" class="has-link-black-ter is-size-6">http-proxy杂记</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -909,16 +1069,16 @@
         
         <article class="media">
             
-            <a href="/2019/06/30/React-Diff/" class="media-left">
+            <a href="/2019/09/26/互联网广告初识/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="React-Diff">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="互联网广告初识">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-06-30T13:04:21.000Z">2019-06-30</time></div>
-                    <a href="/2019/06/30/React-Diff/" class="has-link-black-ter is-size-6">React-Diff</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-26T01:49:52.000Z">2019-09-26</time></div>
+                    <a href="/2019/09/26/互联网广告初识/" class="has-link-black-ter is-size-6">互联网广告初识</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -939,12 +1099,34 @@
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/09/">
                 <span class="level-start">
                     <span class="level-item">September 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -1106,6 +1288,17 @@
             <ul class="menu-list">
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/Babel/">
+                        <span class="level-start">
+                            <span class="level-item">Babel</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/CSS/">
                         <span class="level-start">
                             <span class="level-item">CSS</span>
@@ -1164,6 +1357,17 @@
                     <a class="level is-marginless" href="/tags/JavaScript/">
                         <span class="level-start">
                             <span class="level-item">JavaScript</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/Node-js/">
+                        <span class="level-start">
+                            <span class="level-item">Node.js</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1249,6 +1453,17 @@
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/http/">
+                        <span class="level-start">
+                            <span class="level-item">http</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/node-js/">
                         <span class="level-start">
                             <span class="level-item">node.js</span>
@@ -1265,7 +1480,7 @@
                             <span class="level-item">react</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">3</span>
                         </span>
                     </a>
                 </li>
@@ -1285,6 +1500,17 @@
                     <a class="level is-marginless" href="/tags/webpack/">
                         <span class="level-start">
                             <span class="level-item">webpack</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a class="level is-marginless" href="/tags/互联网广告/">
+                        <span class="level-start">
+                            <span class="level-item">互联网广告</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1336,8 +1562,7 @@
                 </a>
                 <p class="is-size-7">
                 &copy; 2019 Joeng_ll&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>
             </div>
             <div class="level-end">
@@ -1463,7 +1688,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
